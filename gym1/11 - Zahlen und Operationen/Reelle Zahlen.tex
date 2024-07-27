@@ -1,0 +1,101 @@
+\newpage
+\section{Reelle Zahlen $\mathbb{R}$}
+
+% ----------------------------------------------------------------------------
+\subsection{irrationale Zahlen}
+
+Wir haben gesehen, dass die rationalen Zahlen auf der Zahlengerade dicht liegen. Das heisst, wir finden zwischen zwei rationalen Zahlen immer unendlich viele weitere.
+
+Wir können aber auch Zahlen konstruieren, die nicht rational sind. Dazu müssen wir nur eine unendliche Dezimalentwicklung angeben, die nicht periodisch ist, beispielsweise:
+\[
+  0.1011011101111011111011111101\ldots
+\]
+
+Diese Zahl liegt natürlich auch auf der Zahlengerade, zwischen $0.1$ und $0.11$, sie ist aber nicht eine rationale Zahl, da sie nicht als Bruch darstellbar ist.
+
+\textbf{Definition:} Eine Zahl auf der Zahlengeraden, welche nicht eine rationale Zahl ist, also \textbf{nicht} in der Form
+\[
+  \frac{z}{n} \qquad z \in \mathbb{Z},\quad n \in \mathbb{Z^{+}}
+\]
+geschrieben werden kann, heisst \textbf{irrationale} Zahl.
+
+Werden alle rationalen und alle irrationalen Zahlen zusammengefasst, ergeben sich sämtliche Zahlen auf der Zahlengeraden.
+
+\textbf{Definition:} Alle rationalen und irrationalen Zahlen zusammen werden \textbf{reelle Zahlen} genannt und mit $\mathbb{R}$ bezeichnet.
+
+% ----------------------------------------------------------------------------
+\subsection{Beweis der Irratonalität von Zahlen}
+
+Es ist gar nicht so einfach zu beweisen, dass eine bestimmte Zahl irrational ist.
+
+\begin{itemize}
+  \item Dass $\sqrt{2}$ und weitere Wurzeln irrational sind, hat der Grieche Archytas von Tarent ca. 420 v. Chr. bewiesen.
+  \item Dass die Kreiszahl $\pi$ irrational ist, hat Johann Heinrich Lambert 1761 bewiesen.
+  \item Dass die eulersche Zahl $e$ irrational ist, hat Charles Hermite 1873 bewiesen.
+  \item Bei anderen Zahlen wird die Irrationalität vermutet, ist aber bis heute nicht bewiesen, z.B. bei
+  \[
+    \pi + e \qquad\qquad \pi - e \qquad\qquad \pi^{\pi}
+  \]
+\end{itemize}
+
+\newpage
+% ----------------------------------------------------------------------------
+\subsection{Irrationalität von Wurzeln}
+
+Der Beweis, dass bestimmte Wurzeln irrational sind, ist von Euklid überliefert worden und ist relativ einfach nachvollziehbar, hier am Beispiel von $\sqrt{5}$
+
+\begin{theorem}
+  \textbf{Satz:} Die Wurzel von fünf ist keine rationale Zahl.
+\end{theorem}
+
+\textbf{Beweis:} Der Satz wird mit einem Widerspruchsbeweis bewiesen. Das bedeutet, dass das Gegenteil angenommen und gezeigt wird, dass diese Annahme zu einem Widerspruch führt.
+
+Es wird also angenommen, dass $\sqrt{5}$ eine rationale Zahl ist. Jede rationale Zahl kann als vollständig gekürzten Bruch dargestellt werden:
+\[
+  \sqrt{5} = \frac{z}{n} \qquad z \in \mathbb{Z}, \quad n \in \mathbb{Z^{+}}
+\]
+
+Nun wird die Gleichung auf beiden Seiten quadriert:
+\[
+  5 = \left(\frac{z}{n}\right)^{2} = \frac{z^{2}}{n^{2}}
+\]
+Die Gleichung kann wie folgt geschrieben werden:
+\[
+  \frac{5}{1} = \frac{z^{2}}{n^{2}}
+\]
+Diese Gleichung hat auf beiden Seiten einen vollständig gekürzten Bruch, da $z$ und $n$ gemäss Annahme keine gemeinsamen Teiler haben. Zwei vollständig gekürzte Brüche sind gleich, wenn Zähler und Nenner gleich sind. Also folgt:
+\[
+  5 = z^{2} \qquad\text{und}\qquad 1 = n^{2}
+\]
+Es gibt aber keine ganze Zahl $z$, deren Quadrat $5$ ist. Damit ist ein Widerspruch aufgezeigt worden. Daraus folgt, dass die Annahme, dass $\sqrt{5}$ eine rationale Zahl ist, falsch sein muss.
+
+% ----------------------------------------------------------------------------
+\subsection{Intervalle}
+
+Manchmal soll ein Intervall auf der Zahlengeraden beschrieben werden, beispielsweise alle Zahlen zwischen $-1$ und $1$. Dabei muss angegeben werden, ob die Grenzen des Intervalls dazu gerechnet werden oder nicht.
+
+Es werden die folgenden Begriffe und Schreibweisen verwendet:
+
+\begin{center}
+  \renewcommand{\arraystretch}{1.1}
+  \begin{tabularx}{0.9\textwidth}{XXX}
+    \textbf{Begriff} & \textbf{Schreibweise} & \textbf{Definition} \\
+  \toprule
+    geschlossenes Intervall & $[a, b]$ & $\{ x\in\mathbb{R} \;|\; a \leq x \leq b\}$ \\
+  \midrule
+    linksoffenes Intervall & $(a, b]$ oder $]a, b]$ & $\{ x\in\mathbb{R} \;|\; a< x \leq b\}$ \\
+  \midrule
+    rechtsoffenes Intervall & $[a, b)$ oder $[a, b[$ & $\{ x\in\mathbb{R} \;|\; a \leq x < b\}$ \\
+  \midrule
+    offenes Intervall & $(a, b)$ oder $]a, b[$ & $\{ x\in\mathbb{R} \;|\; a< x < b\}$ \\
+  \bottomrule
+  \end{tabularx}
+\end{center}
+
+% ----------------------------------------------------------------------------
+\subsection{Näherungen}
+
+Irrationale Zahlen können wir nicht exakt als Dezimalzahl notieren. In diesem Fall geben wir eine Annäherung an und verwenden wir das Zeichen $\approx$ um zu verdeutlichen, dass die Angabe nicht exakt ist:
+\[
+  \sqrt{2} \approx 1.414 \qquad\qquad \pi \approx 3.141
+\]

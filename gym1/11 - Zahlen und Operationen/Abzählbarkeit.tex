@@ -1,0 +1,67 @@
+\newpage
+\section{Abzählbarkeit}
+
+% ----------------------------------------------------------------------------
+\subsection{Definition}
+
+
+Wir könnten uns nun fragen, ob es mehr ganze Zahlen als natürliche Zahlen gibt. Das ist aber nicht so einfach zu beantworten.
+
+Bei Mengen mit unendlich vielen Elementen können wir nicht zählen, wie viele Elemente die Menge hat. Somit können wir auch nicht sagen, ob eine Menge «mehr» Elemente hat.
+
+Wir müssen also eine präzise Definition finden, um unendliche Mengen vergleichen zu können. Eine solche Definition ist die Abzählbarkeit:
+
+\textbf{Definition:} Eine unendliche Menge heisst abzählbar, wenn alle Elemente dieser Menge mit den natürlichen Zahlen durchnummeriert werden können.
+
+Wir müssen also eine Möglichkeit finden, jedem Element einer unendlichen Menge eine eindeutige natürliche Zahl zuzuordnen. Wenn wir eine solche Zuordnung gefunden haben, wissen wir, dass diese Menge «gleich viele» Elemente wie die natürlichen Zahlen enthält. Bei unendlichen Mengen sagen wir, die Mengen sind \textbf{gleich mächtig}, da es keinen Sinn macht, über die Anzahl zu sprechen.
+
+% ----------------------------------------------------------------------------
+\subsection{Einfaches Beispiel}
+
+Als Beispiel zeigen wir, dass die Menge $M = \{-1, 0, 1, 2, 3, \ldots\}$ abzählbar ist. Wir ordnen jedem Element $k$ der Menge die natürliche Zahl $k+1$ zu. Somit haben wir alle Elemente durchnummeriert und wissen, dass diese Menge abzählbar ist.
+
+\begin{center}
+  \renewcommand{\arraystretch}{1.3}
+  \begin{tabularx}{\textwidth}{|l|C|C|C|C|C|C|C|}
+  \hline
+    \textbf{Menge $M$}       & $-1$ & $0$ & $1$ & $2$ & $3$ & $4$ & $k$ \\
+  \hline
+    \textbf{natürliche Zahl} & $0$ &  $1$ & $2$ & $3$ & $4$ & $5$ & $k+1$ \\
+  \hline
+  \end{tabularx}
+\end{center}
+
+
+% ----------------------------------------------------------------------------
+\subsection{Ganze Zahlen}
+
+\begin{theorem}
+  \textbf{Satz:} Die ganzen Zahlen sind abzählbar.
+\end{theorem}
+
+Um das zu zeigen, ordnen wir jeder negativen ganzen Zahl $-k$ die natürliche Zahl $2k$ zu. Jeder nichtnegativen ganzen Zahl $k$ ordnen wir die natürliche Zahl $2k-1$ zu.
+
+Dies sind die ersten paar Zuordnungen:
+\begin{center}
+  \renewcommand{\arraystretch}{1.3}
+  \begin{tabularx}{\textwidth}{|l|C|C|C|C|C|C|C|C|C|}
+  \hline
+    \textbf{ganze Zahl}      & $-k$ & $-3$ & $-2$ & $-1$ & $0$ & $1$ & $2$ & $3$ & $k$ \\
+  \hline
+    \textbf{natürliche Zahl} & $2k$ &  $6$ & $4$ & $2$ & $0$ & $1$ & $3$ & $5$ & $2k-1$ \\
+  \hline
+  \end{tabularx}
+\end{center}
+
+Wir können sehen, dass so jeder ganzen Zahl genau eine natürliche Zahl zugeordnet wird und umgekehrt.
+
+% ----------------------------------------------------------------------------
+\subsection{Rationale Zahlen}
+
+Der Mathematiker Georg Cantor (1845 — 1918) hat bewiesen, dass auch die rationalen Zahlen abzählbar sind. Dazu ordnet er sämtliche Brüche in einer Tabelle an, sodass in der ersten Spalte alle Brüche mit dem Nenner 1 sind, in der zweiten Spalte alle Brüche mit dem Nenner 2 usw. Das gleiche gilt für die Zeilen und den Zähler.
+
+Anschliessend wird die ganze Tabelle nach folgendem Verfahren durchnummeriert:
+
+
+
+Wir sehen, dass damit jeder Bruch eine Nummer kriegt. Somit sind die rationalen Zahlen abzählbar.

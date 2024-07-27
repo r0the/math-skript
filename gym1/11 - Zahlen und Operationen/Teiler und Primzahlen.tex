@@ -1,0 +1,146 @@
+\newpage
+\section{Teiler und Primzahlen}
+
+% ----------------------------------------------------------------------------
+\subsection{Teiler}
+
+\textbf{Definition:} Die natürliche Zahl $t$ ist ein \textbf{Teiler} der natürlichen Zahl $n$, wenn $n$ ohne Rest durch $t$ dividiert werden kann, also wenn es genau eine natürliche Zahl $z$ gibt, sodass gilt:
+  \[
+    t\cdot z = n
+  \]
+Wir schreiben $t\mid n$ und sagen «$t$ ist ein Teiler von $n$» oder «$t$ teilt $n$».
+
+\begin{example}
+  \textbf{Beispiele:}
+  \begin{itemize}[noitemsep]
+    \item Die Zahl $60$ hat $12$ Teiler, nämlich $1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30$ und $60$.
+    \item Die Zahl $13$ hat zwei Teiler, nämlich $1$ und $13$.
+    \item Die Zahl $1$ teilt jede natürliche Zahl.
+    \item Die Zahl $0$ teilt keine natürliche Zahl.
+    \item Die Zahl $0$ hat jede natürliche Zahl ausser sich selbst als Teiler.
+  \end{itemize}
+\end{example}
+
+Zwei Zahlen heissen \textbf{teilerfremd}, wenn sie ausser $1$ keinen gemeinsamen Teiler haben.
+
+% ----------------------------------------------------------------------------
+\subsection{Primzahlen}
+
+\textbf{Definition.} Eine natürliche Zahl ist \textbf{prim} oder eine \textbf{Primzahl}, wenn sie genau zwei Teiler hat.
+
+Die beiden Teiler sind Eins und die Zahl selbst. Somit ist die Zahl Eins keine Primzahl, da sie nur einen Teiler hat.
+
+Die Zwei ist die kleinste Primzahl und gleichzeitig die einzige gerade Primzahl. Alle anderen geraden Zahlen haben ja neben Eins und sich selbst noch mindestens die Zwei als Teiler und haben somit mehr als zwei Teiler.
+
+% ----------------------------------------------------------------------------
+\subsection{Sieb des Eratosthenes}
+
+Das Sieb des Eratosthenes ist ein Algorithmus, um alle Primzahlen in einem bestimmten Zahlenbereich zu finden.
+
+Dazu werden alle Zahlen von $2$ bis zur gewünschten maximalen Zahl aufgeschrieben. Dann werden folgende Anweisungen immer wiederholt, bis alle Zahlen eingefärbt oder Primzahlen sind:
+\begin{enumerate}
+  \item Nimm die kleinste nicht eingefärbte Zahl. Das ist eine Primzahl.
+  \item Färbe alle Vielfachen dieser Zahl ein.
+  \item Beginne von vorne.
+\end{enumerate}
+
+\newpage
+% ----------------------------------------------------------------------------
+\subsection{Primfaktorzerlegung}
+
+\begin{theorem}
+  \textbf{Satz:} Zu jeder natürlichen Zahl $n$ existiert eine eindeutige Primfaktorzerlegung
+  \[
+    n = p_{1}^{r_{1}} \cdot p_{2}^{r_{2}} \cdot \cdots \cdot p_{s}^{r_{s}}
+  \]
+  Dabei sind $p_{1}, p_{2}, \ldots, p_{s}$ die ersten $s$ Primzahlen. Die Potenzen $r_{1}, r_{2},\ldots, r_{s}$ geben an, wie oft die jeweilige Primzahl als Faktor in n vorkommt.
+\end{theorem}
+
+\begin{example}
+  \textbf{Beispiel:}
+  \[
+    504 = 2\cdot 2\cdot 2\cdot 3\cdot 3\cdot 7 = 2^{3}\cdot 3^{2}\cdot 7
+  \]
+\end{example}
+
+Eine wichtige Anwendung der Primfaktorzerlegung ist das Kürzen und Erweitern von Brüchen. Angenommen, der folgende Bruch soll gekürzt werden:
+\[
+  \frac{14014}{5278}
+\]
+Zunächst werden Zähler und Nenner in ihre Primfaktoren zerlegt. Gemeinsame Primfaktoren in Zähler und Nenner können gekürzt werden:
+\[
+  \frac{14014}{5278} = \frac{2\cdot 7\cdot 7\cdot 11\cdot 13}{2\cdot 7\cdot 13\cdot 29} = \frac{7\cdot 11}{29} = \frac{77}{29}
+\]
+
+% ----------------------------------------------------------------------------
+\subsection{Aufwand der Primfaktorzerlegung}
+
+Das Zerlegen einer grossen Zahl in ihre Primfaktoren ist sehr aufwändig, weil es bis heute keinen effizienten Algorithmus dafür gibt. Je nach Grösse der Zahl dauert eine solche vom Computer durchgeführte Zerlegung Stunden, Tage, Jahre oder gar Milliarden von Jahren. Beispielsweise wurde die Zahl RSA-240, eine 240-stellige Zahl, im November 2019 von einem Zusammenschluss von Computern zerlegt; auf einem Single-core-Rechner hätte die Faktorisierung etwa 900 Jahre in Anspruch genommen.
+
+In der Informatik basieren wichtige Verschlüsselungsverfahren darauf, dass es unmöglich ist, eine grosse Zahl in vernünftiger Zeit in ihre Primfaktoren zu zerlegen.
+
+% ----------------------------------------------------------------------------
+\subsection{ggT und kgV}
+
+Den grössten gemeinsamen Teiler (ggT) und das kleinste gemeinsame Vielfache (kgV) zweier Zahlen kann mit Hilfe der Primfaktorzerlegung der beiden Zahlen ermittelt werden.
+\begin{align*}
+  6468 &= 2\cdot2\cdot3\cdot7\cdot7\cdot11 = 2^{2}\cdot 3\cdot 7^{2}\cdot 11 \\
+   840 &= 2\cdot2\cdot2\cdot3\cdot5\cdot7 = 2^{3}\cdot 3\cdot 5\cdot 7
+\end{align*}
+Der grösste gemeinsame Teiler ist das Produkt aller Primfaktoren, welche in beiden Zerlegungen vorkommen.
+\begin{center}
+  \renewcommand{\arraystretch}{1.3}
+  \begin{tabular}{rccccccccccccccc}
+    \hline
+      $6488=$ & \cellcolor{lightgreen} $2$ & $\cdot$ & \cellcolor{lightgreen} $2$ & $\cdot$ & & & \cellcolor{lightgreen} $3$ & $\cdot$ & & & \cellcolor{lightgreen} $7$ & $\cdot$ & $7$ & $\cdot$ & $11$ \\
+    \hline
+       $840=$ & \cellcolor{lightgreen} $2$ & $\cdot$ & \cellcolor{lightgreen} $2$ & $\cdot$ & $2$ & $\cdot$ & \cellcolor{lightgreen} $3$ & $\cdot$ & $5$ & $\cdot$ & \cellcolor{lightgreen} $7$ & & & & \\
+    \hline
+  \end{tabular}
+\end{center}
+Also ist $\ggT(6488;840) = 2\cdot2\cdot 3\cdot 7 = 84$.
+
+Für das kleinste gemeinsame Vielfache müssen diejenigen Primfaktoren gesucht werden, die in mindestens einer der beiden Zerlegungen vorkommen:
+\begin{center}
+  \renewcommand{\arraystretch}{1.3}
+  \begin{tabular}{rccccccccccccccc}
+    \hline
+      $6488=$ & \cellcolor{lightgreen} $2$ & $\cdot$ & \cellcolor{lightgreen} $2$ & $\cdot$ & & & \cellcolor{lightgreen} $3$ & $\cdot$ & & & \cellcolor{lightgreen} $7$ & $\cdot$ & \cellcolor{lightgreen} $7$ & $\cdot$ & \cellcolor{lightgreen} $11$ \\
+    \hline
+       $840=$ & $2$ & $\cdot$ & $2$ & $\cdot$ & \cellcolor{lightgreen} $2$ & $\cdot$ & $3$ & $\cdot$ & \cellcolor{lightgreen} $5$ & $\cdot$ & $7$ & & & & \\
+    \hline
+  \end{tabular}
+\end{center}
+Also ist $\kgV(6468;840) = 2\cdot2\cdot2\cdot5\cdot7\cdot7\cdot11 = 64680$.
+
+% ----------------------------------------------------------------------------
+\subsection{Wie viele Primzahlen gibt es?}
+
+Bereits der griechische Mathematiker Euklid von Alexandria (ca. 300 v.Chr.) hat bewiesen, dass es unendlich viele Primzahlen gibt. Da damals das Konzept der Unendlichkeit noch nicht bekannt war, hat er seinen Satz und den Beweis so formuliert:
+
+\begin{quote}
+  «Es gibt mehr Primzahlen als jede vorgelegte Anzahl Primzahlen.»
+\end{quote}
+
+Wird sein Satz in moderne Sprache übersetzt, lautet er so:
+\begin{theorem}
+  \textbf{Satz des Euklid:} Es gibt unendlich viele Primzahlen.
+\end{theorem}
+
+Um diesen Satz zu beweisen, muss gezeigt werden, dass zur jeder Primzahl $p$ eine grössere Primzahl gefunden werden kann. Euklid hat den Satz wie folgt bewiesen:
+
+Es wird angenommen, dass alle Primzahlen bis zur Primzahl $p$ bekannt sind:
+\[
+  2, 3, 5, 7, 11, 13, \ldots, p
+\]
+Nun werden alle diese Primzahlen miteinander multipliziert und zu Eins addiert:
+\[
+  z = 1 + 2\cdot 3\cdot 5\cdot 7\cdot 11\cdot 13\cdot\cdots\cdot p
+\]
+Nun werden die Primfaktoren der so entstandenen Zahl $z$ gesucht, indem versucht wird, $z$ durch die bekannten Primzahlen zu dividieren. Bei der Division durch 2 bleibt der Rest übrig, da Eins addiert wurde:
+\[
+  z:2 = (1 + 2\cdot 3\cdot 5\cdot 7\cdot 11\cdot 13\cdot\cdots\cdot p):2 = \frac{1}{2}+ 3\cdot 5\cdot 7\cdot 11\cdot 13\cdot\cdots\cdot p
+\]
+Das gleiche lässt sich für alle anderen Primzahlen von 3 bis $p$ feststellen.
+
+Die Primfaktoren von $z$ müssen also Primzahlen sein, die grösser als $p$ sind. Damit ist bewiesen worden, dass zu jeder Primzahl $p$ eine grössere Primzahl gefunden werden kann.

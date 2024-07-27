@@ -1,0 +1,121 @@
+\newpage
+\section{Stellenwertsystem}
+
+% ----------------------------------------------------------------------------
+\subsection{Römische Zahlen}
+
+Die Römer haben als Zeichen für die Zahlen die lateinischen Buchstaben verwendet. Dabei hat jeder Buchstaben einen bestimmten Wert:
+
+\begin{center}
+  \newcolumntype{C}{>{\centering\arraybackslash}X}
+  \begin{tabularx}{0.9\textwidth}{CCCCCCC}
+  \toprule
+   $\text{I}$ & $\text{V}$ & $\text{X}$ & $\text{L}$ & $\text{C}$ &  $\text{D}$ & $\text{M}$ \\
+  \midrule
+    $1$        & $5$        & $10$       & $50$       & $100$      & $500$      & $1000$ \\
+  \bottomrule
+  \end{tabularx}
+\end{center}
+
+In einer römischen Zahl werden die Ziffern immer nach absteigendem Wert angeordnet. Ganz links befindet sich die grösste Ziffer, ganz rechts die kleinste.
+
+Um den Wert einer römischen Zahl herauszufinden, müssen nur die Werte der einzelnen Ziffern addiert werden:
+\[
+  \text{MDCCCCLXXXIIII} = 1000 + 500 + 4\cdot 100 + 50 + 3\cdot 10 + 4 \cdot 1 = 1984
+\]
+
+Zusätzlich kann die Subtraktionsregel angewendet werden: Wenn eine kleinere Ziffer links von einer fünf- oder zehnmal grösseren Ziffer steht, so wird die kleiner von der grösseren subtrahiert. Die Zahlen $40$ und $90$ können also so geschrieben werden:
+\[
+  40 = \text{XXXX} = \text{XL} \qquad\qquad 90 = \text{LXXXX} = \text{XC}
+\]
+
+Damit lassen sich die Zahlen kürzer darstellen. Die Zahl $1984$ kann man also so schreiben:
+\[
+  \text{MCMLXXXIV} = 1000 + (-1\cdot 100 + 1000) + 50 + 3\cdot 10 + (-1 + 5) = 1984
+\]
+
+% ----------------------------------------------------------------------------
+\subsection{Dezimalsystem}
+
+Wir können sämtliche Zahlen mit den zehn Ziffern $0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0$ darstellen. Damit so beliebige Werte dargestellt werden können, erhält jede \textbf{Ziffer} je nach ihrer Position oder \textbf{Stelle} in der Zahl einen anderen Wert, ihren \textbf{Stellenwert}, welcher sich aus Zehn hoch die Nummer der Stelle ergibt. Die Stellen werden von rechts nach links durchnummeriert, beginnend bei Null.
+
+Der Wert der Zahl ergibt sich, indem jede Ziffer mit ihrem Stellenwert multipliziert wird und anschliessend alle diese Werte addiert werden. Die Zahl $5478$ bedeutet also, dass $5$ Tausender, $4$ Hunderter, $7$ Zehner und $8$ Einer addiert werden:
+
+\begin{center}
+  \renewcommand{\arraystretch}{1}
+  \newcolumntype{C}{>{\centering\arraybackslash}X}
+  \begin{tabularx}{0.9\textwidth}{lCCCC}
+  \toprule
+    Stelle & $3$ & $2$ & $1$ & $0$ \\
+  \midrule
+    Stellenwert (Potenz) & $10^{3}$ & $10^{2}$ & $10^{1}$ & $10^{0}$ \\
+  \midrule
+    Stellenwert & $1000$ & $100$ & $10$ & $1$ \\
+  \midrule
+    Ziffer & $5$ & $4$ & $7$ & $8$ \\
+  \midrule
+    Wert & $5\cdot 1000$ & $4\cdot 100$ & $7\cdot 10$ & $8\cdot 1$ \\
+  \bottomrule
+  \end{tabularx}
+\end{center}
+
+% ----------------------------------------------------------------------------
+\subsection{Zahlensysteme mit anderer Basis}
+
+Wir können anstelle der Zahl Zehn eine andere Zahl als \textbf{Basis} der Potenzen und somit des Zahlensystems wählen. Damit verändern sich die Stellenwerte entsprechend.
+
+Dabei stimmt die \textbf{Basis des Zahlensystems} immer mit der Anzahl Ziffern überein.
+
+Damit wir einer Zahl ansehen, in welchem Zahlensystem sie geschrieben wurde, hängen wir die Basis immer tiefgestellt und in Klammern an die Zahl an. Die Zahl «4032» im Fünfersystem schreiben wir:
+\[
+  4032_{(5)}
+\]
+
+Die folgende Abbildung zeigt, wie der Wert der Zahl $4032_{(5)}$ berechnet wird:
+
+
+\begin{center}
+  \newcolumntype{C}{>{\centering\arraybackslash}X}
+  \begin{tabularx}{0.9\textwidth}{lCCCC}
+  \toprule
+    Stelle & $3$ & $2$ & $1$ & $0$ \\
+  \midrule
+    Stellenwert (Potenz) & $5^{3}$ & $5^{2}$ & $5^{1}$ & $5^{0}$ \\
+  \midrule
+    Stellenwert & $125$ & $25$ & $5$ & $1$ \\
+  \midrule
+    Ziffer & $4$ & $0$ & $3$ & $2$ \\
+  \midrule
+    Wert & $4\cdot 125$ & $0\cdot 25$ & $3\cdot 5$ & $2\cdot 1$ \\
+  \bottomrule
+  \end{tabularx}
+\end{center}
+
+Die Zahl $4032_5$ im Fünfersystem entspricht also der Zahl $517$ im Dezimalsystem:
+\[
+  4\cdot 125+0\cdot 25+3\cdot 5+2\cdot 1 = 500+9+2 = 517
+\]
+
+% ----------------------------------------------------------------------------
+\subsection{Übersicht Zahlensysteme}
+
+Hier ist eine Übersicht der Zahlensysteme mit einer Basis von Zwei bis Zehn:
+
+\begin{center}
+  \renewcommand{\arraystretch}{1.3}
+  \begin{tabularx}{0.7\textwidth}{Xcl}
+    \toprule
+      \textbf{Bezeichnung}   & \textbf{Basis} & \textbf{Ziffern} \\
+    \midrule
+      \textbf{Binärsystem}   & $2$     & $0, 1$                      \\
+      Dreiersystem           & $3$     & $0, 1, 2$                      \\
+      Vierersystem           & $4$     & $0, 1, 2, 3$                   \\
+      Fünfersystem           & $5$     & $0, 1, 2, 3, 4$                \\
+      Sechsersystem          & $6$     & $0, 1, 2, 3, 4, 5$             \\
+      Siebnersystem          & $7$     & $0, 1, 2, 3, 4, 5, 6$          \\
+      \textbf{Oktalsystem}   & $8$     & $0, 1, 2, 3, 4, 5, 6, 7$       \\
+      Neunersystem           & $9$     & $0, 1, 2, 3, 4, 5, 6, 7, 8$    \\
+      \textbf{Dezimalsystem} & $10$    & $0, 1, 2, 3, 4, 5, 6, 7, 8, 9$ \\
+    \bottomrule
+  \end{tabularx}
+\end{center}

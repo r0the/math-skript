@@ -1,0 +1,55 @@
+\documentclass[parskip=half]{scrartcl}
+\input{../../ros-config.tex}
+
+\usepackage{scrlayer-scrpage}
+\pagestyle{scrheadings}
+
+\usepackage{longdivision}
+\longdivisionkeys{style=german}
+
+\KOMAoption{DIV}{12}
+\KOMAoption{toc}{listof}
+\DeclareTOCStyleEntry[entryformat=\bfseries,beforeskip=2pt,linefill=\TOCLineLeaderFill]{tocline}{section}
+\setcounter{tocdepth}{1}
+
+\title{Zahlen und Operationen}
+\author{Stefan Rothe}
+\date{25.04.2024}
+
+\makeatletter
+\lohead{\@title}
+\rohead{\@date}
+\lofoot{\@author}
+\cofoot{}
+\rofoot{\thepage}
+\makeatother
+
+\begin{document}
+  \maketitle
+  \thispagestyle{empty}
+  \begin{center}
+    \includegraphics[height=5.7cm]{calculator.pdf}
+  \end{center}
+  \tableofcontents
+  \clearpage
+  ~
+  \thispagestyle{empty}
+  \clearpage
+
+  \input{Natürliche Zahlen}
+  \input{Addition}
+  \input{Multiplikation}
+  \input{Potenzieren}
+  \input{Teiler und Primzahlen}
+  \input{Stellenwertsystem}
+  \input{Subtraktion}
+  \input{Ganze Zahlen}
+  \input{Division}
+  \input{Brüche}
+  \input{Rationale Zahlen}
+  \input{Potenzen}
+  \input{Wissenschaftliche Schreibweise und Präfixe}
+  \input{Quadratwurzeln}
+  \input{Reelle Zahlen}
+%  \input{Abzählbarkeit}
+\end{document}

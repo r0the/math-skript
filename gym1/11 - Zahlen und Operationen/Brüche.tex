@@ -1,0 +1,156 @@
+\newpage
+\section{Brüche $\frac{a}{b}$}
+
+% ----------------------------------------------------------------------------
+\subsection{Definition}
+
+In der Mathematik ist jedoch eine andere Schreibweise der Division viel weiter verbreitet. Eine Division wird üblicherweise als Bruch geschrieben:
+\[
+  \frac{a}{b} := a:b
+\]
+
+In der Mathematik am Gymnasium wird ebenfalls diese Schreib- und Sprechweise verwendet. Dabei wird die Zahl $a$ oberhalb des Bruchstrichs \textbf{Zähler} und die Zahl $b$ unterhalb des Bruchstrichs \textbf{Nenner} genannt. Wir schreiben
+\[
+  \frac{a}{b} = c
+\]
+und sagen «$a$ über $b$ ist gleich $c$.», «$a$ durch $b$ ist gleich $c$.» oder weiterhin «der Quotient von $a$ und $b$ ist gleich $c$.»
+
+% ----------------------------------------------------------------------------
+\subsection{Operationsreihenfolge}
+
+Ein wichtiger Unterschied zwischen der Bruchschreibweise und der Schreibweise als Division ist die Reihenfolge, in welcher die Operationen ausgeführt werden.
+
+Grundsätzlich werden Divisionen als Punktoperationen gleichzeitig mit den Multiplikationen von links nach rechts ausgeführt. Bei Brüchen gilt zusätzlich die Regel, dass zunächst Operationen in Zähler und Nenner ausgeführt werden müssen. Bei der Bruchschreibweise muss man sich also Klammern um Zähler und Nenner vorstellen.
+\begin{example}
+\textbf{Beispiel:}
+\[
+  \frac{1+2}{2+3} = (1+2):(2+3) \ne 1+2:2+3 = 1+\frac{2}{2}+3
+\]
+\end{example}
+
+% ----------------------------------------------------------------------------
+\subsection{Kürzen und Erweitern}
+
+Ein Bruch wird \textbf{erweitert}, indem Zähler und Nenner mit der gleichen ganzen Zahl multipliziert werden:
+\[
+  \frac{1}{2} = \frac{1\cdot 5}{2\cdot 5} = \frac{5}{10}
+\]
+Ein Bruch wird \textbf{gekürzt}, indem Zähler und Nenner durch die gleiche ganze Zahl dividiert werden:
+\[
+  \frac{-3}{-6} = \frac{(-3):(-3)}{(-6):(-3)} = \frac{1}{2}
+\]
+
+\textbf{Definition:} Ein Bruch $\frac{z}{n}$ ist \textbf{vollständig gekürzt}, wenn der grösste gemeinsame Teiler von Zähler und Nenner gleich Eins ist.
+\[
+  \ggT(z;n) = 1
+\]
+
+Beim Erweitern und Kürzen ändert sich der Wert des Bruchs nichts, alle diese Brüche repräsentieren also die gleiche Zahl.
+
+% ----------------------------------------------------------------------------
+\subsection{Gegenzahlen}
+
+Wenn sowohl Zähler als auch Nenner eines Bruchs negativ sind, so kann der Bruch mit $(-1)$ erweitert werden. Damit fallen die negativen Vorzeichen weg.
+\[
+  \frac{-2}{-5} = \frac{(-2)\cdot(-1)}{(-5)\cdot(-1)} = \frac{2}{5}
+\]
+
+\begin{theorem}
+  \textbf{Gegenzahl bei Brüchen}: Der Wert eines Bruchs ändert sich nicht, wenn sowohl Zähler als auch Nenner durch ihre Gegenzahlen ersetzt werden. Die Gegenzahl eines Bruchs erhält man, indem nur der Zähler oder nur der Nenner durch seine Gegenzahl ersetzt wird.
+  \[
+    \frac{-a}{-b} = \frac{a}{b} \qquad\qquad -\frac{a}{b} = \frac{-a}{b} = \frac{a}{-b}
+  \]
+\end{theorem}
+
+% ----------------------------------------------------------------------------
+\subsection{Addition und Subtraktion}
+
+Um Brüche zu addieren, müssen Sie auf den gleichen Nenner gebracht werden. Dazu wird jeder Bruch mit dem Nenner des anderen Bruchs erweitert. Sind beide Nenner gleich, können die Zähler addiert werden.
+\begin{theorem}
+  \textbf{Addition von Brüchen:}
+  \[
+    \frac{a}{b}+\frac{c}{d} = \frac{a\cdot d}{b\cdot d}+\frac{c\cdot b}{d\cdot b} = \frac{a\cdot d+c\cdot b}{b\cdot d}
+  \]
+\end{theorem}
+Das Vorgehen für die Subtraktion ist analog:
+\begin{theorem}
+  \textbf{Subtraktion von Brüchen:}
+  \[
+    \frac{a}{b}-\frac{c}{d} = \frac{a\cdot d}{b\cdot d}-\frac{c\cdot b}{d\cdot b} = \frac{a\cdot d-c\cdot b}{b\cdot d}
+  \]
+\end{theorem}
+
+Dieses Vorgehen funktioniert immer, ist jedoch unpraktisch, da im Nenner sehr grosse Zahlen entstehen können. Besser ist es, den kleinsten gemeinsame Nenner $n$ der beiden Brüche mit $\frac{a}{b}$ und $\frac{c}{d}$ zu bestimmen. Dieser ist gerade das kleinste gemeinsame Vielfache von $b$ und $d$:
+\[
+  n = \kgV(b;d)
+\]
+
+\begin{example}
+  \textbf{Beispiel:} Das kleinste gemeinsame Vielfache von $4$ und $6$ ist $12$. Deshalb werden hier die Brüche so erweitert, dass der Nenner $12$ entsteht:
+  \[
+    \frac{3}{4}+\frac{5}{6} = \frac{3\cdot 3}{4\cdot 3}+\frac{5\cdot 2}{6\cdot 2} = \frac{9}{12}+\frac{10}{12} = \frac{9+10}{12} = \frac{19}{12}
+  \]
+\end{example}
+
+% ----------------------------------------------------------------------------
+\subsection{Multiplikation}
+
+\begin{theorem}
+  \textbf{Multiplikation von Brüchen:} Brüche werden multipliziert, indem Zähler und Nenner multipliziert werden.
+  \[
+    \frac{a}{b}\cdot\frac{c}{d} = \frac{a\cdot c}{b\cdot d}
+  \]
+\end{theorem}
+
+\begin{example}
+  \textbf{Beispiel:} Zwei Drittel von drei Vierteln ist ein Zweitel:
+  \[
+    \frac{2}{3}\cdot\frac{3}{4} = \frac{2\cdot 3}{3\cdot 4} = \frac{6}{12} = \frac{1}{2}
+  \]
+\end{example}
+
+% ----------------------------------------------------------------------------
+\subsection{Kehrwert}
+
+Welche Zahl muss mit zwei Fünftel multipliziert werden, um Eins zu erhalten?
+\[
+  \frac{2}{5}\cdot\square = 1
+\]
+Die Antwort auf diese Frage lautet $\frac{5}{2}$, da dann das Produkt so gekürzt werden kann, dass $1$ resultiert. Allgemein wird eine solche Zahl \textbf{Kehrwert} genannt.
+
+\textbf{Definition:} Der Kehrwert einer Zahl $a$ ist diejenige Zahl, welche mit $a$ multipliziert Eins ergibt.
+
+Ganz allgemein kann der Kehrwert von $a$ als $\frac{1}{a}$ geschrieben werden, denn:
+\[
+  a\cdot \frac{1}{a} = \frac{a}{1}\cdot\frac{1}{a} = \frac{a\cdot 1}{1\cdot a} = \frac{a}{a} = 1
+\]
+
+\begin{theorem}
+  \textbf{Kehrwert eines Bruchs:} Um den Kehrwert eines Bruchs zu erhalten, werden Zähler und Nenner vertauscht.
+
+  Der Kehrwert von $\displaystyle\frac{a}{b}$ ist $\displaystyle\frac{b}{a}$.
+\end{theorem}
+
+\newpage
+% ----------------------------------------------------------------------------
+\subsection{Doppelbrüche und Division}
+
+Wenn im Zähler und Nenner eines Bruchs wiederum Brüche stehen, ergibt sich ein Doppelbruch. Diese Schreibweise ist jedoch unübersichtlich, deshalb empfiehlt es sich, einen Doppelbruch gemäss Definition als Division zu schreiben:
+
+\[
+  \frac{\frac{a}{b}}{\frac{c}{d}} = \frac{a}{b}:\frac{c}{d}
+\]
+
+\begin{theorem}
+  \textbf{Division von Brüchen:} Brüche werden dividiert, indem der erste Bruch mit dem Kehrwert des zweiten multipliziert wird:
+  \[
+    \frac{a}{b}:\frac{c}{d} = \frac{a}{b}\cdot\frac{d}{c} = \frac{a\cdot d}{b\cdot c}
+  \]
+\end{theorem}
+
+\begin{example}
+  \textbf{Beispiel:} Ein Doppelbruch wird als Division geschrieben. Die Division wird als Multiplikation mit dem Kehrwert geschrieben und ausgerechnet.
+  \[
+    \frac{\frac{1}{2}}{\frac{3}{4}} = \frac{1}{2}:\frac{3}{4} = \frac{1}{2}\cdot\frac{4}{3} = \frac{1\cdot 4}{2\cdot 3} = \frac{2}{3}
+  \]
+\end{example}

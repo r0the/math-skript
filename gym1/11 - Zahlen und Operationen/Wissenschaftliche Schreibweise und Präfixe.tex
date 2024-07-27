@@ -1,0 +1,73 @@
+\newpage
+\section{Wissenschaftliche Schreibweise und Präfixe}
+
+In der Wissenschaft trifft man häufig auf sehr grosse oder sehr kleine Zahlen. So ist die Sonne etwa \qty{150000000000}{m} von der Erde entfernt. Ein Atom hat einen Radius von etwa \qty{0.0000000001}{m}. Solche Zahlen sind nicht einfach zu lesen. Deshalb werden sie üblicherweise anders dargestellt.
+
+% ----------------------------------------------------------------------------
+\subsection{Wissenschaftliche Schreibweise}
+
+In der wissenschaftlichen Schreibweise wird das Dezimalpunkt so verschoben, dass \textbf{vor dem Dezimalpunkt genau eine Stelle steht}.
+
+So wird die Zahl 125 durch 100 dividiert, um 1.25 zu erhalten. Damit der Wert erhalten bleibt, muss die Zahl anschliessend wieder mit 100 multipliziert werden. Diesen Faktor wir als Potenz von Zehn geschrieben.
+\[
+  125 = 12.5\cdot 10 = 1.25 \cdot 100 = 1.25 \cdot 10^{2}
+\]
+
+Analog wird die Zahl 0.0034 mit 1000 multipliziert, um 3.4 zu erhalten. Um den Wert zu erhalten, wird anschliessend wieder mit einem Tausendstel multipliziert. Der Tausendstel wird als Potenz von Zehn geschrieben:
+\[
+  0.0034 = 0.034\cdot \frac{1}{10} = 0.34 \cdot\frac{1}{100} = 3.4\cdot\frac{1}{1000} = 3.4\cdot 10^{-3}
+\]
+
+\begin{example}
+  So kann nun geschrieben werden, dass die Sonne \qty{1.5e11}{m} von der Erde entfernt ist und dass ein Atom etwa einen Radius von \qty{1e-10}{m} hat.
+\end{example}
+
+\newpage
+% ----------------------------------------------------------------------------
+\subsection{SI-Präfixe}
+
+Für bestimmte solche Faktoren haben sich eigenständige Bezeichnungen entwickelt. So sagen wir vier Kilometer statt \qty{4e3}{m} oder ein Gigabyte statt \qty{10e9}{B}.
+
+Diese Bezeichnungen sind heute durch das \textbf{internationale Einheitensystem SI} (französisch: \textit{système international d’unités}) genau festgelegt.
+
+\begin{center}
+  \renewcommand{\arraystretch}{1.1}
+  \begin{tabularx}{0.9\textwidth}{lXX}
+    \textbf{Präfix} & \textbf{Bezeichnung} & \textbf{Wert} \\
+  \toprule
+    P -- Peta & Billiarde (engl. \textit{quadrillion}) & $10^{15} = \num{1000000000000000}$ \\
+  \midrule
+    T -- Tera & Billion (engl. \textit{trillion}) & $10^{12} = \num{1000000000000}$ \\
+  \midrule
+    G -- Giga & Milliarde (engl. \textit{billion}) & $10^{9} = \num{1000000000}$ \\
+  \midrule
+    M -- Mega & Million & $10^{6} = \num{1000000}$ \\
+  \midrule
+    k -- Kilo & Tausend & $10^{3} = \num{1000}$ \\
+  \midrule
+    h -- Hekto & Hundert & $10^{2} = 100$ \\
+  \midrule
+    da -- Deka & Zehn & $10^{1} = 10$ \\
+  \midrule
+    -- & -- & $10^{0} = 1$ \\
+  \midrule
+    d -- Dezi & Zehntel & $10^{-1} = 0.1$ \\
+  \midrule
+    c -- Zenti & Hundertstel & $10^{-2} = 0.01$ \\
+  \midrule
+    m -- Milli & Tausendstel & $10^{-3} = 0.001$ \\
+  \midrule
+    $\mu$ -- Mikro & Millionstel & $10^{-6} = 0.000\;001$ \\
+  \midrule
+    n -- Nano & Milliardstel & $10^{-9} = 0.000\;000\;001$ \\
+  \midrule
+    p -- Piko & Billionstel & $10^{-12} = 0.000\;000\;000\;001$ \\
+  \midrule
+    f -- Femto & Billiardstel & $10^{-15} = 0.000\;000\;000\;000\;001$ \\
+  \bottomrule
+  \end{tabularx}
+\end{center}
+
+\begin{note}
+\textbf{Achtung:} Der englische Begriff «billion» bedeutet nicht eine Billion, sondern eine Milliarde. Ein:e «billionaire» ist also ein:e Milliardär:in. Der englische Begriff «trillion» bedeutet eine Billion.
+\end{note}

@@ -1,0 +1,49 @@
+\newpage
+\section{Natürliche Zahlen $\mathbb{N}$}
+
+% ----------------------------------------------------------------------------
+\subsection{Motivation}
+
+Die natürlichen Zahlen ergeben sich, indem Dinge gezählt werden.
+\begin{example}
+  \textbf{Beispiel:} Ich kann keinen, einen, fünf oder zehn Millionen Äpfel besitzen. Jede Anzahl Äpfel, die ich besitze, kann als natürliche Zahl dargestellt werden:
+  \[
+    0, 1, 5, \num{10000000}
+  \]
+\end{example}
+
+% ----------------------------------------------------------------------------
+\subsection{Menge der natürlichen Zahlen}
+
+\textbf{Definition:} Die Menge der natürlichen Zahlen wird mit dem Symbol $\mathbb{N}$ bezeichnet.
+\[
+  \mathbb{N} := \{0; 1; 2; 3; 4; \ldots\}
+\]
+\textbf{Hinweis:} Manchmal wird die Null nicht zu den natürlichen Zahlen gezählt. Es ist eine Frage der Definition, ob die Null dazu gehört oder nicht. Hier ist die Null gemäss Definition eine natürliche Zahl.
+
+% ----------------------------------------------------------------------------
+\subsection{Zahlengerade}
+
+Die natürlichen Zahlen können auf der Zahlengerade dargestellt werden. Dabei ist der Punkt $0$ (die Null) der Ausgangspunkt oder \textbf{Ursprung}. Der Abstand zwischen $0$ und $1$ (der Eins) ist die \textbf{Einheit}, also der Länge $1$.
+\begin{center}
+  \begin{tikzpicture}
+    \tkzInit[xmin=0,xmax=9.5]
+    \tkzDrawX[label={}]
+    \tkzLabelX
+    \tkzDefPoint(0,0){O}
+    \tkzDefPoint(1,0){E}
+    \tkzDefPoint(5,0){A}
+    \tkzDrawPoints[thick,red](O,E)
+    \tkzDrawSegment[dim={$5$,10pt,}](O,A)
+  \end{tikzpicture}
+\end{center}
+So können sämtlich natürlichen Zahlen dargestellt werden, indem sie mit der Distanz zum Ursprung gleichgesetzt werden. So ist der Punkt, welcher die Zahl $5$ repräsentiert, genau das fünffache der Einheitsdistanz vom Ursprung entfernt.
+
+% ----------------------------------------------------------------------------
+\subsection{Abgeschlossenheit}
+
+Werden zwei beliebige natürliche Zahlen addiert, multipliziert oder potenziert, so ergibt sich wieder eine natürliche Zahl.
+
+Diese wichtige Eigenschaft einer Zahlenmenge wird \textbf{Abgeschlossenheit} genannt. Es wird gesagt, dass die natürlichen Zahlen bezüglich der Addition, Multiplikation und dem Potenzieren abgeschlossen sind.
+
+Bezüglich der Subtraktion und Division sind die natürlichen Zahlen \textbf{nicht} abgeschlossen: Beispielsweise sind $3-5 = -2$ und $1:2 = 0.5$ keine natürlichen Zahlen.

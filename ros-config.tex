@@ -1,0 +1,187 @@
+% ------------------------------------------------------------------------------
+% LaTeX-Grundkonfiguration von Stefan Rothe
+% ------------------------------------------------------------------------------
+
+% 1 Konfiguration der Schriftarten
+% --------------------------------
+% um \ifXeTeX verwenden zu können
+\usepackage{iftex}
+
+\ifXeTeX
+  % Setze PDF-Version auf 1.7
+  \special{pdf:minorversion 7}
+
+  % 1.1 Konfiguration der Schriftarten für XeTeX (empfohlen)
+  % ----------------------------------------------------------
+  \usepackage{fontspec}
+
+  \IfFontExistsTF{Helvetica}{\setmainfont{Helvetica}}{%
+    \IfFontExistsTF{Arial}{\setmainfont{Arial}}{}%
+  }
+
+  \IfFontExistsTF{Helvetica}{\setsansfont{Helvetica}}{%
+    \IfFontExistsTF{Arial}{\setsansfont{Arial}}{}%
+  }
+
+  \IfFontExistsTF{Menlo}{\setmonofont[SizeFeatures={Size=10}]{Menlo}}{%
+    \IfFontExistsTF{Courier New}{\setmonofont[SizeFeatures={Size=10}]{Courier New}}{}%
+  }
+\else
+  % Setze PDF-Version auf 1.7
+  \pdfminorversion=7
+
+  % 1.2 Konfiguration der Schriftarten für PdfTeX
+  % -----------------------------------------------
+
+  % Unterstützung von UTF-8 (Unicode)
+  \usepackage[utf8]{inputenc}
+
+  % Unterstützung der modernen Zeichencodierung
+  \usepackage[T1]{fontenc}
+
+  % Moderne Schriftart verwenden
+  \usepackage{lmodern}
+
+  % Schriftart Helvetica verwenden
+  \usepackage{helvet}
+
+  % serifenfreie Schriftvariante verwenden
+  \renewcommand{\familydefault}{\sfdefault}
+\fi
+
+% 2 wichtige Pakete laden und konfigurieren
+% -----------------------------------------
+
+% sprachspezifische Anpassungen
+\usepackage[ngerman]{babel}
+
+% Absatzabstände kontrollieren für nicht-KOMA-Klassen
+\makeatletter
+\@ifclassloaded{scrartcl}{}{\usepackage{parskip}}
+\makeatother
+
+% Aufzählungen
+\usepackage{enumitem}
+
+% mehrere Spalten
+\usepackage{multicol}
+
+% Rahmen
+\usepackage{mdframed}
+
+% Tabellen
+\usepackage{booktabs}
+\usepackage{tabularx}
+
+% Grafiken (JPG, PNG, PDF)
+\usepackage{graphicx}
+
+% Links
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,urlcolor=blue,linkcolor=black}
+
+% Einbinden von Quellcode
+\usepackage{listings}
+\lstdefinestyle{mystyle}{
+  basicstyle=\ttfamily,
+  numberstyle=\scriptsize\color{black!70},
+  numbers=left,
+  numbersep=0.75cm
+}
+\lstset{style=mystyle}
+
+% 3 Mathematik
+% ------------
+
+% 3.1 Zahlen und Einheiten schön darstellen
+% -----------------------------------------
+\usepackage{siunitx}
+\sisetup{%
+  mode=match,
+  exponent-product=\cdot,
+  group-digits=integer,
+  group-separator={\text{\textquotesingle}}
+}
+
+% 3.2 AMS-Mathematik
+% ------------------
+
+\usepackage[fleqn]{amsmath}
+\usepackage{amssymb}
+
+% 3.3 Vektoren
+% ------------
+\usepackage[b]{esvect}
+
+% Komponentenschreibweise für 2D-Vektoren
+\NewDocumentCommand\vxy{mm}{\begin{pmatrix}#1\\#2\end{pmatrix}}
+% Komponentenschreibweise für 3D-Vektoren
+\NewDocumentCommand\vxyz{mmm}{\begin{pmatrix}#1\\#2\\#3\end{pmatrix}}
+
+% Lineare Gleichungssysteme
+\usepackage{systeme}
+\sysdelim||
+
+% Kürzen bei Brüchen zeigen
+\usepackage{cancel}
+
+% eigene Operatoren
+\DeclareMathOperator{\ggT}{ggT}
+\DeclareMathOperator{\kgV}{kgV}
+\DeclareMathOperator{\lb}{lb}
+
+% muss wegen der Konfiguration vor tikz eingebunden werden
+% Mit table können Tabellenzellen eingefärbt werden
+\usepackage[table]{xcolor}
+% für Geometrie (TikZ-Erweiterung)
+% damit wird auch tikz eingebunden
+\usepackage{tkz-base}
+\usepackage{tkz-fct}
+\usepackage{tkz-euclide}
+% Bäume mit tikz
+\usepackage{forest}
+
+% Material Design-Farben
+% ----------------------
+\definecolor{lightblue}{HTML}{BBDEFB} % MD Blue 100
+\definecolor{lightred}{HTML}{FFCDD2} % MD Red 100
+\definecolor{lightgrey}{HTML}{F5F5F5} % MD Gray 100
+\definecolor{lightgreen}{HTML}{C8E6C9} % MD Green 100
+\definecolor{lightorange}{HTML}{FFE0B2} % MD Orange 100
+
+\definecolor{theoremcolor}{HTML}{FFEBEE} % MD Red 50
+\definecolor{notecolor}{HTML}{FFECB3} % MD Amber 100
+
+\definecolor{red}{HTML}{D50000} % MD Red A700
+\definecolor{green}{HTML}{31843F} % MD Green A700
+\definecolor{blue}{HTML}{2962FF} % MD Blue A700
+\definecolor{teal}{HTML}{00BFA5} % MD Teal A700
+\definecolor{cyan}{HTML}{00B8D4} % MD Cyan A700
+\definecolor{yellow}{HTML}{EE8E0D} % WordPress Colors Yellow Fire 40%
+
+\tikzset{dim style/.append style={purple,dashed}}
+\tikzset{dim fence style/.append style={purple}}
+\tikzset{mark angle style/.append style={german}}
+
+% eigene Befehle
+% --------------
+
+\tikzset{circled/.style={shape=circle,draw,inner sep=2pt}}
+\NewDocumentCommand\circled{m}{\tikz[baseline=(char.base)]{\node[circled] (char) {#1};}}
+
+% Umgebung eqt
+\NewDocumentEnvironment{eqt}{}{\begin{array}{>{\displaystyle}r@{\hspace{0.2cm}}>{\displaystyle}l@{\hspace{1cm}}|l}}{\end{array}}
+
+% Makro \result, um das Resultat von Berechnungen hervorzuheben.
+\NewDocumentCommand\result{m}{\textcolor{red}{#1}}
+
+% Makro \extra, um schwierige Zusatzaufgaben zu markieren
+\NewDocumentCommand\extra{}{$\bigstar\quad$}
+
+\newmdenv[,skipabove=\parskip,outerlinewidth=1.5pt]{example}
+\newmdenv[backgroundcolor=notecolor,skipabove=\parskip,outerlinewidth=1.5pt]{note}
+\newmdenv[backgroundcolor=theoremcolor,skipabove=\parskip,outerlinewidth=1.5pt]{theorem}
+\newmdenv[backgroundcolor=theoremcolor,outerlinewidth=1.5pt]{instructions}
+
+%
+\def\rosconfig{1}
