@@ -20,14 +20,12 @@ Wenn nun diese Regel bei der Potenz $5^{0}$ weiter angewendet wird, dann entsteh
   5^{-2} &= \frac{1}{5\cdot 5} = \frac{1}{25} && |\; :5\\\\
   5^{-3} &= \frac{1}{5\cdot 5\cdot 5} = \frac{1}{125}
 \end{align*}
-
 Diese Überlegungen werden in folgender Definition festgehalten:
 
 \textbf{Definition:} Die Potenz einer Zahl $a$ mit einem negativen Exponenten $-n$ ist der Kehrwert der Potenz mit der Gegenzahl $n$ im Exponenten.
 \[
   a^{-n} := \frac{1}{a^{n}} = \frac{1}{1\cdot\underbrace{a\cdot a\cdot a\cdots a}_{n-\text{mal}}}
 \]
-
 \begin{example}
   \textbf{Beispiele:} $\displaystyle \qquad 4^{-7} = \frac{1}{4^{7}} \qquad\qquad 3^{-1} = \frac{1}{3} \qquad\qquad 10^{-2} = \frac{1}{10^{2}} = 0.01$
 \end{example}
@@ -45,7 +43,6 @@ Im folgenden wird betrachtet, welche Werte die Potenz einer negativen Zahl annim
   (-5)^{4} &= 1\cdot(-5)\cdot(-5)\cdot(-5)\cdot(-5) = 625 = 5^{4}
 \end{align*}
 Wenn zwei negative Zahlen multipliziert werden, ergibt sich eine positive Zahl. Wenn der Exponent gerade ist, können alle Faktoren paarweise multipliziert werden und das Resultat ist positiv. Wenn der Exponent ungerade ist, bleibt immer ein negativer Faktor übrig.
-
 \begin{theorem}
   Die Potenz einer negativen Zahl $-n$ mit einem \textbf{geraden Exponenten} $b$ ist gleich der Potenz mit der Gegenzahl $n$ als Basis.
   \[
@@ -61,19 +58,16 @@ Wenn zwei negative Zahlen multipliziert werden, ergibt sich eine positive Zahl. 
 \subsection{Potenzgesetze}
 
 Potenzen können gemäss der fünf Potenzgesetze umgeformt werden.
-
 \begin{theorem}
   \textbf{Produkt mit gleicher Basis.} Potenzen mit gleicher Basis werden multipliziert, indem die Potenzen addiert werden:
   \[
     a^{k} \cdot a^{m} = a^{k+m}
   \]
 \end{theorem}
-
 \textbf{Begründung:} Gemäss der Definition der Potenz bedeutet $a^{k}$, dass $a$ der Faktor $k$-mal in der Multiplikation vorkommt. $a^{m}$ bedeutet, dass der Faktor $m$-mal vorkommt. Insgesamt kommt der Faktor $a$ also $(k+m)$-mal in der Multiplikation vor. Dies kann gemäss Definition wiederum als $a^{k+m}$ geschrieben werden.
 \[
   a^{k}\cdot a^{m} = 1\cdot\underbrace{a\cdot a\cdot a\cdots a}_{k-\text{mal}}\cdot 1\cdot\underbrace{a\cdot a\cdot a\cdots a}_{m-\text{mal}} = 1\cdot\underbrace{a\cdot a\cdot a\cdots a}_{(k+m)-\text{mal}} = a^{k+m}
 \]
-
 \begin{example}
   \textbf{Beispiele:}
   \[
@@ -81,14 +75,12 @@ Potenzen können gemäss der fünf Potenzgesetze umgeformt werden.
   \]
 \end{example}
 \vspace{1cm}
-
 \begin{theorem}
   \textbf{Quotient mit gleicher Basis.} Potenzen mit gleicher Basis werden dividiert, indem die Potenzen subtrahiert werden:
   \[
     \frac{a^{k}}{a^{m}} = a^{k-m}
   \]
 \end{theorem}
-
 \textbf{Begründung:} Gemäss der Definition der Potenz bedeutet $a^{k}$, dass $a$ der Faktor $k$-mal vorkommt. $a^{m}$ bedeutet, dass der Faktor $m$-mal vorkommt. Insgesamt kommt der Faktor $a$ also $k$-mal im Zähler und $m$-mal im Nenner vor. Ist $k$ grösser als $m$, so bleibt der Faktor $(k-m)$-mal im Zähler übrig, was als $a^{k-m}$ geschrieben werden kann.
 \[
   \frac{a^{k}}{a^{m}} = \frac{1\cdot\overbrace{a\cdot a\cdot a\cdots a}^{k-\text{mal}}}{1\cdot\underbrace{a\cdot a\cdots a}_{m-\text{mal}}} = \frac{1\cdot\overbrace{a\cdot a\cdots a}^{(k-m)-\text{mal}}}{1} = a^{k-m}
@@ -97,59 +89,48 @@ Ist hingegen $m$ grösser als $k$, so bleibt der Faktor $(m-k)$-mal im Nenner ü
 \[
   \frac{a^{k}}{a^{m}} = \frac{1\cdot\overbrace{a\cdot a\cdot a\cdots a}^{k-\text{mal}}}{1\cdot\underbrace{a\cdot a\cdots a}_{m-\text{mal}}} = \frac{1}{1\cdot\underbrace{a\cdot a\cdots a}_{(m-k)-\text{mal}}} = \frac{1}{a^{m-k}} = a^{-(m-k)} = a^{k-m}
 \]
-
 \begin{example}
   \textbf{Beispiele:} $\displaystyle \frac{5^{2}}{5^{3}} = 5^{2-3} = 5^{-1} \qquad\qquad \frac{3^{-2}}{3^{-4}} = 3^{-2-(-4)} = 3^{2}$
 \end{example}
-
 \begin{theorem}
   \textbf{Produkt mit gleichem Exponent.} In einem Produkt können gleiche Exponenten ausgeklammert werden:
   \[
     a^{k}\cdot b^{k} = (a\cdot b)^{k}
   \]
 \end{theorem}
-
 \textbf{Begründung:} Gemäss Definition ist $a^{k}\cdot b^{k}$ ein Produkt, in welchem die Faktoren $a$ und $b$ je $k$-mal vorkommen. Wegen der Kommutativität der Multiplikation können die Faktoren umgestellt werden, sodass $k$ Faktoren $(a\cdot b)$ entstehen. Dieses Produkt kann wiederum als $(a\cdot b)^{k}$ geschrieben werden.
 \[
   a^{k}\cdot b^{k} = 1\cdot\underbrace{a\cdot a\cdot a\cdots a}_{k-\text{mal}}\cdot 1\cdot\underbrace{b\cdot b\cdot b\cdots b}_{k-\text{mal}} = 1\cdot\underbrace{(a\cdot b)\cdot (a\cdot b)\cdot (a\cdot b)\cdots (a\cdot b)}_{k-\text{mal}} = (ab)^{k}
 \]
-
 \begin{example}
   \textbf{Beispiele:} $\displaystyle 5^{3} \cdot 3^{3} = (5\cdot 3)^{3} = 15^{3} \qquad\qquad 2^{-2}\cdot 7^{-2} = (2\cdot 7)^{-2} = 14^{-2}$
 \end{example}
-
 \begin{theorem}
   \textbf{Quotient mit gleichem Exponent.} In einem Bruch können gleiche Exponenten ausgeklammert werden:
   \[
     \frac{a^{k}}{b^{k}} = \left(\frac{a}{b}\right)^{k}
   \]
 \end{theorem}
-
 \textbf{Begründung:} Gemäss Definition hat der Bruch $\frac{a^{k}}{b^{k}}$ im Zähler bzw. im Nenner $k$ Faktoren $a$ bzw. $b$. Der Bruch kann also in eine Multiplikation von $k$ Brüchen $\frac{a}{b}$ aufgeteilt werden. Diese können gemäss Definition der Potenz als $\left(\frac{a}{b}\right)^{k}$ geschrieben werden.
 \[
   \frac{a^{k}}{b^{k}} = \frac{1\cdot\overbrace{a\cdot a\cdot a\cdots a}^{k-\text{mal}}}{1\cdot\underbrace{b\cdot b\cdot b\cdots b}_{k-\text{mal}}} = 1\cdot\underbrace{\frac{a}{b}\cdot \frac{a}{b}\cdot \frac{a}{b}\cdots \frac{a}{b}}_{k-\text{mal}} = \left(\frac{a}{b}\right)^{k}
 \]
-
 \begin{example}
   \textbf{Beispiele:} $\displaystyle \frac{4^{6}}{2^{6}} = \left(\frac{4}{2}\right)^{6} = 2^{6} \qquad\qquad \frac{3^{-2}}{5^{-2}} = \left(\frac{3}{5}\right)^{-2} = 0.6^{-2}$
 \end{example}
-
 \begin{theorem}
   \textbf{Potenz einer Potenz.} Potenzen werden potenziert, indem die Exponenten multipliziert werden:
   \[
     \left(a^{k}\right)^{m} = \left(a^{m}\right)^{k}= a^{k\cdot m}
   \]
 \end{theorem}
-
 \textbf{Begründung:} $a^{k}$ bedeutet, dass der Faktor $a$ im Produkt $k$-mal vorkommt. Wird die Potenz nochmals mit $m$ potenziert, bedeutet dies, dass alle $k$ Faktoren $m$-mal wiederholt werden. Insgesamt kommt der Faktor $a$ in $\left(a^{k}\right)^{m}$ also $(k\cdot m)$-mal vor. Dies kann auch als $a^{k\cdot m}$ geschrieben werden.
 \[
   (a^{k})^{m} = \overbrace{1\cdot\underbrace{a\cdot a\cdots a}_{k-\text{mal}}\cdot 1\cdot\underbrace{a\cdot a\cdots a}_{k-\text{mal}}\cdots 1\cdot\underbrace{a\cdot a\cdots a}_{k-\text{mal}}}^{m-\text{mal}} = 1\cdot\underbrace{a\cdot a\cdot a\cdots a}_{(k\cdot m)-\text{mal}} = a^{k\cdot m}
 \]
-
 \begin{example}
   \textbf{Beispiele:} $\displaystyle (2^{3})^{2} = 2^{3\cdot 2} = 2^{6} \qquad\qquad (5^{2})^{-2} = 5^{2\cdot(-2)} = 5^{-4}$
 \end{example}
-
 \begin{note}
   \textbf{Achtung:} Potenzen werden von oben nach unten berechnet. So ist $5^{3^{2}}$ nicht dasselbe wie $\left(5^{3}\right)^{2}$:
   \[
