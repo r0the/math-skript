@@ -35,7 +35,7 @@ Geometrisch entspricht das Produkt zweier Zahlen $a\cdot b$ dem Flächeninhalt e
 
 Das Produkt dreier Zahlen $a\cdot b\cdot c$ entspricht dem Volumen eines Quaders mit den Seiten $a$, $b$ und $c$.
 \begin{center}
-  \begin{tikzpicture}[scale=0.9]
+  \begin{tikzpicture}[scale=0.8]
     \tkzText(2.5,3.5){$a\cdot b$}
     \tkzDefPoint(0,0){A1}
     \tkzDefPoint(5,0){A2}
@@ -79,26 +79,26 @@ Das Produkt dreier Zahlen $a\cdot b\cdot c$ entspricht dem Volumen eines Quaders
 
 Anhand der geometrischen Interpretation wird ersichtlich, dass auch für die Multiplikation das Kommutativgesetz gelten muss. Das Vertauschen der beiden Faktoren entspricht dem Vertauschen der beiden Seitenlängen eines Rechtecks, was einer Drehung um \ang{90} entspricht. Die Fläche des Rechtecks und somit das Produkt verändert sich dabei nicht.
 \begin{center}
-  \begin{tikzpicture}[scale=0.9]
+  \begin{tikzpicture}[scale=0.8]
     \tkzDefPoint(0,0){A1}
-    \tkzDefPoint(5,0){A2}
-    \tkzDefPoint(5,3){A3}
+    \tkzDefPoint(4,0){A2}
+    \tkzDefPoint(4,3){A3}
     \tkzDefPoint(0,3){A4}
     \tkzDrawPolygon[fill=lightgreen](A1,A2,A3,A4)
     \tkzLabelLine[below](A1,A2){$a$}
     \tkzLabelLine[left](A1,A4){$b$}
-    \foreach \y in {0,...,3}{\tkzDrawSegment({0,\y},{5,\y})}
-    \foreach \x in {0,...,5}{\tkzDrawSegment({\x,0},{\x,3})}
+    \foreach \y in {0,...,3}{\tkzDrawSegment({0,\y},{4,\y})}
+    \foreach \x in {0,...,4}{\tkzDrawSegment({\x,0},{\x,3})}
 
-    \tkzDefPoint(7,-1){B1}
-    \tkzDefPoint(10,-1){B2}
-    \tkzDefPoint(10,4){B3}
-    \tkzDefPoint(7,4){B4}
+    \tkzDefPoint(7,-0.5){B1}
+    \tkzDefPoint(10,-0.5){B2}
+    \tkzDefPoint(10,3.5){B3}
+    \tkzDefPoint(7,3.5){B4}
     \tkzDrawPolygon[fill=lightgreen](B1,B2,B3,B4)
     \tkzLabelLine[below](B1,B2){$b$}
     \tkzLabelLine[left](B1,B4){$a$}
-    \foreach \y in {-1,...,4}{\tkzDrawSegment({7,\y},{10,\y})}
-    \foreach \x in {7,...,10}{\tkzDrawSegment({\x,-1},{\x,4})}
+    \foreach \y in {0,...,4}{\tkzDrawSegment({7,\y-0.5},{10,\y-0.5})}
+    \foreach \x in {0,...,3}{\tkzDrawSegment({\x+7,-0.5},{\x+7,3.5})}
   \end{tikzpicture}
 \end{center}
 \begin{theorem}
@@ -111,12 +111,8 @@ Anhand der geometrischen Interpretation wird ersichtlich, dass auch für die Mul
 % ----------------------------------------------------------------------------
 \subsection{Assoziativgesetz}
 Das Volumen eines Quaders ergibt sich aus der Grundfläche multipliziert mit der Höhe. Je nach Orientierung des Quaders ergibt sich somit eine andere Formel für das gleiche Volumen. Wird bei der rechten Formel das Kommutativgesetz angewendet, ergibt sich daraus das Assoziativgesetz für die Multiplikation.
-\[
-  a\cdot b\cdot c = (b\cdot c)\cdot a = a\cdot (b\cdot c)
-\]
 \begin{center}
-  \begin{tikzpicture}[scale=0.9]
-    \tkzText(10,3.5){$a\cdot b\cdot c$}
+  \begin{tikzpicture}[scale=0.8]
     \tkzDefPoint(0,0){A1}
     \tkzDefPoint(4,0){A2}
     \tkzDefPoint(4,2){A3}
@@ -141,7 +137,6 @@ Das Volumen eines Quaders ergibt sich aus der Grundfläche multipliziert mit der
     \foreach \x in {0,...,4}{\tkzDrawSegment({\x,0},{\x,2})}
     \foreach \x in {0,...,4}{\tkzDrawSegment({\x,2},{\x+1,3})}
 
-    \tkzText(10,3.5){$a\cdot b\cdot c$}
     \tkzDefPoint(7,0){B1}
     \tkzDefPoint(10,0){B2}
     \tkzDefPoint(10,4){B3}
@@ -165,6 +160,9 @@ Das Volumen eines Quaders ergibt sich aus der Grundfläche multipliziert mit der
     \foreach \y in {0,...,4}{\tkzDrawSegment({10,\y},{10.67,\y+0.67})}
     \foreach \x in {7,...,10}{\tkzDrawSegment({\x,0},{\x,4})}
     \foreach \x in {7,...,10}{\tkzDrawSegment({\x,4},{\x+0.67,4.67})}
+
+    \tkzText(3,3.5){$a\cdot b\cdot c$}
+    \tkzText[black](9,5.2){$b\cdot c\cdot a = a\cdot (b\cdot c)$}
   \end{tikzpicture}
 \end{center}
 \begin{theorem}
@@ -190,7 +188,7 @@ Die Eins hat bezüglich der Multiplikation eine besondere Stellung. Das Multipli
 \subsection{Distributivgesetz}
 Das Distributivgesetz verbindet die Addition und die Multiplikation. Es kann ebenfalls durch eine geometrische Überlegung begründet werden. Wird das Rechteck mit den Seiten $a$ und $b$ und das Rechteck mit den Seiten $a$ und $c$ zusammengesetzt, so ergibt sich ein Rechteck mit den Seiten $a$ und $b+c$, welches die gleiche Fläche wie die beiden ersten Rechtecke hat.
 \begin{center}
-  \begin{tikzpicture}[scale=0.9]
+  \begin{tikzpicture}[scale=0.8]
     \tkzText(3,3.5){$a\cdot b+a\cdot c$}
     \tkzDefPoint(0,0){A1}
     \tkzDefPoint(3,0){A2}
