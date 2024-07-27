@@ -6,19 +6,23 @@
 
 Bisher konnten Potenzen nur eine natürliche Zahl als Exponenten haben. Man kann sich aber fragen, was es bedeuten würde, wenn eine negative Zahl im Exponenten steht. Dazu wird betrachtet, was passiert, wenn bei einer Potenz immer wieder der Exponent um Eins verringert wird.
 \begin{align*}
-  5^{3} &= 1\cdot 5\cdot 5\cdot 5 = 125 && |\; :5\\
-  5^{2} &= 1\cdot 5\cdot 5 = 25         && |\; :5\\
-  5^{1} &= 1\cdot 5 = 5                 && |\; :5\\
-  5^{0} &= 1
+  \begin{eqt}
+    5^{3} &= 1\cdot 5\cdot 5\cdot 5 = 125 & :5 \\[2mm]
+    5^{2} &= 1\cdot 5\cdot 5 = 25 & :5 \\[2mm]
+    5^{1} &= 1\cdot 5 = 5 & :5 \\[2mm]
+    5^{0} &= 1
+  \end{eqt}
 \end{align*}
 Wenn bei einer Potenz der Exponent um eins verringert wird, bedeutet dies, dass der Wert der Potenz durch ihre Basis dividiert wird. Das macht Sinn, ein um Eins kleinerer Exponent bedeutet ja, dass die Basis einmal weniger mit sich selbst multipliziert wird.
 
 Wenn nun diese Regel bei der Potenz $5^{0}$ weiter angewendet wird, dann entsteht die Potenz $5^{-1}$. Deren Wert ist der Wert von $5^{0}$ dividert durch $5$ also $\frac{1}{5}$. Wird dies so fortgesetzt, können die Werte für sämtliche Potenzen mit negativem Exponenten bestimmt werden:
 \begin{align*}
-  5^{0}    &= 1                               && |\; :5\\\\
-  5^{-1} &= \frac{1}{5}                       && |\; :5\\\\
-  5^{-2} &= \frac{1}{5\cdot 5} = \frac{1}{25} && |\; :5\\\\
-  5^{-3} &= \frac{1}{5\cdot 5\cdot 5} = \frac{1}{125}
+  \begin{eqt}
+    5^{0}  &= 1 & :5 \\[4mm]
+    5^{-1} &= \frac{1}{5} & :5 \\[4mm]
+    5^{-2} &= \frac{1}{5\cdot 5} = \frac{1}{25} & :5 \\[4mm]
+    5^{-3} &= \frac{1}{5\cdot 5\cdot 5} = \frac{1}{125}
+  \end{eqt}
 \end{align*}
 Diese Überlegungen werden in folgender Definition festgehalten:
 
@@ -69,10 +73,7 @@ Potenzen können gemäss der fünf Potenzgesetze umgeformt werden.
   a^{k}\cdot a^{m} = 1\cdot\underbrace{a\cdot a\cdot a\cdots a}_{k-\text{mal}}\cdot 1\cdot\underbrace{a\cdot a\cdot a\cdots a}_{m-\text{mal}} = 1\cdot\underbrace{a\cdot a\cdot a\cdots a}_{(k+m)-\text{mal}} = a^{k+m}
 \]
 \begin{example}
-  \textbf{Beispiele:}
-  \[
-    5^{2}\cdot 5^{3} = 5^{2+3} = 5^{5} \qquad\qquad 3\cdot 3^{-3} = 3^{1+(-3)} = 3^{-2}
-  \]
+  \textbf{Beispiele:} $\displaystyle 5^{2}\cdot 5^{3} = 5^{2+3} = 5^{5} \qquad\qquad 3\cdot 3^{-3} = 3^{1+(-3)} = 3^{-2}$
 \end{example}
 \vspace{1cm}
 \begin{theorem}
