@@ -1,8 +1,23 @@
 \newpage
 \section{Ganze Zahlen $\mathbb{Z}$}
 
+Die natürlichen Zahlen sind unter Addition und Multiplikation abgeschlossen: Addieren und multiplizieren wir natürliche Zahlen, so ist das Ergebnis wieder eine natürliche Zahl. Für die Subtraktion funktioniert das leider nicht. Rechnen wir
+\[
+  5-7 = \square
+\]
+so können wir mit den natürlichen Zahlen kein Ergebnis finden.
+
+Denken wir an die Äpfel zurück: wir können von fünf Äpfeln nicht sieben wegnehmen, da wir nicht weniger als null Äpfel haben können.
+
+In der Tat haben sich auch berühmte Mathematiker lange gegen negative Zahlen gesträubt. Sie bekamen dann aber zum Rechnen mit Schulden einen praktischen Nutzen.
+
+Wenn man von fünf Äpfeln sieben Äpfel abziehen möchte, ist die Frage: «Wie viele Äpfel bräuchte es noch, damit am Ende alle Äpfel weg sind?». Die Antwort ist Zwei! Rechnen wir $5-7$ so erhalten wir das Gegenteil von Zwei (bzgl. der Addition), also Minus Zwei!
+\[
+  5-7 = -2
+\]
+
 % ----------------------------------------------------------------------------
-\subsection{Definition}
+\subsection{Definition: Gegenzahl}
 
 Welche Zahl muss zu Fünf addiert werden, um Null zu erhalten?
 \[
@@ -22,6 +37,7 @@ Die Gegenzahl von $5$ ist also $-5$ und $5 + (-5) = 0$. Wird die Menge der natü
 \[
   \mathbb{Z} = \{\ldots -4, -3, -2, -1, 0, 1, 2, 3, 4, \ldots\}
 \]
+\textbf{Anmerkung:} Die Gegenzahl von $0$ ist wieder $0$, da $0+0 = 0$ gilt. Deshalb ist $-0 = 0$.
 
 % ----------------------------------------------------------------------------
 \subsection{Zahlengerade und Betrag}
@@ -54,20 +70,6 @@ Der Abstand einer Zahl $a$ zur Null auf der Zahlengerade wird als ihr Betrag $|a
 \end{example}
 
 % ----------------------------------------------------------------------------
-\subsection{Historisches}
-
-Der indische Mathematiker Brahmagupta, der im 7. Jahrhundert lebte, hat als erster Regeln für das Rechnen mit negativen Zahlen aufgestellt. Er hat die positiven Zahlen «Vermögen» und die negativen «Schulden» genannt.
-
-\begin{minipage}[t]{0.45\textwidth}
-  \vspace{0cm}
-  \includegraphics[width=.9\textwidth]{Pacioli.jpg}
-\end{minipage}
-\begin{minipage}[t]{0.55\textwidth}
-  \vspace{0cm}
-  Im 15. Jahrhundert wurde in Italien die doppelte Buchführung entwickelt. Dabei wurden Schulden als negative Zahlen notiert. Der italienische Mathematiker und Franziskaner Luca Pacioli hat diese Praxis in seinem Werk \textit{Summa de Arithmetica, Geometria, Proportioni et Proportionalità} festgehalten.
-\end{minipage}
-
-% ----------------------------------------------------------------------------
 \subsection{Abgeschlossenheit}
 
 Die ganzen Zahlen sind bezüglich der folgenden Operationen abgeschlossen:
@@ -98,11 +100,11 @@ Oft wird über bestimmte Teilmengen der ganzen Zahlen gesprochen. Dabei werden d
 \end{center}
 
 % ----------------------------------------------------------------------------
-\subsection{Negative und Gegenzahlen}
+\subsection{Negative Zahlen und Gegenzahlen}
 
-Es ist wichtig, negative Zahlen und Gegenzahlen zu unterscheiden. Negative Zahlen sind immer Gegenzahlen von positiven Zahlen. Eine positive Zahl kann aber auch eine Gegenzahl sein. So ist beispielsweise $5$ die Gegenzahl von $-5$.
+Es ist nicht so, dass Gegenzahlen immer negativ sind. Jede beliebige Zahl $a$ hat eine Gegenzahl, egal ob $a$ selbst positiv ist, oder nicht. Die Gegenzahl von $a = -5$ ist beispielsweise $-a = -(-5) = 5$.
 
-Wenn eine Variable $a$ verwendet wird, um über eine unbekannte Zahl zu sprechen, so kann es sein, dass die Gegenzahl $-a$ eine positive Zahl ist, nämlich wenn $a$ eine negative Zahl ist.
+Wenn eine Variable $a$ verwendet wird, um über eine beliebige Zahl zu sprechen, kann es also auch sein, dass die Gegenzahl $-a$ eine positive Zahl ist und zwar genau dann, wenn $a$ eine negative Zahl ist.
 
 % ----------------------------------------------------------------------------
 \subsection{Rechenregeln}
@@ -138,3 +140,5 @@ Für das Rechnen mit Gegenzahlen gelten die folgenden Rechenregeln:
     (-a)\cdot b = a\cdot(-b) = -ab \qquad\qquad  (-a)\cdot(-b) = ab
   \]
 \end{theorem}
+
+\textbf{Anmerkung:} Wir haben gesehen, dass die Subtraktion nicht kommutativ ist, also $6-3\ne 3-6$. Mit Hilfe der Gegenzahlen können wir aber etwas tricksen, denn $6-3 = 6+(-3) = (-3)+6$.
