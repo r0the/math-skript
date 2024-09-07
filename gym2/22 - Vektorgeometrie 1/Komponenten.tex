@@ -1,0 +1,90 @@
+\newpage
+\section{Komponentendarstellung}
+
+% ------------------------------------------------------------------------------
+\subsection{Komponenten}
+
+Wird ein Vektor $\vv{v}$ in das kartesische Koordinatensystem eingezeichnet, so kann der Vektor beschrieben werden durch die
+\[
+  \vv{v} = \vxy{v_{x}}{v_{y}}
+\]
+Dabei werden $v_{x}$ und $v_{y}$ die Komponenten des Vektors $\vv{v}$ genannt. $v_{x}$ ist die horizontale Komponente, $v_{y}$ die vertikale Komponente. Die horizontale Komponente steht oben, die vertikale Komponente unten.
+
+% ------------------------------------------------------------------------------
+\subsection{Addition und Subtraktion}
+Die Addition und Subtraktion von Vektoren erfolgt komponentenweise.
+
+\begin{theorem}
+  \textbf{Addition.} Zwei Vektoren $\vv{a} = \vxy{a_{x}}{a_{y}}$ und $\vv{b} = \vxy{b_{x}}{b_{y}}$ werden addiert, indem ihre Komponenten addiert werden:
+  \[
+    \vv{a}+\vv{b} = \vxy{a_{x}}{a_{y}}+\vxy{b_{x}}{b_{y}} = \vxy{a_{a}+b_{x}}{a_{y}+b_{y}}
+  \]
+  \textbf{Subtraktion.} $\vv{a}$ und $\vv{b}$ werden subtrahiert, indem ihre Komponenten subtrahiert werden:
+  \[
+    \vv{a}-\vv{b} = \vxy{a_{x}}{a_{y}}-\vxy{b_{x}}{b_{y}} = \vxy{a_{a}-b_{x}}{a_{y}-b_{y}}
+  \]
+
+\end{theorem}
+
+% ------------------------------------------------------------------------------
+\subsection{Skalierung}
+
+Die Skalierung eines Vektors erfolgt komponentenweise.
+
+\begin{theorem}
+  \textbf{Skalierung.} Ein Vektor  $\vv{a} = \vxy{a_{x}}{a_{y}}$ wird skaliert, indem seine Komponenten mit dem Faktor multipliziert werden:
+  \[
+    k\cdot\vv{a} = k\cdot\vxy{a_{x}}{a_{y}} = \vxy{k\cdot a_{a}}{k\cdot a_{y}}
+  \]
+\end{theorem}
+
+% ------------------------------------------------------------------------------
+\subsection{Länge}
+
+Die Länge eines Vektors $\vv{a}$ wird mit $|\vv{a}|$ bezeichnet. Die Komponenten bilden zusammen mit dem Vektor ein rechtwinkliges Dreieck. Deshalb kann die Länge mit Hilfe des Satzes von Pythagoras aus dem Komponenten berechnet werden.
+
+\begin{center}
+  \begin{tikzpicture}
+    \tkzInit[xmin=-4,xmax=8,ymin=-1,ymax=4]
+    \tkzGrid[color=lightgray]
+    \tkzDefPoint(0,0){S}
+    \tkzDefPoint(5,3){Z}
+    \tkzDefPoint(5,0){H}
+    \tkzDrawSegment[thick,-LaTeX](S,Z)
+    \tkzDrawPolySeg[thick,red](S,H,Z)
+    \tkzLabelSegment[above left](S,Z){$\vv{a}$}
+    \tkzLabelSegment[red,below](S,H){$a_{x}$}
+    \tkzLabelSegment[red,right](H,Z){$a_{y}$}
+    \tkzMarkRightAngle[red,german,size=0.5](Z,H,S)
+  \end{tikzpicture}
+\end{center}
+
+\begin{theorem}
+  \textbf{Länge eines Vektors.} Die Länge $|\vv{a}|$ eines Vektors $\vv{a} = \vxy{a_{x}}{a_{y}}$ wird wie folgt berechnet:
+  \[
+    |\vv{a}| = \sqrt{a_{x}^{2}+a_{y}^{2}}
+  \]
+\end{theorem}
+
+\begin{example}
+  \textbf{Beispiel:} In der oben stehenden Abbildung hat der Vektor $\vv{a}$ die Komponenten $\vxy{5}{3}$. Also ist seine Länge
+  \[
+    |\vv{a}| = \sqrt{5^{2}+3^{2}} = \sqrt{34} \approx 5.831
+  \]
+\end{example}
+
+% ------------------------------------------------------------------------------
+\subsection{Nullvektor}
+
+Ein spezieller Vektor ist der Nullvektor. Er stellt einen Pfeil der Länge Null dar. Im Gegensatz zu allen anderen Vektoren hat der Nullvektor keine Richtung. Der Nullvektor wird als Zahl Null mit einem Vektorpfeil geschrieben: $\vv{0}$. Alle seine Komponenten sind Null.
+\[
+  \vv{0} = \vxy{0}{0}
+\]
+
+% ------------------------------------------------------------------------------
+\subsection{Gleichheit}
+
+Zwei Vektoren sind genau dann gleich, wenn ihre Komponenten übereinstimmen:
+\[
+  \vxy{a_{x}}{a_{y}} = \vxy{b_{x}}{b_{y}} \qquad\Leftrightarrow\qquad a_{x} = b_{x} \quad\text{und}\quad a_{y} = b_{y}
+\]

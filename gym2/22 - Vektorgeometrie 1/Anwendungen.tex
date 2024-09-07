@@ -1,0 +1,280 @@
+\newpage
+\section{Anwendungen}
+
+Mit Vektoren können geometrische Probleme algebraisch gelöst werden. Hier werden erste solche Probleme betrachtet.
+
+% ------------------------------------------------------------------------------
+\subsection{Strecke}
+\textbf{Aufgabe:} Teilen Sie die Strecke $\overline{AB}$ in drei gleiche Teile.
+\[
+  A(2\mid 4) \qquad B(11\mid 1)
+\]
+Zunächst wird der Vektor $\vv{a} = \vv{AB}$ bestimmt. Der erste Teilpunkt $T_{1}$ erhält man, indem ein Drittel von $\vv{a}$ zum Ortsvektor von $A$ addiert wird. Der zweite Teilpunkt erhält man durch Addieren von zwei Dritteln von $\vv{a}$.
+\[
+  \vv{a} := \vv{AB} \qquad\qquad \vv{OT_{1}} = \vv{OA} + \frac{1}{3}\vv{a} \qquad\qquad \vv{OT_{2}} = \vv{OA} + \frac{2}{3}\vv{a}
+\]
+
+\begin{center}
+  \begin{tikzpicture}
+    \tkzInit[xmin=0,xmax=12,ymin=0,ymax=5]
+    \tkzAxeXY[]
+    \tkzGrid[color=lightgray]
+    \tkzDefPoint(0,0){O}
+    \tkzDefPoint(2,4){A}
+    \tkzDefPoint(11,1){B}
+    \tkzDefPoint(5,3){T1}
+    \tkzDefPoint(8,2){T2}
+    \tkzDrawSegment[](A,B)
+    \tkzDrawSegment[-LaTeX](O,A)
+    \tkzDrawSegment[-LaTeX](O,T1)
+    \tkzDrawSegment[-LaTeX](O,T2)
+    \tkzDrawSegment[red,thick,-LaTeX](A,T1)
+    \tkzDrawSegment[red,thick,-LaTeX](T1,T2)
+    \tkzDrawSegment[red,thick,-LaTeX](T2,B)
+
+    \tkzLabelSegment[above left](O,A){$\vv{OA}$}
+    \tkzLabelSegment[above left](O,T1){$\vv{OT_{1}}$}
+    \tkzLabelSegment[below right](O,T2){$\vv{OT_{2}}$}
+    \tkzLabelSegment[red,below left](A,T1){$\frac{1}{3}\vv{a}$}
+    \tkzLabelSegment[red,below left](T1,T2){$\frac{1}{3}\vv{a}$}
+    \tkzLabelSegment[red,below left](T2,B){$\frac{1}{3}\vv{a}$}
+
+    \tkzDrawPoints(A,B)
+    \tkzDrawPoints[red](T1,T2)
+    \tkzLabelPoint[above right](A){$A$}
+    \tkzLabelPoint[above right](B){$B$}
+    \tkzLabelPoint[red,above right](T1){$T_{1}$}
+    \tkzLabelPoint[red,above right](T2){$T_{2}$}
+  \end{tikzpicture}
+\end{center}
+Damit ergeben sich folgende Ortsvektoren und Koordinaten für $T_{1}$ und $T_{2}$:
+\begin{align*}
+       \vv{a} &= \vv{AB} = \vxy{11}{1} - \vxy{2}{4} = \vxy{11-2}{1-4} = \vxy{9}{-3} \\[2mm]
+  \vv{OT_{1}} &= \vxy{2}{4}+\frac{1}{3}\vxy{9}{-3} = \vxy{2+\frac{1}{3}9}{4+\frac{1}{3}(-3)} = \vxy{5}{3} \\[2mm]
+  \vv{OT_{2}} &= \vxy{2}{4}+\frac{2}{3}\vxy{9}{-3} = \vxy{2+\frac{2}{3}9}{4+\frac{2}{3}(-3)} = \vxy{8}{2}
+\end{align*}
+Die Strecke wird also durch die Punkte $T_{1}(5\mid 3)$ und $T_{2}(8\mid 2)$ in drei gleiche Teile geteilt.
+
+% ------------------------------------------------------------------------------
+\subsection{Dreieck}
+\textbf{Aufgabe:} Bestimmen Sie den Umfang des Dreiecks $\triangle ABC$ mit
+\[
+  A(3\mid 2) \qquad B(8\mid 1) \qquad C(7\mid 4)
+\]
+Zwischen den Punkten $A$, $B$ und $C$ können die Vektoren $\vv{AB}$, $\vv{BC}$ und $\vv{CA}$ definiert werden.
+\begin{center}
+  \begin{tikzpicture}
+    \tkzInit[xmin=0,xmax=12,ymin=0,ymax=5]
+    \tkzAxeXY[]
+    \tkzGrid[color=lightgray]
+    \tkzDefPoint(3,2){A}
+    \tkzDefPoint(8,1){B}
+    \tkzDefPoint(7,4){C}
+    \tkzDrawSegment[red,thick,-LaTeX](A,B)
+    \tkzDrawSegment[red,thick,-LaTeX](B,C)
+    \tkzDrawSegment[red,thick,-LaTeX](C,A)
+    \tkzLabelSegment[red,below left](A,B){$\vv{a}$}
+    \tkzLabelSegment[red,above right](B,C){$\vv{b}$}
+    \tkzLabelSegment[red,above left](C,A){$\vv{c}$}
+
+    \tkzDrawPoints(A,B,C)
+    \tkzLabelPoint[below left](A){$A$}
+    \tkzLabelPoint[below right](B){$B$}
+    \tkzLabelPoint[above](C){$C$}
+  \end{tikzpicture}
+\end{center}
+Anschliessend werden die Längen der Vektoren ermittelt und addiert, um den Umfang des Dreiecks zu erhalten.
+\begin{align*}
+  \vv{a} &= \vv{AB} = \vxy{8-3}{1-2} = \vxy{5}{-1} & |\vv{a}| &= \sqrt{5^{2}+(-1)^{2}} = \sqrt{26} \approx 5.099 \\[2mm]
+  \vv{b} &= \vv{BC} = \vxy{7-8}{4-1} = \vxy{-1}{3} & |\vv{b}| &= \sqrt{(-1)^{2}+3^{2}} = \sqrt{10} \approx 3.162 \\[2mm]
+  \vv{c} &= \vv{CA} = \vxy{3-7}{2-4} = \vxy{-4}{-2} & |\vv{c}| &= \sqrt{(-4)^{2}+(-2)^{2}} = \sqrt{20} \approx 4.472
+\end{align*}
+Damit ergibt sich für den Umfang des Dreiecks:
+\[
+  U = |\vv{a}|+|\vv{b}|+|\vv{c}| \approx 5.099 + 3.162 + 4.472 \approx 12.733
+\]
+
+% ------------------------------------------------------------------------------
+\subsection{Parallelogramm}
+
+\textbf{Aufgabe:} Ermitteln Sie den fehlenden Eckpunkt $C$ und den Umfang des Parallelogramms $ABCD$ mit
+\[
+  A(3\mid 2) \qquad B(8\mid 1) \qquad D(6\mid 4)
+\]
+Zuerst werden die Seitenvektoren des Parallelogramms bestimmt:
+\begin{align*}
+  \vv{a} &= \vv{OB}-\vv{OA} = \vxy{8}{1}-\vxy{3}{2} = \vxy{8-3}{1-2} = \vxy{5}{-1} \\[2mm]
+  \vv{b} &= \vv{OD}-\vv{OA} = \vxy{6}{4}-\vxy{3}{2} = \vxy{6-3}{4-2} = \vxy{3}{2}
+\end{align*}
+Der Punkt $C$ erhält man, indem der Punkt $B$ um den Vektor $\vv{b}$ verschiebt. Dazu wird $\vv{b}$ zum Ortsvektor $\vv{OB}$ addiert:
+\[
+  \vv{OC} = \vv{OB} + \vv{b} = \vxy{8}{1} + \vxy{3}{2} = \vxy{8+3}{1+2} = \vxy{11}{3}
+\]
+Also ist der vierte Punkt des Parallelogramms $C(11\mid 3)$.
+
+\begin{center}
+  \begin{tikzpicture}
+    \tkzInit[xmin=0,xmax=12,ymin=0,ymax=5]
+    \tkzAxeXY[]
+    \tkzGrid[color=lightgray]
+    \tkzDefPoint(0,0){O}
+    \tkzDefPoint(3,2){A}
+    \tkzDefPoint(8,1){B}
+    \tkzDefPoint(11,3){C}
+    \tkzDefPoint(6,4){D}
+
+    \tkzDrawSegment[-LaTeX](O,A)
+    \tkzLabelSegment[above left](O,A){$\vv{OA}$}
+
+    \tkzDrawSegment[-LaTeX](O,B)
+    \tkzLabelSegment[below right](O,B){$\vv{OB}$}
+
+    \tkzDrawSegment[thick,-LaTeX](A,B)
+    \tkzLabelSegment[below left](A,B){$\vv{a}$}
+
+    \tkzDrawSegment[thick,-LaTeX](A,D)
+    \tkzLabelSegment[above left](A,D){$\vv{b}$}
+
+    \tkzDrawSegment[red,thick,-LaTeX](B,C)
+    \tkzLabelSegment[red,below right](B,C){$\vv{b}$}
+
+    \tkzDrawSegment[red,thick,dotted](C,D)
+
+    \tkzDrawPoints(A,B,D)
+    \tkzDrawPoints[red](C)
+    \tkzLabelPoint[above left](A){$A$}
+    \tkzLabelPoint[below right](B){$B$}
+    \tkzLabelPoint[red,right](C){$C$}
+    \tkzLabelPoint[above](D){$D$}
+  \end{tikzpicture}
+\end{center}
+
+Der Umfang des Parallelogramms ergibt sich, indem die Längen von $\vv{a}$ und $\vv{b}$ addiert und verdoppelt werden:
+\[
+  U = 2\left(|\vv{a}| + |\vv{b}|\right) = 2\left(\sqrt{5^{2}+(-1)^2}+\sqrt{3^{2}+2^{2}}\right) \approx 2\cdot 8.704 \approx 12.310
+\]
+
+% ------------------------------------------------------------------------------
+\subsection{Quadrat}
+
+\textbf{Aufgabe:} Ermitteln Sie die fehlenden Eckpunkte $C$ und $D$ sowie die Fläche des Quadrats $ABCD$ mit
+\[
+  A(3\mid 2) \qquad B(6\mid 1)
+\]
+\begin{center}
+  \begin{tikzpicture}
+    \tkzInit[xmin=0,xmax=10,ymin=0,ymax=5]
+    \tkzAxeXY[]
+    \tkzGrid[color=lightgray]
+    \tkzDefPoint(3,2){A}
+    \tkzDefPoint(6,1){B}
+    \tkzDefPoint(7,4){C}
+    \tkzDefPoint(4,5){D}
+    \tkzDrawSegment[thick,-LaTeX](A,B)
+    \tkzLabelSegment[below left](A,B){$\vv{a}$}
+
+    \tkzDrawSegment[red,thick,-LaTeX](A,D)
+    \tkzLabelSegment[red,above left](A,D){$\vv{b}$}
+    \tkzDrawSegment[red,thick,-LaTeX](B,C)
+    \tkzLabelSegment[red,below right](B,C){$\vv{b}$}
+    \tkzDrawSegment[red,thick,dotted](C,D)
+
+    \tkzDrawPoints(A,B,D)
+    \tkzDrawPoints[red](C)
+    \tkzLabelPoint[left](A){$A$}
+    \tkzLabelPoint[below](B){$B$}
+    \tkzLabelPoint[red,right](C){$C$}
+    \tkzLabelPoint[red,above](D){$D$}
+    \tkzMarkRightAngle[red,german,size=0.5](B,A,D)
+  \end{tikzpicture}
+\end{center}
+Zunächst wird der Vektor $\vv{a} = \vv{AB}$ ermittelt:
+\[
+  \vv{a} = \vxy{6}{1}-\vxy{3}{2} = \vxy{6-3}{1-2} = \vxy{3}{-1}
+\]
+Nun wird der zu $\vv{a}$ senkrechte Vektor $\vv{b}$ ermittelt:
+\[
+  \vv{b} = \vxy{1}{3}
+\]
+Nun werden $C$ und $D$ ermittelt:
+\begin{align*}
+  \vv{OC} &= \vv{OB}+\vv{b} = \vxy{6}{1} + \vxy{1}{3} = \vxy{6+1}{1+3} = \vxy{7}{4} \\[2mm]
+  \vv{OD} &= \vv{OA}+\vv{b} = \vxy{3}{2} + \vxy{1}{3} = \vxy{3+1}{2+3} = \vxy{4}{5}
+\end{align*}
+Die gesuchten Punkte sind also $C(7\mid 4)$ und $D(4\mid 5)$. Die Fläche des Quadrats beträgt
+\[
+  A = |\vv{a}|^{2} = \left(\sqrt{3^{2}+1^{2}}\right)^{2} = 9+1 = 10
+\]
+
+
+\newpage
+% ------------------------------------------------------------------------------
+\subsection{Kreis}
+
+\textbf{Aufgabe:} Berechnen Sie den Mittelpunkt und den Radius des Kreises, auf welchem die folgenden drei Punkte liegen:
+\[
+  A(3\mid 2) \qquad B(6\mid 5) \qquad C(7\mid 2)
+\]
+\begin{center}
+  \begin{tikzpicture}
+    \tkzInit[xmin=0,xmax=10,ymin=0,ymax=6]
+    \tkzAxeXY[]
+    \tkzGrid[color=lightgray]
+    \tkzDefPoint(3,2){A}
+    \tkzDefPoint(6,5){B}
+    \tkzDefPoint(7,2){C}
+    \tkzDefPoint(5,3){M}
+
+    \tkzDrawCircle[thick,red](M,C)
+
+    \tkzDrawSegment[red,thick,-LaTeX](A,M)
+    \tkzLabelSegment[red,below right](A,M){$\vv{AM}$}
+
+    \tkzDrawPoints(A,B,C)
+    \tkzDrawPoints[red](M)
+    \tkzLabelPoints[below left](A)
+    \tkzLabelPoints[above right](B)
+    \tkzLabelPoints[below right](C)
+    \tkzLabelPoints[red,below right](M)
+  \end{tikzpicture}
+\end{center}
+Sei $\vv{OA}$ der Ortsvektor des Punkts $A$ auf dem Kreis und $\vv{OM}$ der Ortsvektor des Mittelpunkts $M$ mit den folgenden Komponenten:
+\[
+  \vv{OA} = \vxy{3}{2} \qquad \vv{OM} = \vxy{x}{y}
+\]
+Der Vektor $\vv{AM} = \vv{OM}-\vv{OA}$ zeigt vom Punkt $P$ zum Kreismittelpunkt $M$. Seine Länge ist der Radius des Kreises $r$:
+\[
+  \left|\vv{OM}-\vv{OA}\right| = r
+\]
+In Komponentenschreibweise ergibt sich die folgende Gleichung:
+\[
+  \sqrt{\left(x-3\right)^{2}+\left(y-2\right)^{2}} = r
+\]
+Um die Wurzel zu eliminieren wird die Gleichung quadriert.
+\[
+  \left(x-3\right)^{2}+\left(y-2\right)^{2} = r^{2}
+\]
+Für die Punkte $B$ und $C$ ergeben sich zwei analoge Gleichungen. Diese ergeben zusammen ein Gleichungssystem mit drei Gleichungen und drei Unbekannten:
+\begin{align*}
+  (x-3)^{2}+(y-2)^{2} &= r^{2} && \circled{1} \\
+  (x-6)^{2}+(y-5)^{2} &= r^{2} && \circled{2} \\
+  (x-7)^{2}+(y-2)^{2} &= r^{2} && \circled{3}
+  \intertext{Die Gleichungen werden ausmultipliziert:}
+  x^{2}-6x+y^{2}-4y+13 &= r^{2} && \circled{1} \\
+  x^{2}-12x+y^{2}-10y+61 &= r^{2} && \circled{2} \\
+  x^{2}-14x+y^{2}-4y+53 &= r^{2} && \circled{3} \\
+\end{align*}
+Durch Gleichsetzen der Gleichungen werden $r$ und die Quadrate eliminiert und es entsteht ein lineares Gleichungssystem:
+\begin{align*}
+  -6x-4y+13 &= -12x-10y+61 && \circled{1}=\circled{2} \\
+  -6x-4y+13 &= -14x-4y+53 && \circled{1}=\circled{3}
+  \intertext{Nach Zusammenfassen ergibt sich:}
+  6x+6y &= 48 \\
+  8x &= 40
+\end{align*}
+Die Lösung des Gleichungssystems ist $x = 5$ und $y = 3$. Also hat der Mittelpunkt des Kreises die Koordinaten $M(5\mid 3)$.
+
+Den Radius des Kreises ist die Länge des Vektors $\vv{AM}$:
+\[
+  r = \left|\vv{AM}\right| = \left|\vxy{5-2}{3-2}\right| = \left|\vxy{3}{1}\right| = \sqrt{3^{2}+1^{2}} = \sqrt{10} \approx 3.162
+\]
