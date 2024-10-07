@@ -22,17 +22,17 @@ Sind zwei Vektoren parallel, so werden sie als kollinear bezeichnet. Zwei Vektor
 
     \tkzDefPoint(1,3){A1}
     \tkzDefShiftPoint[A1](2,-1){A2}
-    \tkzDrawSegment[red,thick,-LaTeX](A1,A2)
+    \tkzDrawSegment[red,thick,vector style](A1,A2)
     \tkzLabelSegment[red,above right](A1,A2){$\vv{a}$}
 
     \tkzDefPoint(9,1){B1}
     \tkzDefShiftPoint[B1](-6,3){B2}
-    \tkzDrawSegment[red,thick,-LaTeX](B1,B2)
+    \tkzDrawSegment[red,thick,vector style](B1,B2)
     \tkzLabelSegment[red,above right](B1,B2){$\vv{b}$}
 
     \tkzDefPoint(3,0){C1}
     \tkzDefShiftPoint[C1](2,2){C2}
-    \tkzDrawSegment[thick,-LaTeX](C1,C2)
+    \tkzDrawSegment[thick,vector style](C1,C2)
     \tkzLabelSegment[below right](C1,C2){$\vv{c}$}
   \end{tikzpicture}
 \end{center}
@@ -69,17 +69,17 @@ Stehen zwei Vektoren senkrecht zueinander, so werden sie als \textbf{orthogonal}
 
     \tkzDefPoint(1,3){A1}
     \tkzDefShiftPoint[A1](2,-3){A2}
-    \tkzDrawSegment[red,thick,-LaTeX](A1,A2)
+    \tkzDrawSegment[red,thick,vector style](A1,A2)
     \tkzLabelSegment[red,below left](A1,A2){$\vv{a}$}
 
     \tkzDefPoint(3,0){B1}
     \tkzDefShiftPoint[B1](6,4){B2}
-    \tkzDrawSegment[red,thick,-LaTeX](B1,B2)
+    \tkzDrawSegment[red,thick,vector style](B1,B2)
     \tkzLabelSegment[red,below right](B1,B2){$\vv{b}$}
 
     \tkzDefPoint(3,0){C1}
     \tkzDefShiftPoint[C1](1,4){C2}
-    \tkzDrawSegment[thick,-LaTeX](C1,C2)
+    \tkzDrawSegment[thick,vector style](C1,C2)
     \tkzLabelSegment[below right](C1,C2){$\vv{c}$}
 
     \tkzMarkRightAngle[red,german,size=0.5](B2,B1,A1)
@@ -120,15 +120,15 @@ Das lässt sich einfach überprüfen:
 
     \tkzDefPoint(5,3){A1}
     \tkzDefShiftPoint[A1](2,-3){A2}
-    \tkzDrawSegment[thick,-LaTeX](A1,A2)
+    \tkzDrawSegment[thick,vector style](A1,A2)
     \tkzLabelSegment[below left](A1,A2){$\vv{a}$}
 
     \tkzDefShiftPoint[A1](3,2){B2}
-    \tkzDrawSegment[red,thick,-LaTeX](A1,B2)
+    \tkzDrawSegment[red,thick,vector style](A1,B2)
     \tkzLabelSegment[red,above left](A1,B2){$\vv{b}$}
 
     \tkzDefShiftPoint[A1](-3,-2){C2}
-    \tkzDrawSegment[red,thick,-LaTeX](A1,C2)
+    \tkzDrawSegment[red,thick,vector style](A1,C2)
     \tkzLabelSegment[red,above left](A1,C2){$-\vv{b}$}
 
     \tkzMarkRightAngle[red,german,size=0.5](C2,A1,A2)

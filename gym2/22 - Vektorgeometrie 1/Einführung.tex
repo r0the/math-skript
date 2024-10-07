@@ -16,7 +16,7 @@ Ein Vektor $\vv{a}$ wird als Pfeil dargestellt und mit einem Kleinbuchstaben mit
   \begin{tikzpicture}
     \tkzDefPoint(0,0){A1}
     \tkzDefShiftPoint[A1](3,0.8){A2}
-    \tkzDrawSegment[thick,-LaTeX](A1,A2)
+    \tkzDrawSegment[thick,vector style](A1,A2)
     \tkzLabelSegment[above left](A1,A2){$\vv{a}$}
   \end{tikzpicture}
 \end{center}
@@ -32,7 +32,7 @@ Ein Vektor $\vv{a}$ kann durch einen Anfangspunkt $A$ und einen Endpunkt $B$ def
   \begin{tikzpicture}
     \tkzDefPoint(0,0){A}
     \tkzDefShiftPoint[A](3,0.8){B}
-    \tkzDrawSegment[thick,-LaTeX](A,B)
+    \tkzDrawSegment[thick,vector style](A,B)
     \tkzLabelSegment[above left](A,B){$\vv{a}$}
     \tkzDrawPoints(A,B)
     \tkzLabelPoints[left](A)
@@ -59,13 +59,13 @@ verschoben wird:
     \tkzLabelPoints[left](A)
     \tkzLabelPoints[right](C)
 
-    \tkzDrawSegment[thick,-LaTeX](A,D)
+    \tkzDrawSegment[thick,vector style](A,D)
     \tkzLabelSegment[above left](A,D){$\vv{a}$}
 
-    \tkzDrawSegment[thick,-LaTeX](D,C)
+    \tkzDrawSegment[thick,vector style](D,C)
     \tkzLabelSegment[above right](D,C){$\vv{b}$}
 
-    \tkzDrawSegment[red,thick,-LaTeX](A,C)
+    \tkzDrawSegment[red,thick,vector style](A,C)
     \tkzLabelSegment[red,above left](A,C){$\vv{c}$}
   \end{tikzpicture}
 \end{center}
@@ -84,19 +84,19 @@ Die Addition von Vektoren ist \textbf{kommutativ}. Es spielt keine Rolle, ob der
     \tkzLabelPoints[left](A)
     \tkzLabelPoints[right](C)
 
-    \tkzDrawSegment[thick,-LaTeX](A,B)
+    \tkzDrawSegment[thick,vector style](A,B)
     \tkzLabelSegment[below left](A,B){$\vv{a}$}
 
-    \tkzDrawSegment[thick,-LaTeX](B,C)
+    \tkzDrawSegment[thick,vector style](B,C)
     \tkzLabelSegment[below right](B,C){$\vv{a}$}
 
-    \tkzDrawSegment[thick,-LaTeX](A,D)
+    \tkzDrawSegment[thick,vector style](A,D)
     \tkzLabelSegment[above left](A,D){$\vv{b}$}
 
-    \tkzDrawSegment[thick,-LaTeX](D,C)
+    \tkzDrawSegment[thick,vector style](D,C)
     \tkzLabelSegment[above right](D,C){$\vv{b}$}
 
-    \tkzDrawSegment[red,thick,-LaTeX](A,C)
+    \tkzDrawSegment[red,thick,vector style](A,C)
     \tkzLabelSegment[red,above left](A,C){$\vv{c}$}
   \end{tikzpicture}
 \end{center}
@@ -114,13 +114,13 @@ Wird ein Vektor $\vv{a}$ zu sich selbst addiert, so entsteht ein paralleler Vekt
     \tkzDefShiftPoint[A2](3,0.8){A3}
     \tkzDefShiftPoint[A1](0.1,-0.3){B1}
     \tkzDefShiftPoint[A3](0.1,-0.3){B2}
-    \tkzDrawSegment[thick,-LaTeX](A1,A2)
+    \tkzDrawSegment[thick,vector style](A1,A2)
     \tkzLabelSegment[above left](A1,A2){$\vv{a}$}
 
-    \tkzDrawSegment[thick,-LaTeX](A2,A3)
+    \tkzDrawSegment[thick,vector style](A2,A3)
     \tkzLabelSegment[above left](A2,A3){$\vv{a}$}
 
-    \tkzDrawSegment[thick,red,-LaTeX](B1,B2)
+    \tkzDrawSegment[thick,red,vector style](B1,B2)
     \tkzLabelSegment[red,below right](B1,B2){$2\vv{a}$}
   \end{tikzpicture}
 \end{center}
@@ -141,10 +141,10 @@ Der Gegenvektor eines Vektors $\vv{a}$ ist der Vektor, der gleich lang ist wie $
     \tkzDefShiftPoint[A1](3,0.8){A2}
     \tkzDefShiftPoint[A1](0.1,-0.3){B2}
     \tkzDefShiftPoint[A2](0.1,-0.3){B1}
-    \tkzDrawSegment[thick,-LaTeX](A1,A2)
+    \tkzDrawSegment[thick,vector style](A1,A2)
     \tkzLabelSegment[above left](A1,A2){$\vv{a}$}
 
-    \tkzDrawSegment[thick,red,-LaTeX](B1,B2)
+    \tkzDrawSegment[thick,red,vector style](B1,B2)
     \tkzLabelSegment[red,below right](B1,B2){$-\vv{a}$}
   \end{tikzpicture}
 \end{center}
@@ -168,16 +168,16 @@ Die Subtraktion von Vektoren kann auf zwei Arten definiert werden. Erstens kann 
 
     \tkzDrawPoint(B)
 
-    \tkzDrawSegment[thick,-LaTeX](A,B)
+    \tkzDrawSegment[thick,vector style](A,B)
     \tkzLabelSegment[above left](A,B){$\vv{a}$}
 
-    \tkzDrawSegment[thick,-LaTeX](B,Z1)
+    \tkzDrawSegment[thick,vector style](B,Z1)
     \tkzLabelSegment[above right](B,Z1){$-\vv{b}$}
 
-    \tkzDrawSegment[thick,-LaTeX](B,Z)
+    \tkzDrawSegment[thick,vector style](B,Z)
     \tkzLabelSegment[above right](B,Z){$\vv{b}$}
 
-    \tkzDrawSegment[red,thick,-LaTeX](A,Z1)
+    \tkzDrawSegment[red,thick,vector style](A,Z1)
     \tkzLabelSegment[red,below left](A,Z1){$\vv{c}$}
   \end{tikzpicture}
 \end{center}
@@ -192,13 +192,13 @@ Zweitens kann die Subtraktionsgleichung durch addieren von $\vv{b}$ zu einer Add
     \tkzDefPoint(2,2){B}
     \tkzDefPoint(-2,3){Z1}
 
-    \tkzDrawSegment[thick,-LaTeX](A,B)
+    \tkzDrawSegment[thick,vector style](A,B)
     \tkzLabelSegment[above left](A,B){$\vv{a}$}
 
-    \tkzDrawSegment[thick,-LaTeX](Z1,B)
+    \tkzDrawSegment[thick,vector style](Z1,B)
     \tkzLabelSegment[above right](Z1,B){$\vv{b}$}
 
-    \tkzDrawSegment[red,thick,-LaTeX](A,Z1)
+    \tkzDrawSegment[red,thick,vector style](A,Z1)
     \tkzLabelSegment[red,below left](A,Z1){$\vv{c}$}
   \end{tikzpicture}
 \end{center}

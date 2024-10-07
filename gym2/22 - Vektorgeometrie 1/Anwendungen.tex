@@ -25,12 +25,12 @@ Zunächst wird der Vektor $\vv{a} = \vv{AB}$ bestimmt. Der erste Teilpunkt $T_{1
     \tkzDefPoint(5,3){T1}
     \tkzDefPoint(8,2){T2}
     \tkzDrawSegment[](A,B)
-    \tkzDrawSegment[-LaTeX](O,A)
-    \tkzDrawSegment[-LaTeX](O,T1)
-    \tkzDrawSegment[-LaTeX](O,T2)
-    \tkzDrawSegment[red,thick,-LaTeX](A,T1)
-    \tkzDrawSegment[red,thick,-LaTeX](T1,T2)
-    \tkzDrawSegment[red,thick,-LaTeX](T2,B)
+    \tkzDrawSegment[vector style](O,A)
+    \tkzDrawSegment[vector style](O,T1)
+    \tkzDrawSegment[vector style](O,T2)
+    \tkzDrawSegment[red,thick,vector style](A,T1)
+    \tkzDrawSegment[red,thick,vector style](T1,T2)
+    \tkzDrawSegment[red,thick,vector style](T2,B)
 
     \tkzLabelSegment[above left](O,A){$\vv{OA}$}
     \tkzLabelSegment[above left](O,T1){$\vv{OT_{1}}$}
@@ -70,9 +70,9 @@ Zwischen den Punkten $A$, $B$ und $C$ können die Vektoren $\vv{AB}$, $\vv{BC}$ 
     \tkzDefPoint(3,2){A}
     \tkzDefPoint(8,1){B}
     \tkzDefPoint(7,4){C}
-    \tkzDrawSegment[red,thick,-LaTeX](A,B)
-    \tkzDrawSegment[red,thick,-LaTeX](B,C)
-    \tkzDrawSegment[red,thick,-LaTeX](C,A)
+    \tkzDrawSegment[red,thick,vector style](A,B)
+    \tkzDrawSegment[red,thick,vector style](B,C)
+    \tkzDrawSegment[red,thick,vector style](C,A)
     \tkzLabelSegment[red,below left](A,B){$\vv{a}$}
     \tkzLabelSegment[red,above right](B,C){$\vv{b}$}
     \tkzLabelSegment[red,above left](C,A){$\vv{c}$}
@@ -94,6 +94,7 @@ Damit ergibt sich für den Umfang des Dreiecks:
   U = |\vv{a}|+|\vv{b}|+|\vv{c}| \approx 5.099 + 3.162 + 4.472 \approx 12.733
 \]
 
+\newpage
 % ------------------------------------------------------------------------------
 \subsection{Parallelogramm}
 
@@ -123,19 +124,19 @@ Also ist der vierte Punkt des Parallelogramms $C(11\mid 3)$.
     \tkzDefPoint(11,3){C}
     \tkzDefPoint(6,4){D}
 
-    \tkzDrawSegment[-LaTeX](O,A)
+    \tkzDrawSegment[vector style](O,A)
     \tkzLabelSegment[above left](O,A){$\vv{OA}$}
 
-    \tkzDrawSegment[-LaTeX](O,B)
+    \tkzDrawSegment[vector style](O,B)
     \tkzLabelSegment[below right](O,B){$\vv{OB}$}
 
-    \tkzDrawSegment[thick,-LaTeX](A,B)
+    \tkzDrawSegment[thick,vector style](A,B)
     \tkzLabelSegment[below left](A,B){$\vv{a}$}
 
-    \tkzDrawSegment[thick,-LaTeX](A,D)
+    \tkzDrawSegment[thick,vector style](A,D)
     \tkzLabelSegment[above left](A,D){$\vv{b}$}
 
-    \tkzDrawSegment[red,thick,-LaTeX](B,C)
+    \tkzDrawSegment[red,thick,vector style](B,C)
     \tkzLabelSegment[red,below right](B,C){$\vv{b}$}
 
     \tkzDrawSegment[red,thick,dotted](C,D)
@@ -154,6 +155,7 @@ Der Umfang des Parallelogramms ergibt sich, indem die Längen von $\vv{a}$ und $
   U = 2\left(|\vv{a}| + |\vv{b}|\right) = 2\left(\sqrt{5^{2}+(-1)^2}+\sqrt{3^{2}+2^{2}}\right) \approx 2\cdot 8.704 \approx 12.310
 \]
 
+\newpage
 % ------------------------------------------------------------------------------
 \subsection{Quadrat}
 
@@ -170,12 +172,12 @@ Der Umfang des Parallelogramms ergibt sich, indem die Längen von $\vv{a}$ und $
     \tkzDefPoint(6,1){B}
     \tkzDefPoint(7,4){C}
     \tkzDefPoint(4,5){D}
-    \tkzDrawSegment[thick,-LaTeX](A,B)
+    \tkzDrawSegment[thick,vector style](A,B)
     \tkzLabelSegment[below left](A,B){$\vv{a}$}
 
-    \tkzDrawSegment[red,thick,-LaTeX](A,D)
+    \tkzDrawSegment[red,thick,vector style](A,D)
     \tkzLabelSegment[red,above left](A,D){$\vv{b}$}
-    \tkzDrawSegment[red,thick,-LaTeX](B,C)
+    \tkzDrawSegment[red,thick,vector style](B,C)
     \tkzLabelSegment[red,below right](B,C){$\vv{b}$}
     \tkzDrawSegment[red,thick,dotted](C,D)
 
@@ -227,7 +229,7 @@ Die gesuchten Punkte sind also $C(7\mid 4)$ und $D(4\mid 5)$. Die Fläche des Qu
 
     \tkzDrawCircle[thick,red](M,C)
 
-    \tkzDrawSegment[red,thick,-LaTeX](A,M)
+    \tkzDrawSegment[red,thick,vector style](A,M)
     \tkzLabelSegment[red,below right](A,M){$\vv{AM}$}
 
     \tkzDrawPoints(A,B,C)

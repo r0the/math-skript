@@ -29,7 +29,7 @@ Wird ein Vektor $\vv{OP}$ mit dem Ursprung $O$ als Anfangspunkt und dem Punkt $P
     \tkzDefPoint(0,0){O}
     \tkzDefPoint(6,2){P}
 
-    \tkzDrawSegment[red,thick,-LaTeX](O,P)
+    \tkzDrawSegment[red,thick,vector style](O,P)
     \tkzLabelSegment[red,above left](O,P){$\vv{OP}=\vxy{x}{y}$}
 
     \tkzDrawPoints(O,P)
@@ -59,13 +59,13 @@ Ein Vektor kann durch einen Anfangspunkt $A$ und einen Endpunkt $B$ bestimmt wer
     \tkzDefPoint(2,3){A}
     \tkzDefPoint(9,1){B}
 
-    \tkzDrawSegment[-LaTeX](O,A)
+    \tkzDrawSegment[vector style](O,A)
     \tkzLabelSegment[above left](O,A){$\vv{OA}$}
 
-    \tkzDrawSegment[-LaTeX](O,B)
+    \tkzDrawSegment[vector style](O,B)
     \tkzLabelSegment[above left](O,B){$\vv{OB}$}
 
-    \tkzDrawSegment[red,thick,-LaTeX](A,B)
+    \tkzDrawSegment[red,thick,vector style](A,B)
     \tkzLabelSegment[red,above right](A,B){$\vv{AB}$}
 
     \tkzDrawPoints(A,B)
