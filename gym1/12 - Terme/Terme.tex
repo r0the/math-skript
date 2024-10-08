@@ -1,0 +1,205 @@
+\newpage
+\section{Terme}
+
+% ------------------------------------------------------------------------------
+\subsection{Begriff}
+
+Im Laufe der Zeit ist in der Mathematik eine formale Sprache entwickelt worden, welche es heute ermöglicht, mathematische Zusammenhänge präzise als Formeln auszudrücken.
+
+Sämtliche solchen Zusammenhänge können selbstverständlich auch in normaler Sprache ausgedrückt werden. Wir können sagen:
+
+\begin{quote}
+Addiere die Werte $b$ und $c$ und multipliziere das Resultat mit dem Wert $a$.
+
+oder: Multipliziere die Summe von $b$ und $c$ mit $a$.
+\end{quote}
+
+Wir können aber auch eine Formel schreiben:
+\[
+  (b+c)\cdot a
+\]
+Eine solche formalisierte Rechenvorschrift wird \textbf{Term} genannt.
+
+% ------------------------------------------------------------------------------
+\subsection{Grundelemente}
+
+Die Grundelemente mathematische Formeln sind Zahlen, Variablen, Operations- und Relationszeichen sowie Klammern.
+
+\textbf{Zahlen:} Es gibt natürliche, ganze, rationale und reelle Zahlen. Negative Zahlen werden mit vorangestelltem Minuszeichen geschrieben. Rationale Zahlen können als Bruch oder als Dezimalzahl geschrieben werden. Irrationale Zahlen können nicht so dargestellt werden, deshalb werden andere Darstellungen wie $\sqrt{2}$ oder $\pi$ verwendet.
+\[
+  0 \qquad 5 \qquad -23 \qquad -\frac{8}{25} \qquad 3.\overline{6} \qquad \sqrt{2} \qquad \pi
+\]
+
+\textbf{Variablen:} Manchmal ist eine Zahl nicht bekannt oder man will sich nicht auf eine bestimmte Zahl festlegen. Dann wird ein Platzhalter für diese Zahl verwendet. Diese Platzhalter heissen Variablen. Variablen werden mit kleinen lateinischen und manchmal griechischen Buchstaben dargestellt:
+\[
+  a \quad b \quad c \quad n \quad q \quad x \quad y \quad z \quad \alpha \quad \gamma \quad \lambda
+\]
+
+Achtung: Der griechische Buchstabe $\pi$ und der lateinische Buchstabe $e$ stehen üblicherweise für bekannte Zahlen (Kreiszahl und eulersche Zahl).
+
+\textbf{Operationszeichen:} Operationszeichen weisen auf eine mathematische Operation (eine «Rechenvorschrift») hin, die ausgeführt werden soll.
+\[
+  + \qquad - \qquad \cdot \qquad : \qquad \sqrt{\phantom{x}}
+\]
+
+\textbf{Relationszeichen} beschreiben eine Beziehung zwischen zwei mathematischen Objekten (z.B. zwischen Zahlen, Termen oder Mengen).
+\[
+  = \qquad \neq \qquad <  \qquad >  \qquad \leq  \qquad \geq  \qquad \approx \qquad \in \qquad \subset
+\]
+
+\textbf{Klammern} weisen darauf hin, dass Operationen in einer bestimmten Reihenfolgen ausgeführt werden müssen.
+\[
+  ( \qquad )
+\]
+
+% ------------------------------------------------------------------------------
+\subsection{Aufbau eines Terms}
+
+Ein Term ist eine \textbf{formalisierte Rechenvorschrift}. Terme werden aus den oben genannten Elementen nach strengen Regeln aufgebaut. Es gibt vier Möglichkeiten, einen Term aufzubauen
+\begin{enumerate}
+  \item Der Term besteht aus einer Zahl.
+  \item Der Term besteht aus einer Variable.
+  \item Der Term besteht aus einem Term, der mit Klammern oder Betragsstrichen umschlossen wird. In das Kästchen muss jeweils wieder ein Term eingefüllt werden:
+  \[
+    ( \square ) \qquad | \square |
+  \]
+  \item Der Term besteht aus zwei Termen, welche mit einer Operation verbunden werden. Hier stehen alle uns bekannten Operationen. In die Kästchen muss jeweils wieder ein Term eingefüllt werden:
+  \[
+    \square+\square \qquad
+    \square-\square \qquad
+    \square\cdot\square \qquad
+    \square:\square \qquad
+    \frac{\square}{\square} \qquad
+    \square^{\square} \qquad
+    \sqrt{\square} \qquad
+  \]
+  \item Der Term besteht aus einem Minuszeichen gefolgt von einem Term, welcher in Klammern gesetzt wird:
+  \[
+    -(\square)
+  \]
+\end{enumerate}
+Später werden weitere Operationen eingeführt, welche dann ebenfalls in Termen verwendet werden können.
+
+% ------------------------------------------------------------------------------
+\subsection{Struktur eines Terms analysieren}
+
+Um zu verstehen, wie ein Term aufgebaut ist, kann seine Struktur durch einen \textbf{Termbaum} visualisiert werden. Zuoberst wird jede Zahl und jede Variable des Terms in einem Kästchen dargestellt.
+
+Danach werden jeweils zwei Kästchen durch eine Operation miteinander verbunden. Dadurch wird die Reihenfolge, in welcher die Operationen in einem Term vorgenommen werden, sofort erkennbar.
+
+Hier sind als Beispiel die Termbäume für die Terme $a\cdot(b-c)$ und $a\cdot b-c$ abgebildet:
+
+\begin{center}
+  \begin{minipage}[b]{0.4\textwidth}
+    \centering
+    \begin{tikzpicture}[every node/.style={minimum height=7mm,minimum width=7mm}]
+      \draw
+        (0.5,0) node[fill=lightblue] (A) {$a$}
+        (1.5,0) node {$\cdot$}
+        (2,0) node {$($}
+        (3,0) node[fill=lightred] (B) {$b$}
+        (4,0) node {$-$}
+        (5,0) node[fill=lightgreen] (C) {$c$}
+        (6,0) node {$)$};
+      \draw
+        (4,-1) node[circle,fill=lightgray] (minus) {$-$}
+        (2.5,-2) node[circle,fill=lightgray] (times) {$\cdot$};
+      \draw
+        (B) -- (minus)
+        (C) -- (minus)
+        (A) -- (times)
+        (minus) -- (times);
+    \end{tikzpicture}
+  \end{minipage}
+  \begin{minipage}[b]{0.4\textwidth}
+    \centering
+    \begin{tikzpicture}[every node/.style={minimum height=7mm,minimum width=7mm}]
+      \draw
+        (1,0) node[fill=lightblue] (A) {$a$}
+        (2,0) node {$\cdot$}
+        (3,0) node[fill=lightred] (B) {$b$}
+        (4,0) node {$-$}
+        (5,0) node[fill=lightgreen] (C) {$c$};
+      \draw
+        (2,-1) node[circle,fill=lightgray] (times) {$\cdot$}
+        (4,-2) node[circle,fill=lightgray] (minus) {$-$};
+      \draw
+        (A) -- (times)
+        (B) -- (times)
+        (C) -- (minus)
+        (times) -- (minus);
+    \end{tikzpicture}
+  \end{minipage}
+\end{center}
+
+% ------------------------------------------------------------------------------
+\subsection{Wert eines Terms bestimmen, Äquivalenz}
+
+Der Wert eines Terms ist das Resultat, welches entsteht, wenn alle Rechenvorschriften im Term in der korrekten Reihenfolge ausgeführt werden.
+
+Bei Termen ohne Variablen kann der Wert einfach durch Ausrechnen bestimmt werden.
+\begin{example}
+\textbf{Beispiele}
+\[
+  17 + 5 \cdot 2 = 17 + 10 = 27 \qquad (1 + 8)^{2} = 9^{2} = 81 \qquad \sqrt{10 - 1} = \sqrt{9} = 3
+\]
+\end{example}
+
+Für Terme mit Variablen kann der Wert bestimmt werden, indem für die Variablen Zahlen eingesetzt werden. Dabei wird die gleiche Variable immer durch die gleiche Zahl ersetzt.
+\begin{example}
+\textbf{Beispiele}
+
+Der Wert des Terms $(a+b)^{2}$ für $a=5$ und $b=-3$ ist:
+\[
+  (a+b)^{2} = (5 + (-3))^{2} = 2^{2} = 4
+\]
+Der Wert des Terms $a^{2} + 2ab+b^{2}$ für $a=5$ und $b=-3$ ist:
+\[
+  a^{2}+2ab+b^{2} = 5^{2} + 2\cdot 5\cdot(-3) + (-3)^{2} = 25 - 30 + 9 = 4
+\]
+\end{example}
+
+Bei den beiden Termen oben fällt auf, dass sie den gleichen Wert haben, wenn die gleichen Werte $a=2$ und $b=-3$ eingesetzt werden. Tatsächlich ergeben die beiden Terme immer den gleichen Wert, egal welche Zahlen für die Variablen $a$ und $b$ eingesetzt werden. Dies führt zu der folgenden Definition:
+
+\textbf{Definition:} Zwei Terme heissen \textbf{äquivalent} oder \textbf{gleichwertig}, wenn sie für alle möglichen Werte der Variablen immer den gleichen Wert besitzen.
+
+Das Umformen von Termen in äquivalente Terme ist in der Mathematik von zentraler Bedeutung.
+
+% ------------------------------------------------------------------------------
+\subsection{Definitionsmenge}
+
+Die Definitionsmenge $\mathbb{D}_{x}$ einer Variable $x$ in einem Term ist die Menge aller Zahlen der Grundmenge, für welche der Term definiert ist, wenn die Zahl für die entsprechende Variable eingesetzt wird.
+
+\begin{example}
+  \textbf{Beispiel:} Für den Term $\displaystyle \frac{1}{x}$ ist die Definitionsmenge $\mathbb{D}_{x} = \mathbb{G} \setminus \{0\}$, da der Term für $x = 0$ nicht definiert ist.
+\end{example}
+
+Die Definitionsmengen für Variablen müssen für alle Terme angegeben werden, wo Definitionslücken auftreten können. Dies ist insbesondere in den folgenden zwei Fällen nötig:
+
+\begin{itemize}
+\item \textbf{Variable im Nenner:} Wenn sich im Nenner eines Bruchs (oder im Divisor einer Division) eine Variable befindet, so kann es sein, dass der Nenner für bestimmte Werte der Variable Null wird. Diese Werte müssen aus der Definitionsmenge ausgeschlossen werden.
+  \begin{example}
+    \textbf{Beispiele:}
+    \begin{align*}
+      \frac{1}{a} \qquad&\Rightarrow\qquad \mathbb{D}_a = \mathbb{R} \setminus \{0\} &
+      \frac{1}{b-2} \qquad&\Rightarrow\qquad \mathbb{D}_b = \mathbb{R} \setminus \{2\} \\\\
+      \frac{1}{c^{2}+1} \qquad&\Rightarrow\qquad \mathbb{D}_c = \mathbb{R} & \frac{1}{d^{3}+1} \qquad&\Rightarrow\qquad \mathbb{D}_c = \mathbb{R} \setminus \{-1\}
+    \end{align*}
+  \end{example}
+
+  \item \textbf{Variable unter Wurzel:} Wenn sich eine Variable unter einer Wurzel befindet, so kann es sein, dass der Radikand für bestimmte Werte der Variable negativ wird. Diese Werte müssen aus der Definitionsmenge ausgeschlosen werden.
+  \begin{example}
+    \textbf{Beispiele:}
+    \begin{align*}
+      \sqrt{a}   \qquad&\Rightarrow\qquad \mathbb{D}_a = \mathbb{R}_{0}^{+} &
+      \sqrt{-b}  \qquad&\Rightarrow\qquad \mathbb{D}_b = \mathbb{R}_{0}^{-} \\\\
+      \sqrt{c-2} \qquad&\Rightarrow\qquad \mathbb{D}_c = \{c \in \mathbb{R} : c \ge 2 \}
+    \end{align*}
+  \end{example}
+\end{itemize}
+
+Die Definitionsmenge wird manchmal vereinfacht als Gleichung angegeben.
+\begin{align*}
+  \mathbb{D}_a = \mathbb{R} \setminus \{0\} \qquad&\Rightarrow\qquad a \ne 0 \\
+  \mathbb{D}_c = \{c \in \mathbb{R} : c \ge 2 \} \qquad&\Rightarrow\qquad c \ge 2 \\
+\end{align*}

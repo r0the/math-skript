@@ -1,0 +1,70 @@
+\documentclass[parskip=half]{scrartcl}
+\input{../../ros-config.tex}
+
+\usepackage{scrlayer-scrpage}
+\pagestyle{scrheadings}
+
+
+
+
+\KOMAoption{DIV}{12}
+\KOMAoption{toc}{listof}
+\DeclareTOCStyleEntry[entryformat=\bfseries,beforeskip=2pt,linefill=\TOCLineLeaderFill]{tocline}{section}
+\setcounter{tocdepth}{1}
+
+\title{Terme}
+\author{Stefan Rothe}
+\date{08.10.2024}
+
+\def\arraystretch{1.3}
+
+\newpairofpagestyles{firstpage}{%
+  \cofoot{\textcopyright{} Gymnasium Kirchenfeld\\Dieses Skript steht unter einer Creative Commons Attribution 4.0 International-Lizenz.\\(CC BY 4.0)}
+}
+
+\makeatletter
+\lohead{\@title}
+\rohead{\@date}
+\cofoot{\thepage}
+\rofoot{}
+\makeatother
+
+\begin{document}
+  \maketitle
+  \thispagestyle{firstpage}
+  \begin{center}
+    \begin{tikzpicture}[every node/.style={minimum height=7mm,minimum width=7mm}]
+      \draw
+        (0,0) node {$($}
+        (1,0) node[fill=lightblue] (A1) {$a$}
+        (2,0) node {$+$}
+        (3,0) node[fill=lightred] (B1) {$b$}
+        (4,0) node {$)$}
+        (4.5,0) node {$\cdot$}
+        (5,0) node {$($}
+        (6,0) node[fill=lightblue] (A2) {$a$}
+        (7,0) node {$-$}
+        (8,0) node[fill=lightred] (B2) {$b$}
+        (9,0) node {$)$};
+      \draw
+        (2,-1) node[circle,fill=lightgrey] (plus) {$+$}
+        (7,-1) node[circle,fill=lightgrey] (minus) {$-$}
+        (4.5,-2) node[circle,fill=lightgrey] (times) {$\cdot$};
+      \draw
+        (A1) -- (plus)
+        (B1) -- (plus)
+        (A2) -- (minus)
+        (B2) -- (minus)
+        (plus) -- (times)
+        (minus) -- (times);
+    \end{tikzpicture}
+  \end{center}
+  \tableofcontents
+  \newpage
+
+  \input{Mengen}
+  \input{Terme}
+  \input{Grundlegende Umformungen}
+  \input{Polynome}
+  \input{Faktorisieren und Ausmultiplizieren}
+\end{document}

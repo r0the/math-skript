@@ -1,0 +1,63 @@
+\documentclass[parskip=half]{scrartcl}
+\input{../../../ros-cheatsheet.tex}
+
+\title{Mengen}
+\id{12.81}
+\author{Stefan Rothe}
+\date{29.04.2024}
+
+\begin{document}
+  \maketitle
+
+  \subsection*{Schreibweise}
+  \begin{itemize}
+    \item \textbf{Definition durch Aufzählung}: Die Menge der genügenden Noten ist $G = \{ 4; 5; 6 \}$
+    \item \textbf{Definition durch Bedingung}: Die Menge der ungenügenden Noten sind die natürlichen Zahlen zwischen Eins und Drei: $U = \{ n\in \mathbb{N} \mid 1 \le n \le 3 \}$
+    \item \textbf{Element}: Vier ist eine genügende Note: $4\in G$.
+    \item \textbf{Vereinigung}: alle Noten sind $M = G\cup U$.
+    \item \textbf{Subtraktion}: alle Noten ohne die Eins: $M \setminus \{1\}$.
+
+  \end{itemize}
+
+  \subsection*{Zahlenmengen}
+  \begin{center}
+    \begin{tabularx}{0.9\textwidth}{lX}
+    \toprule
+      natürliche Zahlen & $\mathbb{N} = \{ 0, 1, 2, 3, \ldots \}$ \\
+    \midrule
+      ganze Zahlen & $\mathbb{Z} = \{\ldots, -3, -2, -1, 0, 1, 2, \ldots \}$ \\
+    \midrule
+      rationale Zahlen & $\mathbb{Q} = \left\{\frac{z}{n}\quad z\in\mathbb{Z}, n\in \mathbb{N}^{+}\right\}$ \\
+    \midrule
+      irrationale Zahlen & $\mathbb{I} = \{ \pi, \sqrt{2}, \ldots \}$ \\
+    \midrule
+      reelle Zahlen & $\mathbb{R} = \mathbb{Q}\cup \mathbb{I}$ \\
+    \bottomrule
+    \end{tabularx}
+  \end{center}
+
+  \subsection*{Teilmengen}
+  \begin{itemize}
+    \item positive Zahlen: $\mathbb{N}^{+}, \quad \mathbb{Q}^{+},  \quad \mathbb{R}^{+}$
+    \item negative Zahlen: $\mathbb{N}^{-}, \quad \mathbb{Q}^{-},  \quad \mathbb{R}^{-}$
+    \item nicht-negative Zahlen: $\mathbb{N}_{0}^{+}, \quad \mathbb{Q}_{0}^{+}, \quad \mathbb{R}_{0}^{+}$
+    \item nicht-positive Zahlen: $\mathbb{N}_{0}^{-}, \quad \mathbb{Q}_{0}^{-}, \quad \mathbb{R}_{0}^{-}$
+  \end{itemize}
+
+  \subsection*{Intervalle}
+  \begin{center}
+    \def\arraystretch{1.1}
+    \begin{tabularx}{0.9\textwidth}{XXX}
+    \toprule
+      geschlossenes Intervall & $[a, b]$ & $\{ x\in\mathbb{R} \;|\; a \leq x \leq b\}$ \\
+    \midrule
+      linksoffenes Intervall & $(a, b]$ oder $]a, b]$ & $\{ x\in\mathbb{R} \;|\; a< x \leq b\}$ \\
+    \midrule
+      rechtsoffenes Intervall & $[a, b)$ oder $[a, b[$ & $\{ x\in\mathbb{R} \;|\; a \leq x < b\}$ \\
+    \midrule
+      offenes Intervall & $(a, b)$ oder $]a, b[$ & $\{ x\in\mathbb{R} \;|\; a< x < b\}$ \\
+    \bottomrule
+    \end{tabularx}
+  \end{center}
+
+\end{document}
