@@ -60,13 +60,11 @@ Die erste binomische berechnet die Fläche des Quadrats, das entsteht, wenn das 
     \def\s{7}
     \tkzDefPoint(0,0){A}
     \tkzDefShiftPoint[A](\a,0){B}
-    \tkzDefShiftPoint[A](\a,\a){C}
-    \tkzDefShiftPoint[A](0,\a){D}
+    \tkzDefSquare(A,B) \tkzGetPoints{C}{D}
     \tkzDefShiftPoint[B](\b,0){B'}
-    \tkzDefShiftPoint[C](\b,\b){C'}
-    \tkzDefShiftPoint[D](0,\b){D'}
+    \tkzDefSquare(A,B') \tkzGetPoints{C'}{D'}
 
-    \tkzDrawPolygon[fill=lightred](A,B,C,D)
+    \tkzDrawPolygon[fill=lightgreen](A,B,C,D)
     \tkzLabelSegment[below](A,B){$a$}
     \tkzLabelSegment[left](A,D){$a$}
     \tkzDrawSegment[-LaTeX](B,B')
@@ -78,18 +76,16 @@ Die erste binomische berechnet die Fläche des Quadrats, das entsteht, wenn das 
 
     \tkzDefPoint(\s,0){A}
     \tkzDefShiftPoint[A](\a,0){B}
-    \tkzDefShiftPoint[A](\a,\a){C}
-    \tkzDefShiftPoint[A](0,\a){D}
+    \tkzDefSquare(A,B) \tkzGetPoints{C}{D}
     \tkzDefShiftPoint[B](\b,0){B'}
-    \tkzDefShiftPoint[C](\b,0){C1}
-    \tkzDefShiftPoint[C](\b,\b){C2}
-    \tkzDefShiftPoint[C](0,\b){C3}
-    \tkzDefShiftPoint[D](0,\b){D'}
+    \tkzDefSquare(A,B') \tkzGetPoints{C'}{D'}
+    \tkzDefShiftPoint[C](\b,0){E}
+    \tkzDefShiftPoint[C](0,\b){F}
 
-    \tkzDrawPolygon[fill=lightred](A,B,C,D)
-    \tkzDrawPolygon[fill=lightgreen](B,B',C1,C)
-    \tkzDrawPolygon[fill=lightgreen](D,C,C3,D')
-    \tkzDrawPolygon[fill=lightorange](C,C1,C2,C3)
+    \tkzDrawPolygon[fill=lightgreen](A,B,C,D)
+    \tkzDrawPolygon[fill=lightred](B,B',E,C)
+    \tkzDrawPolygon[fill=lightred](D,C,F,D')
+    \tkzDrawPolygon[fill=lightorange](C,E,C',F)
 
     \tkzLabelSegment[below](A,B'){$a+b$}
     \tkzLabelSegment[left](A,D'){$a+b$}
@@ -127,7 +123,7 @@ Oft muss ein Term mit Hilfe anderer Regeln umgeformt und vorbereitet werden, bev
 \[
   (a-b)^{2} = a^{2} - 2ab + b^{2}
 \]
-Die zweite binomische Formel berechnet die Fläche des gelben Quadrats, welches entsteht, wenn vom Quadrat mit der Seitenlänge $a$ rechts und oben ein Streifen der Breite $b$ abgeschnitten wird. Dabei wird zwei Mal ein Rechteck der Fläche $ab$ abgeschnitten, also $2ab$. Das Quadrat mit der Seitenlänge $b$ wurde dabei jedoch doppelt gezählt. Deshalb muss $b^{2}$ wieder addiert werden.
+Die zweite binomische Formel berechnet die Fläche des Quadrats, welches entsteht, wenn vom Quadrat mit der Seitenlänge $a$ rechts und oben ein Streifen der Breite $b$ abgeschnitten wird. Dabei wird zwei Mal ein Rechteck der Fläche $ab$ abgeschnitten, also $2ab$. Das Quadrat mit der Seitenlänge $b$ wurde dabei jedoch doppelt gezählt. Deshalb muss $b^{2}$ wieder addiert werden.
 \begin{center}
   \begin{tikzpicture}
     \def\a{4}
@@ -135,13 +131,11 @@ Die zweite binomische Formel berechnet die Fläche des gelben Quadrats, welches 
     \def\s{7}
     \tkzDefPoint(0,0){A}
     \tkzDefShiftPoint[A](\a,0){B}
-    \tkzDefShiftPoint[A](\a,\a){C}
-    \tkzDefShiftPoint[A](0,\a){D}
+    \tkzDefSquare(A,B) \tkzGetPoints{C}{D}
     \tkzDefShiftPoint[B](\b,0){B'}
-    \tkzDefShiftPoint[C](\b,\b){C'}
-    \tkzDefShiftPoint[D](0,\b){D'}
+    \tkzDefSquare(A,B') \tkzGetPoints{C'}{D'}
 
-    \tkzDrawPolygon[fill=lightred](A,B,C,D)
+    \tkzDrawPolygon[fill=lightgreen](A,B,C,D)
     \tkzLabelSegment[below](A,B){$a$}
     \tkzLabelSegment[left](A,D){$a$}
     \tkzDrawSegment[-LaTeX](B,B')
@@ -153,17 +147,15 @@ Die zweite binomische Formel berechnet die Fläche des gelben Quadrats, welches 
 
     \tkzDefPoint(\s,0){A}
     \tkzDefShiftPoint[A](\a,0){B}
-    \tkzDefShiftPoint[A](\a,\a){C}
-    \tkzDefShiftPoint[A](0,\a){D}
+    \tkzDefSquare(A,B) \tkzGetPoints{C}{D}
     \tkzDefShiftPoint[B](\b,0){B'}
-    \tkzDefShiftPoint[C](\b,0){C1}
-    \tkzDefShiftPoint[C](\b,\b){C2}
-    \tkzDefShiftPoint[C](0,\b){C3}
-    \tkzDefShiftPoint[D](0,\b){D'}
+    \tkzDefSquare(A,B') \tkzGetPoints{C'}{D'}
+    \tkzDefShiftPoint[C](0,\b){E}
+    \tkzDefShiftPoint[C](\b,0){F}
 
-    \tkzDrawPolygon[fill=lightorange](A,B',C2,D')
-    \tkzDrawPolygon[fill=green,opacity=0.3](B',B,C,C1)
-    \tkzDrawPolygon[fill=green,opacity=0.3](D',C3,C,D)
+    \tkzDrawPolygon[fill=lightgreen](A,B',C',D')
+    \tkzDrawPolygon[fill=orange,opacity=0.3](B',B,C,F)
+    \tkzDrawPolygon[fill=orange,opacity=0.3](D',E,C,D)
 
     \tkzLabelSegment[below](A,B'){$a-b$}
     \tkzLabelSegment[left](A,D'){$a-b$}
@@ -180,5 +172,41 @@ Die zweite binomische Formel berechnet die Fläche des gelben Quadrats, welches 
 \]
 Die dritte binomische Formel berechnet die Fläche, welche entsteht, wenn aus dem Quadrat mit der Seitenlänge $a$ ein Quadrat mit der Seitenlänge $b$ ausgeschnitten wird. Die resultierende Fläche kann auseinander geschnitten und so arrangiert werden, dass ein Rechteck mit den Seitenlängen $a+b$ und $a-b$ entsteht.
 \begin{center}
-  \includegraphics[width=.8\textwidth]{Binomische Formel 3.pdf}
+  \begin{tikzpicture}
+    \def\a{4}
+    \def\b{1}
+    \def\s{8}
+    \tkzDefPoint(0,0){A}
+    \tkzDefShiftPoint[A](\a,0){B}
+    \tkzDefSquare(A,B) \tkzGetPoints{C}{D}
+    \tkzDefShiftPoint[C](-\b,-\b){A'}
+    \tkzDefShiftPoint[A'](\b,0){B'}
+    \tkzDefSquare(A',B') \tkzGetPoints{C'}{D'}
+
+    \tkzDrawPolygon[fill=lightgreen](A,B,C,D)
+    \tkzDrawPolygon[fill=lightorange](A',B',C',D')
+    \tkzDrawSegment[dashed](A,A')
+
+    \tkzLabelSegment[below](A,B){$a$}
+    \tkzLabelSegment[left](A,D){$a$}
+    \tkzLabelSegment[above](C,D'){$b$}
+    \tkzLabelSegment[right](C,B'){$b$}
+    \tkzLabelSegment[right](B,B'){$a-b$}
+    \tkzText(\a-\b/2,\a-\b/2){$b^{2}$}
+
+    \tkzDefPoint(\s,0){A}
+    \tkzDefShiftPoint[A](\a+\b,\a-\b){C}
+    \tkzDefRectangle(A,C) \tkzGetPoints{B}{D}
+    \tkzDefShiftPoint[A](\b,0){E}
+    \tkzDefShiftPoint[C](-\b,0){F}
+
+    \tkzDrawPolygon[fill=lightgreen](A,B,C,D)
+    \tkzDrawSegment[dashed](E,F)
+
+    \tkzLabelSegment[left](A,D){$a-b$}
+    \tkzLabelSegment[below](A,E){$b$}
+    \tkzLabelSegment[below](E,B){$a$}
+    \tkzLabelSegment[above](D,F){$a$}
+    \tkzLabelSegment[above](F,C){$b$}
+  \end{tikzpicture}
 \end{center}
