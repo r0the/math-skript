@@ -3,7 +3,14 @@
 Durch das \textbf{Faktorisieren} oder Ausklammern wird eine Summe in ein Produkt umgeformt. Durch das \textbf{Ausmultiplizieren} wird ein Produkt in eine Summe umgeformt.
 
 \begin{center}
-  \includegraphics[width=.8\textwidth]{Faktorisieren.pdf}
+  \begin{tikzpicture}
+    \node[inner sep=5mm] (A) at (0,0) {$a\cdot b+a\cdot c$};
+    \node[above of=A] (At) {\textbf{\small Summe}};
+    \node[inner sep=5mm] (B) at (10,0) {$a\cdot (b+c)$};
+    \node[above of=B] (Bt) {\textbf{\small Produkt}};
+    \draw[-LaTeX] (A) edge[bend left=10] node[above] {\small Faktorisieren, Ausklammern} (B);
+    \draw[-LaTeX] (B) edge[bend left=10] node[below] {\small Ausmultiplizieren} (A);
+  \end{tikzpicture}
 \end{center}
 
 Das Verwandeln eines Terms von einer Summe zu einem Produkt oder umgekehrt ist eine wichtige grundlegende Umformung, welche wir in der Mathematik immer wieder benötigen werden.
@@ -45,9 +52,52 @@ Auch ganze Terme können Faktoren sein, welche ausgeklammert werden können.
 \[
   (a+b)^{2} = a^{2} + 2ab + b^{2}
 \]
-Die erste binomische berechnet die Fläche des Quadrats, das entsteht, wenn das Quadrat mit der Seitenlänge $a$ nach rechts und unten um $b$ vergrössert wird. Dazu wird links und unten ein Rechteck mit der Fläche $ab$ angesetzt. Unten rechts wird noch das Quadrat mit der Seitenlänge $b$ ergänzt.
+Die erste binomische berechnet die Fläche des Quadrats, das entsteht, wenn das Quadrat mit der Seitenlänge $a$ nach rechts und oben um $b$ vergrössert wird. Dazu wird rechts und oben ein Rechteck mit der Fläche $ab$ angesetzt. Oben rechts wird noch das Quadrat mit der Seitenlänge $b$ ergänzt.
 \begin{center}
-  \includegraphics[width=.8\textwidth]{Binomische Formel 1.pdf}
+  \begin{tikzpicture}
+    \def\a{3}
+    \def\b{1}
+    \def\s{7}
+    \tkzDefPoint(0,0){A}
+    \tkzDefShiftPoint[A](\a,0){B}
+    \tkzDefShiftPoint[A](\a,\a){C}
+    \tkzDefShiftPoint[A](0,\a){D}
+    \tkzDefShiftPoint[B](\b,0){B'}
+    \tkzDefShiftPoint[C](\b,\b){C'}
+    \tkzDefShiftPoint[D](0,\b){D'}
+
+    \tkzDrawPolygon[fill=lightred](A,B,C,D)
+    \tkzLabelSegment[below](A,B){$a$}
+    \tkzLabelSegment[left](A,D){$a$}
+    \tkzDrawSegment[-LaTeX](B,B')
+    \tkzLabelSegment[below](B,B'){$+b$}
+    \tkzDrawSegment[-LaTeX](D,D')
+    \tkzLabelSegment[left](D,D'){$+b$}
+    \tkzDrawPolySeg[dashed](B',C',D')
+    \tkzText(\a/2,\a/2){$a^{2}$}
+
+    \tkzDefPoint(\s,0){A}
+    \tkzDefShiftPoint[A](\a,0){B}
+    \tkzDefShiftPoint[A](\a,\a){C}
+    \tkzDefShiftPoint[A](0,\a){D}
+    \tkzDefShiftPoint[B](\b,0){B'}
+    \tkzDefShiftPoint[C](\b,0){C1}
+    \tkzDefShiftPoint[C](\b,\b){C2}
+    \tkzDefShiftPoint[C](0,\b){C3}
+    \tkzDefShiftPoint[D](0,\b){D'}
+
+    \tkzDrawPolygon[fill=lightred](A,B,C,D)
+    \tkzDrawPolygon[fill=lightgreen](B,B',C1,C)
+    \tkzDrawPolygon[fill=lightgreen](D,C,C3,D')
+    \tkzDrawPolygon[fill=lightorange](C,C1,C2,C3)
+
+    \tkzLabelSegment[below](A,B'){$a+b$}
+    \tkzLabelSegment[left](A,D'){$a+b$}
+    \tkzText(\s+\a/2,\a/2){$a^{2}$}
+    \tkzText(\s+\a+\b/2,\a/2){$ab$}
+    \tkzText(\s+\a/2,\a+\b/2){$ab$}
+    \tkzText(\s+\a+\b/2,\a+\b/2){$b^{2}$}
+  \end{tikzpicture}
 \end{center}
 Oft muss ein Term mit Hilfe anderer Regeln umgeformt und vorbereitet werden, bevor er mit einer binomischen Formel faktorisiert werden kann.
 \begin{example}
@@ -77,9 +127,51 @@ Oft muss ein Term mit Hilfe anderer Regeln umgeformt und vorbereitet werden, bev
 \[
   (a-b)^{2} = a^{2} - 2ab + b^{2}
 \]
-Die zweite binomische Formel berechnet die Fläche des gelben Quadrats, welches entsteht, wenn vom Quadrat mit der Seitenlänge $a$ seitlich und unten ein Streifen der Breite $b$ abgeschnitten wird. Dabei wird zwei Mal ein Rechteck der Fläche $ab$ abgeschnitten, also $2ab$. Das Quadrat mit der Seitenlänge $b$ wurde dabei jedoch doppelt gezählt. Deshalb muss $b^{2}$ wieder addiert werden.
+Die zweite binomische Formel berechnet die Fläche des gelben Quadrats, welches entsteht, wenn vom Quadrat mit der Seitenlänge $a$ rechts und oben ein Streifen der Breite $b$ abgeschnitten wird. Dabei wird zwei Mal ein Rechteck der Fläche $ab$ abgeschnitten, also $2ab$. Das Quadrat mit der Seitenlänge $b$ wurde dabei jedoch doppelt gezählt. Deshalb muss $b^{2}$ wieder addiert werden.
 \begin{center}
-  \includegraphics[width=.8\textwidth]{Binomische Formel 2.pdf}
+  \begin{tikzpicture}
+    \def\a{4}
+    \def\b{-1}
+    \def\s{7}
+    \tkzDefPoint(0,0){A}
+    \tkzDefShiftPoint[A](\a,0){B}
+    \tkzDefShiftPoint[A](\a,\a){C}
+    \tkzDefShiftPoint[A](0,\a){D}
+    \tkzDefShiftPoint[B](\b,0){B'}
+    \tkzDefShiftPoint[C](\b,\b){C'}
+    \tkzDefShiftPoint[D](0,\b){D'}
+
+    \tkzDrawPolygon[fill=lightred](A,B,C,D)
+    \tkzLabelSegment[below](A,B){$a$}
+    \tkzLabelSegment[left](A,D){$a$}
+    \tkzDrawSegment[-LaTeX](B,B')
+    \tkzLabelSegment[below](B,B'){$-b$}
+    \tkzDrawSegment[-LaTeX](D,D')
+    \tkzLabelSegment[left](D,D'){$-b$}
+    \tkzDrawPolySeg[dashed](B',C',D')
+    \tkzText(\a/2,\a/2){$a^{2}$}
+
+    \tkzDefPoint(\s,0){A}
+    \tkzDefShiftPoint[A](\a,0){B}
+    \tkzDefShiftPoint[A](\a,\a){C}
+    \tkzDefShiftPoint[A](0,\a){D}
+    \tkzDefShiftPoint[B](\b,0){B'}
+    \tkzDefShiftPoint[C](\b,0){C1}
+    \tkzDefShiftPoint[C](\b,\b){C2}
+    \tkzDefShiftPoint[C](0,\b){C3}
+    \tkzDefShiftPoint[D](0,\b){D'}
+
+    \tkzDrawPolygon[fill=lightorange](A,B',C2,D')
+    \tkzDrawPolygon[fill=green,opacity=0.3](B',B,C,C1)
+    \tkzDrawPolygon[fill=green,opacity=0.3](D',C3,C,D)
+
+    \tkzLabelSegment[below](A,B'){$a-b$}
+    \tkzLabelSegment[left](A,D'){$a-b$}
+    \tkzText(\s+\a/2+\b/2,\a/2+\b/2){$(a-b)^{2}$}
+    \tkzText(\s+\a+\b/2,\a/2){$ab$}
+    \tkzText(\s+\a/2,\a+\b/2){$ab$}
+    \tkzText(\s+\a+\b/2,\a+\b/2){$b^{2}$}
+  \end{tikzpicture}
 \end{center}
 
 \subsection{Dritte binomische Formel}
