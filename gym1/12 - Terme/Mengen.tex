@@ -48,17 +48,17 @@ Wenn nicht alle Elemente hinschreiben werden können, dürfen auch Aufzählungsp
 \end{example}
 
 % ------------------------------------------------------------------------------
-\subsection{Definition durch Auswahl}
+\subsection{Definition durch Eigenschaft}
 
-Eine Menge kann auch durch das Auswählen von bestimmten Elementen aus einer anderen Menge definiert werden:
+Eine Menge kann auch durch die Angabe einer Eigenschaft der Elemente definiert werden:
 \[
-  M = \{ a \in G\mid \text{Eigenschaft von a} \}
+  M = \{ a \mid \text{ Eigenschaft von } a\}
 \]
-Dabei wird in den geschweiften Klammern zuerst angegeben, aus welcher Menge $G$ die Elemente stammen. Nach dem senkrechten Strich wird angegeben, welche Eigenschaft die Elemente $a$ aus $G$ haben müssen, um zu dieser Menge zu gehören.
+Dabei wird in den geschweiften Klammern zuerst angegeben, mit welcher Variable (hier $a$) die Elemente bezeichnet werden. Nach dem senkrechten Strich wird angegeben, welche Eigenschaft(en) die Elemente $a$ haben müssen, um zur Menge zu gehören.
 \begin{example}
   \textbf{Beispiel:} Die Menge der ungeraden Dezimalziffern $U$ kann so definiert werden:
   \[
-    U = \{ a \in D \mid a \;\text{ist ungerade} \} = \{ 1; 3; 5; 7; 9 \}
+    U = \{ a \mid a \in D \text{ und } a \text{ ist ungerade} \} = \{ 1; 3; 5; 7; 9 \}
   \]
 \end{example}
 
@@ -195,13 +195,13 @@ Die Menge aller reellen Zahlen zwischen zwei bestimmten Zahlen $a$ und $b$ wird 
   \begin{tabularx}{0.9\textwidth}{XXX}
     \textbf{Begriff} & \textbf{Schreibweise} & \textbf{Definition} \\
   \toprule
-    geschlossenes Intervall & $[a, b]$ & $\{ x\in\mathbb{R} \;|\; a \leq x \leq b\}$ \\
+    geschlossenes Intervall & $[a, b]$ & $\{ x\mid x\in\mathbb{R}, a \leq x \leq b\}$ \\
   \midrule
-    linksoffenes Intervall & $(a, b]$ oder $]a, b]$ & $\{ x\in\mathbb{R} \;|\; a< x \leq b\}$ \\
+    linksoffenes Intervall & $(a, b]$ oder $]a, b]$ & $\{ x\mid x\in\mathbb{R}, a< x \leq b\}$ \\
   \midrule
-    rechtsoffenes Intervall & $[a, b)$ oder $[a, b[$ & $\{ x\in\mathbb{R} \;|\; a \leq x < b\}$ \\
+    rechtsoffenes Intervall & $[a, b)$ oder $[a, b[$ & $\{ x\mid x\in\mathbb{R}, a \leq x < b\}$ \\
   \midrule
-    offenes Intervall & $(a, b)$ oder $]a, b[$ & $\{ x\in\mathbb{R} \;|\; a< x < b\}$ \\
+    offenes Intervall & $(a, b)$ oder $]a, b[$ & $\{ x\mid x\in\mathbb{R}, a< x < b\}$ \\
   \bottomrule
   \end{tabularx}
 \end{center}
@@ -225,7 +225,7 @@ Werden jedoch geometrische oder angewandte Probleme in der Mathematik gelöst, s
     \item eine Anzahl Personen ist $\mathbb{G} = \mathbb{N}$
     \item die Länge einer Strecke ist $\mathbb{G} = \mathbb{R}^{+}$
     \item einen Kontostand ist $\mathbb{G} =
-    \{q \;|\; q\in \mathbb{Q} \;\text{und}\; q\cdot 100 \in \mathbb{Z}\}$
+    \{q \;|\; q\in \mathbb{Q} \text{ und } q\cdot 100 \in \mathbb{Z}\}$
     \item Zeugnisnoten ist $\mathbb{G} = \{1;1.5;2;2.5;3;3.5;4;4.5;5;5.5;6\}$
   \end{itemize}
 \end{example}
