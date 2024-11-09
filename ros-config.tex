@@ -113,10 +113,17 @@
 % ------------
 \usepackage[b]{esvect}
 
+\makeatletter
+% Koordinatenschreibweise für 2D-Punkte
+\NewDocumentCommand\pxy@internal{mmm}{\mathopen{}\left(#1/#2\right)\mathclose{}}
+\NewDocumentCommand\pxy{o>{\SplitArgument{2}{,}}m}{\IfNoValueF{#1}{#1}\pxy@internal #2}
+
 % Komponentenschreibweise für 2D-Vektoren
-\NewDocumentCommand\vxy{mm}{\begin{pmatrix}#1\\#2\end{pmatrix}}
+\NewDocumentCommand\vxy@internal{mmm}{\begin{pmatrix}#1\\#2\end{pmatrix}}
+\NewDocumentCommand\vxy{>{\SplitArgument{2}{,}}m}{\vxy@internal #1}
 % Komponentenschreibweise für 3D-Vektoren
 \NewDocumentCommand\vxyz{mmm}{\begin{pmatrix}#1\\#2\\#3\end{pmatrix}}
+\makeatother
 
 % Lineare Gleichungssysteme
 \usepackage{systeme}
@@ -137,6 +144,8 @@
 % damit wird auch tikz eingebunden
 \usepackage{tkz-base}
 \usepackage{tkz-fct}
+% Konfiguration Darstellung von Tangenten in tkz-fct
+\tkzfctset{tan style/.style={red,thick,>=}}
 \usepackage{tkz-euclide}
 % Bäume mit tikz
 \usepackage{forest}
@@ -183,5 +192,8 @@
 \newmdenv[backgroundcolor=theoremcolor,skipabove=\parskip,outerlinewidth=1.5pt]{theorem}
 \newmdenv[backgroundcolor=theoremcolor,outerlinewidth=1.5pt]{instructions}
 
-%
+\usepackage{fontawesome5}
+\def\digital{\faLaptop{} }
+\def\present{\faTrophy{} }
+
 \def\rosconfig{1}

@@ -6,20 +6,20 @@ Vektoren und Punkte sind unterschiedliche Objekte mit unterschiedlichen Eigensch
 
 Ein \textbf{Punkt} befindet sich an einem bestimmten Ort und er hat keine Richtung. Ein Punkt $P$ mit den \textbf{Koordinaten} $x$ und $y$ wird wie folgt geschrieben:
 \[
-  P(x\mid y)
+  \pxy[P]{x,y}
 \]
 
 Ein \textbf{Vektor} kann beliebig verschoben werden, er hat also keine feste Position, aber er zeigt in eine bestimmte Richtung. Ein Vektor $\vv{v}$ mit den \textbf{Komponenten} $v_{x}$ und $v_{y}$ wird folgendermassen geschrieben:
 \[
-  \vv{v} = \vxy{v_{x}}{v_{y}}
+  \vv{v} = \vxy{v_{x},v_{y}}
 \]
 
 % ------------------------------------------------------------------------------
 \subsection{Ortsvektor}
 
-Wird ein Vektor $\vv{OP}$ mit dem Ursprung $O$ als Anfangspunkt und dem Punkt $P(x\mid y)$ als Endpunkt definiert wird, so entsprechen die Komponenten des Vektors gerade den Koordinaten des Punkts $P$:
+Wird ein Vektor $\vv{OP}$ mit dem Ursprung $O$ als Anfangspunkt und dem Punkt $\pxy[P]{x,y}$ als Endpunkt definiert wird, so entsprechen die Komponenten des Vektors gerade den Koordinaten des Punkts $P$:
 \[
-  \vv{OP} = \vxy{x-0}{y-0} = \vxy{x}{y}
+  \vv{OP} = \vxy{x-0,y-0} = \vxy{x,y}
 \]
 \begin{center}
   \begin{tikzpicture}
@@ -30,11 +30,11 @@ Wird ein Vektor $\vv{OP}$ mit dem Ursprung $O$ als Anfangspunkt und dem Punkt $P
     \tkzDefPoint(6,2){P}
 
     \tkzDrawSegment[red,thick,vector style](O,P)
-    \tkzLabelSegment[red,above left](O,P){$\vv{OP}=\vxy{x}{y}$}
+    \tkzLabelSegment[red,above left](O,P){$\vv{OP}=\vxy{x,y}$}
 
     \tkzDrawPoints(O,P)
     \tkzLabelPoint[above right](O){$O$}
-    \tkzLabelPoint[above right](P){$P(x\mid y)$}
+    \tkzLabelPoint[above right](P){$P\pxy{x,y}$}
   \end{tikzpicture}
 \end{center}
 
@@ -42,7 +42,7 @@ Dieser Vektor wird \textbf{Ortsvektor} des Punkts $P$ genannt. Der Ortsvektor vo
 
 Werden Vektoren als Verschiebungen aufgefasst, so verschiebt der Ortsvektor den Ursprung $O$ in den Punkt $P$.
 \begin{example}
-  \textbf{Beispiel:} Der Ortsvektor des Punkts $A(-3\mid 5)$ lautet $\vv{OA} = \vxy{-3}{5}$.
+  \textbf{Beispiel:} Der Ortsvektor des Punkts $\pxy[A]{-3,5}$ lautet $\vv{OA} = \vxy{-3,5}$.
 \end{example}
 
 % ------------------------------------------------------------------------------
@@ -69,27 +69,27 @@ Ein Vektor kann durch einen Anfangspunkt $A$ und einen Endpunkt $B$ bestimmt wer
     \tkzLabelSegment[red,above right](A,B){$\vv{AB}$}
 
     \tkzDrawPoints(A,B)
-    \tkzLabelPoint[left](A){$A(x_{A}\mid y_{A})$}
-    \tkzLabelPoint[right](B){$B(x_{B}\mid y_{B})$}
+    \tkzLabelPoint[left](A){$A\pxy{x_{A},y_{A}}$}
+    \tkzLabelPoint[right](B){$B\pxy{x_{B},y_{B}}$}
   \end{tikzpicture}
 \end{center}
 Der Vektor $\vv{AB}$, welcher von Punkt $A$ nach Punkt $B$ zeigt, kann als Subtraktion der Ortsvektoren von $A$ und $B$ ausgedrückt werden.
 \[
-  \vv{AB} = \vv{OB} - \vv{OA} = \vxy{x_{B}}{y_{B}} - \vxy{x_{A}}{y_{A}} = \vxy{x_{B}-x_{A}}{y_{B}-y_{A}}
+  \vv{AB} = \vv{OB} - \vv{OA} = \vxy{x_{B},y_{B}} - \vxy{x_{A},y_{A}} = \vxy{x_{B}-x_{A},y_{B}-y_{A}}
 \]
 Daraus lässt sich schliessen, dass sich die Komponenten des Vektors $\vv{AB}$ durch Subtraktion der Koordinaten von Punkt $B$ und Punkt $A$ ergeben.
 
 
 \begin{theorem}
-  \textbf{Vektor aus Punkten.} Hat ein Vektor $\vv{AB}$ den Anfangspunkt $A(x_{A}\mid y_{A})$ und den Endpunkt $B(x_{B}\mid y_{B})$ besitzt, so lautet seine Komponentendarstellung
+  \textbf{Vektor aus Punkten.} Hat ein Vektor $\vv{AB}$ den Anfangspunkt $\pxy[A]{x_{A},y_{A}}$ und den Endpunkt $\pxy[B]{x_{B},y_{B}}$ besitzt, so lautet seine Komponentendarstellung
   \[
-    \vv{AB} = \vxy{x_{B}-x_{A}}{y_{B}-y_{A}}
+    \vv{AB} = \vxy{x_{B}-x_{A},y_{B}-y_{A}}
   \]
 \end{theorem}
 
 \begin{example}
-  \textbf{Beispiel:} Im der oben stehenden Abbildung ist der Vektor $\vv{v}$ durch den Anfangspunkt $A(2\mid 3)$ und den Endpunkt $B(9\mid 1)$ definiert. Also lautet seine Komponentendarstellung
+  \textbf{Beispiel:} Im der oben stehenden Abbildung ist der Vektor $\vv{v}$ durch den Anfangspunkt $\pxy[A]{2,3}$ und den Endpunkt $\pxy[B]{9,1}$ definiert. Also lautet seine Komponentendarstellung
   \[
-    \vv{AB} = \vxy{9-2}{1-3} = \vxy{7}{-2}
+    \vv{AB} = \vxy{9-2,1-3} = \vxy{7,-2}
   \]
 \end{example}
