@@ -1,0 +1,255 @@
+\newpage
+\section{Quadratische Gleichungen}
+
+Eine quadratische Gleichung, also eine Polynomgleichung zweiten Grades, hat die Form
+\[
+  ax^{2}+bx+c = 0
+\]
+
+Die Koeffizienten quadratischer Gleichungen werden üblicherweise mit $a$, $b$ und $c$ bezeichnet anstelle von $a_{2}$, $a_{1}$ und $a{0}$.
+
+% ------------------------------------------------------------------------------
+\subsection{Quadratische Gleichungen mit $c=0$}
+
+Wenn bei einer quadratischen Gleichung der Parameter $c = 0$ ist, so hat sie die folgende Form:
+\[
+  ax^{2} + bx = 0
+\]
+Hier kann der Faktor $x$ ausgeklammert werden, damit hat die Gleichung folgende Form:
+\[
+  x\cdot(ax+b) = 0
+\]
+Um bei dieser Gleichung die Lösungen zu bestimmen, wird der Satz des Nullprodukts benötigt:
+
+\begin{theorem}
+  \textbf{Satz des Nullprodukts.} Wenn ein Produkt zweier Faktoren $a$ und $b$ gleich Null ist, dann muss einer der beiden Faktoren Null sein.
+  \[
+    a\cdot b = 0 \qquad\Rightarrow\qquad a = 0 \quad\text{oder}\quad b = 0
+  \]
+\end{theorem}
+
+Aus diesem Satz folgt, dass die Gleichung $x\cdot(ax+b) = 0$ wahr wird, wenn entweder der Faktor $x$ oder der Faktor $xa+b$ gleich Null ist. Für diese beiden Varianten wird eine \textbf{Fallunterscheidung} gemacht.
+
+\textbf{Fall $x = 0$}. Zunächst wird der Fall betrachtet, dass $x = 0$ ist. Dieser Fall ist trivial, da der Wert für $x$ schon feststeht.
+
+\textbf{Fall $ax+b = 0$}. In diesem Fall liegt eine lineare Gleichung vor. Es ist bereits bekannt, wie eine solche Gleichung gelöst wird:
+\[\begin{eqt}
+  ax+b &= 0            & -b \\
+    ax &= -b           & :a \\
+     x &= -\frac{b}{a}
+\end{eqt}\]
+Somit ist die Lösungsmenge einer solchen quadratischen Gleichung
+\[
+  \mathbb{L} = \left\{0;-\frac{b}{a}\right\}
+\]
+
+\begin{example}
+  \textbf{Beispiel:}
+  \[\begin{eqt}
+    3x^{2} + 6x &= 0 & \text{ausklammern} \\
+        x(3x+6) &= 0
+  \end{eqt}\]
+  Fall 1: $x = 0$: trivial.
+
+  Fall 2: $(3x+6) = 0$:
+  \[\begin{eqt}
+    3x+6 &= 0  & -6 \\
+      3x &= -6 & :3 \\
+       x &= -2
+  \end{eqt}\]
+  Die Lösungsmenge ist $\mathbb{L} = \{-2;0\}$.
+\end{example}
+
+
+% ------------------------------------------------------------------------------
+\subsection{Radizieren einer Gleichung}
+
+Um eine Gleichung zu lösen, in welcher die Variable $x$ im Quadrat auftritt, muss die Gleichung radiziert werden. Das bedeutet, dass auf beiden Seiten der Gleichung die Wurzel gezogen wird. Dazu muss sinnvollerweise auf der einen (hier linken) Seite der Gleichung ein Term als Quadrat vorliegen.
+
+Das radizieren oder Ziehen der Wurzel wird mit einem Wurzelzeichen protokolliert. Die Wurzel wird auf beiden Seiten über dem ganzen Term gezogen.
+\[\begin{eqt}
+           \square^{2} &= \square           & \sqrt{\phantom{x}} \\
+    \sqrt{\square^{2}} &= \pm\sqrt{\square} & \\
+               \square &= \pm\sqrt{\square}
+\end{eqt}\]
+Dabei muss berücksichtigt werden, dass der quadrierte Term auch eine negativen Wert besitzen kann. Dies wird in der Gleichung mit einem Plusminuszeichen $\pm$ vor der Wurzel ausgedrückt.
+
+Ein Plusminuszeichen in einem Term bedeutet, dass der Term zwei mögliche Werte hat, je nachdem ob für das Plusminuszeichen ein Plus oder ein Minus eingfügt wird. Damit kann das Radizieren einer Gleichung wie folgt ausgedrückt werden:
+
+\begin{example}
+  \textbf{Beispiel:}
+  \[\begin{eqt}
+           x^{2} &= 25        & \sqrt{\phantom{x}} \\
+    \sqrt{x^{2}} &= \pm\sqrt{25} & \\
+               x &= \pm 5
+  \end{eqt}\]
+  Die Gleichung hat die Lösungsmenge $\mathbb{L} = \{-5;5\}$.
+\end{example}
+
+Anschliessend können die Wurzeln mit den bekannten Wurzelgesetzen vereinfacht oder ausgerechnet werden. Im oben stehenden Beispiel ist so die Lösung $x = 5$ ermittelt worden.
+
+\[\begin{eqt}
+         x^{2} &= 25        & \sqrt{\phantom{x}} \\
+  \sqrt{x^{2}} &= \pm\sqrt{25} & \\
+             x &= \pm 5
+\end{eqt}\]
+
+% ------------------------------------------------------------------------------
+\subsection{Anzahl Lösungen}
+Das nach dem radizieren einer Gleichung eine Wurzel in der Gleichung vorkommen, muss berücksichtigt werden, dass Wurzeln von negativen Zahlen nicht definiert sind.
+\[\begin{eqt}
+         x^{2} &= D           & \sqrt{\phantom{x}} \\
+  \sqrt{x^{2}} &= \pm\sqrt{D} &
+\end{eqt}\]
+Je nachdem welche Zahl unter der Wurzel steht, hat die oben stehende Gleichung eine unterschiedliche Anzahl Lösungen. Es muss daher eine \textbf{Fallunterscheidung} vorgenommen werden:
+\begin{itemize}
+\item $D>0$: Ist $D$ grösser als Null, so hat die Gleichung wie oben erläutert die zwei Lösungen $\pm D$, also die Lösungsmenge $\mathbb{L} = \{-D;D\}$.
+\item $D=0$: Ist $D$ gleich Null so hat die Gleichung nur eine Lösung da $-D = D$, also die Lösungsmenge $\mathbb{L} = \{0\}$.
+\item $D<0$: Ist $D$ kleiner als Null, so hat die Gleichung keine Lösung, da die Wurzel einer negativen Zahl nicht definiert ist, also die Lösungsmenge $\mathbb{L} = \{\}$.
+\end{itemize}
+Der Term $D$ wird \textbf{Diskriminante} genannt.
+
+% ------------------------------------------------------------------------------
+\subsection{Quadratische Gleichungen mit $b=0$}
+
+Zunächst wird das Lösen von quadratischen Gleichungen mit $b = 0$ betrachtet. Diese werden auch \textbf{reinquadratische} Gleichungen, da die Variable $x$ nur als Quadrat vorkommt. Sie haben also die Form
+\[
+  ax^{2}+c = 0
+\]
+Eine reinquadratische Gleichung wird gelöst, indem zunächst $x^{2}$ isoliert wird. Dazu wird zunächst der Konstante Koeffizient $c$ auf die rechte Seite der Gleichung gebracht, anschliessend wird die Gleichung durch den Koeffizienten $a$ dividiert. Als dritter Schritt wird die Gleichung radiziert.
+\[\def\arraystretch{2}\begin{eqt}
+  ax^{2} + c &= 0            & -c \\
+      ax^{2} &= -c           & :a \\
+       x^{2} &= -\frac{c}{a} & \sqrt{\phantom{x}} \\
+           x &= \pm\sqrt{-\frac{c}{a}}
+\end{eqt}\]
+
+Schliesslich wird mit $D = -\frac{a}{c}$ gemäss Fallunterscheidung die Anzahl Lösungen ermittelt und die Lösungsmenge angegeben:
+\begin{itemize}
+\item $D > 0$: zwei Lösungen $\pm\sqrt{-\frac{c}{a}}$ also $\quad\mathbb{L} = \left\{-\sqrt{-\frac{c}{a}}; \sqrt{-\frac{c}{a}}\right\}$
+\item $D = 0:$ Null als einzige Lösung, also $\quad\mathbb{L} = \{0\}$
+\item $D < 0:$ keine Lösung, also $\quad\mathbb{L} = \{\}$
+\end{itemize}
+
+\begin{example}
+  \textbf{Beispiele:}
+  \[\begin{eqt}
+    3x^{2} - 48 &= 0     & +48 \\
+         3x^{2} &= 48    & :3  \\
+          x^{2} &= 16    & \sqrt{\phantom{x}} \\
+              x &= \pm \sqrt{16}
+  \end{eqt}\]
+  $D=16 > 0$, also gibt es zwei Lösungen. Die Lösungsmenge ist $\mathbb{L} = \{-4;4\}$.
+
+  \[\begin{eqt}
+         3x^{2} &= 0    & :3  \\
+          x^{2} &= 0    & \sqrt{\phantom{x}} \\
+              x &= \pm\sqrt{0}
+  \end{eqt}\]
+  $D=0$, also gibt es eine Lösung. Die Lösungsmenge ist $\mathbb{L} = \{0\}$.
+
+  \[\begin{eqt}
+    3x^{2} + 48 &= 0     & -48 \\
+         3x^{2} &= -48   & :3  \\
+          x^{2} &= -16   & \sqrt{\phantom{x}} \\
+              x &= \pm \sqrt{-16}
+  \end{eqt}\]
+  $D=-16 < 0$, also gibt es keine Lösung. Die Lösungsmenge ist $\mathbb{L} = \{\}$.
+\end{example}
+
+% ------------------------------------------------------------------------------
+\subsection{Quadratische Gleichungen mit Binom}
+
+Nun wird eine erst Form von allgmeinen quadratischen Gleichungen betrachtet. Wenn eine quadratische Gleichung in der folgenden Form Binom dargestellt werden kann, so kann sie ebenfalls durch radizieren gelöst werden:
+\[\begin{eqt}
+  (x+k)^{2} &= D & \sqrt{\phantom{x}} \\
+        x+k &= \pm\sqrt{D} & -k \\
+          x &= -k\pm\sqrt{D}
+\end{eqt}\]
+Damit kann abhängig von $D$ die Lösungsmenge angegeben werden:
+\begin{itemize}
+  \item $D>0$: zwei Lösungen $-k\pm\sqrt{D}$, also $\quad\mathbb{L} = \left\{-k-\sqrt{D};-k+\sqrt{D}\right\}$
+  \item $D=0$: eine Lösung $-k$, also $\mathbb{L} = \{-k\}$
+  \item $D<0$: keine Lösung, also $\mathbb{L} = \{\}$
+\end{itemize}
+
+\begin{example}
+  \textbf{Beispiel:}
+  \[\begin{eqt}
+    (x-1)^{2} &= 25 & \sqrt{\phantom{x}} \\
+          x-1 &= \pm\sqrt{25} & +1 \\
+            x &= -1\pm 5
+  \end{eqt}\]
+  Die Lösungsmenge lautet $\mathbb{L} = \{-6;4\}$.
+\end{example}
+
+% --------------------------------------------------------------------------
+\subsection{Quadratische Ergänzung}
+
+Kann eine quadratische Gleichung nicht direkt in ein Binom umgewandelt werden, wird ein Term addiert, sodass das geht. Dieser Trick wird quadratische Ergänzung genannt.
+
+\begin{example}
+  \textbf{Beispiel:} $2x^{2}+12x+2 = 0$
+  Zunächst wird die Gleichung durch den Koeffizienten von $x^{2}$ dividiert. Damit die binomische Formel angewendet werden kann, müsste der letzte Summand $9$ sein. Dies kann erreicht werden, indem $8$ zur Gleichung addiert wird:
+  \[\begin{eqt}
+    2x^{2}+12x+2 &= 0           & :2 \\
+      x^{2}+6x+1 &= 0           & -1 \\
+        x^{2}+6x &= -1          & +9 \\
+    x^{2}+6x\mathcolor{red}{+9} &= -1\mathcolor{red}{+9} & \text{zusammenfassen} \\
+      x^{2}+6x+9 &= 8           & \text{Binom} \\
+       (x+3)^{2} &= 8           & \sqrt{\phantom{x}} \\
+             x+3 &= \pm\sqrt{8} & -3 \\
+               x &= -3\pm\sqrt{8}
+  \end{eqt}\]
+\end{example}
+
+% ------------------------------------------------------------------------------
+\subsection{Allgemeine Lösungsformel}
+
+Mit Hilfe der quadratischen Ergänzung kann die allgemeine quadratische Gleichung gelöst werden. Diese hat folgende Form:
+\[
+  ax^{2}+bx+c = 0
+\]
+Die Gleichung wird zunächst durch $a$ dividiert und dann mit Hilfe der quadratischen Ergänzung in die Binom-Form gebracht und radiziert:
+\[\begin{eqt}
+                ax^{2}+bx+c &= 0 & :a \\[4mm]
+  x^{2}+\frac{b}{a}x+\frac{c}{a} &= 0 & -\frac{c}{a} \\[4mm]
+              x^{2}+\frac{b}{a}x &= -\frac{c}{a} & +\left(\frac{b}{a}\right)^{2} \\[4mm]
+  x^{2}+\frac{b}{a}x\mathcolor{red}{+\left(\frac{b}{2a}\right)^{2}} &= -\frac{c}{a}\mathcolor{red}{+\left(\frac{b}{2a}\right)^{2}} & \text{links mit Binom faktorisieren} \\[4mm]
+  \left(x+\frac{b}{2a}\right)^{2} &= -\frac{c}{a}+\left(\frac{b}{2a}\right)^{2} & \text{rechts vereinfachen} \\[4mm]
+  \left(x+\frac{b}{2a}\right)^{2} &= -\frac{c\cdot 4a}{a\cdot 4a}+\frac{b^{2}}{4a^{2}} & \text{rechts Brüche addieren} \\[4mm]
+  \left(x+\frac{b}{2a}\right)^{2} &= \frac{b^{2}-4ac}{4a^{2}} & \sqrt{\phantom{x}} \\[4mm]
+    x+\frac{b}{2a} &= \pm\sqrt{\frac{b^{2}-4ac}{4a^{2}}} & \text{Wurzel vereinfachen} \\[4mm]
+    x+\frac{b}{2a} &= \pm\frac{\sqrt{b^{2}-4ac}}{2a}
+\end{eqt}\]
+Der letzte Schritt ist erlaubt, da im Nenner ein Quadrat vorhanden ist. Der Term unter der Wurzel gibt an, wie viele Lösungen die Gleichung hat. Damit verdient dieser Term ein eigenes Formelzeichen $D$ und eine eigene Bezeichnung: Er wird \textbf{Diskriminante} genannt.
+\[
+  D = b^{2}-4ac
+\]
+Um die Lösungen zu erhalten, muss aber $x$ noch vollständig isoliert werden:
+\[\begin{eqt}
+  x+\frac{b}{2a} &= \pm\sqrt{\frac{b^{2}-4ac}{4a^{2}}} & -\frac{b}{2a} \\[4mm]
+  x &=  -\frac{b}{2a}\pm\frac{\sqrt{b^{2}-4ac}}{2a} & \text{Brüche addieren} \\[4mm]
+  x &= \frac{-b\pm\sqrt{b^{2}-4ac}}{2a}
+\end{eqt}\]
+
+Damit ist die quadratische Gleichung allgemein gelöst:
+
+\begin{theorem}
+  \textbf{Lösungen der quadratischen Gleichung}. Für die allgemeine quadratische Gleichung
+  \[
+    ax^{2}+bx+c = 0
+  \]
+  gibt die Diskriminante $D = b^{2}-4ac$ an, wie viele Lösungen vorhanden sind:
+  \begin{itemize}
+  \item $D>0$ Die Gleichung hat zwei Lösungen:
+  \[
+    \frac{-b\pm\sqrt{b^{2}-4ac}}{2a}
+  \]
+  \item $D=0$ Die Gleichung hat eine Lösung:
+  \[
+    -\frac{b}{2a}
+  \]
+  \item $D<0$ Die Gleichung hat keine Lösung.
+  \end{itemize}
+\end{theorem}

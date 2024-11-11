@@ -1,0 +1,43 @@
+\documentclass[parskip=half]{scrartcl}
+\input{../../ros-config.tex}
+
+\usepackage{scrlayer-scrpage}
+\pagestyle{scrheadings}
+
+\KOMAoption{DIV}{12}
+\KOMAoption{toc}{listof}
+\DeclareTOCStyleEntry[entryformat=\bfseries,beforeskip=2pt,linefill=\TOCLineLeaderFill]{tocline}{section}
+\setcounter{tocdepth}{1}
+
+\title{Gleichungen}
+\author{Stefan Rothe}
+
+\date{11.11.2024}
+
+\newpairofpagestyles{firstpage}{%
+  \cofoot{\textcopyright{} Gymnasium Kirchenfeld\\Dieses Skript steht unter einer Creative Commons Attribution 4.0 International-Lizenz.\\(CC BY 4.0)}
+}
+
+\makeatletter
+\lohead{\@title}
+\rohead{\@date}
+\cofoot{\thepage}
+\rofoot{}
+\makeatother
+
+\begin{document}
+  \maketitle
+  \thispagestyle{empty}
+  \begin{center}
+    \includegraphics[height=4cm]{Waage.pdf}
+    \includegraphics[width=0.5\textwidth]{Erste Gleichung.png}
+  \end{center}
+  \tableofcontents
+  \clearpage
+
+  \input{Begriffe}
+  \input{Äquivalenzumformungen}
+  \input{Polynome}
+  \input{Lineare Gleichungen}
+  \input{Quadratische Gleichungen}
+\end{document}

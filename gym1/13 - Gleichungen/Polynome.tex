@@ -1,0 +1,76 @@
+\newpage
+\section{Polynome}
+
+% ------------------------------------------------------------------------------
+\subsection{Definition}
+
+Polynome sind eine spezielle Kategorie von Termen. Ein Polynom besteht aus einer Summe von Termen, die wiederum aus einer Zahl und einer natürlichen Potzenz einer bestimmten Variable bestehen. Die allgemeine Form eines Polynoms sieht so aus:
+\[
+  a_{n}x^{n} + a_{n-1}x^{n-1} + \cdots + a_{2}x^{2} + a_{1}x + a_{0}
+\]
+
+Dabei ist $a_{k}$ die Zahl, welche mit der $k$-ten Potenz der Variable multipliziert werden. Die Zahlen $a_{k}$ werden \textbf{Koeffizienten} genannt. Die Summanden werden in absteigender Reihenfolge der Potenzen angeordnet. Summanden, bei welchen der Koeffizient gleich Null ist, werden weggelassen.
+
+\begin{example}
+  \textbf{Beispiele:} Die folgenden Terme sind Polynome:
+  \[
+    5 \qquad\qquad k+3 \qquad\qquad 5x^{2}-3x+25 \qquad\qquad z^{4}-\frac{1}{2}
+  \]
+  Diese Terme sind keine Polynome:
+  \[
+    \frac{1}{x} \qquad\qquad \sqrt{k} \qquad\qquad x\cdot y
+  \]
+\end{example}
+
+Polynome sind eine sehr wichtige Kategorie von Termen, welche später bei Gleichungen und Funktionen wieder auftreten.
+
+\subsection{Grad und spezielle Bezeichnungen}
+
+Der \textbf{Grad} eines Polynoms ist die höchste Potenz der Variable, welche im Polynom vorkommt.
+
+\begin{example}
+  \textbf{Beispiel:} $x^{3}+2x$ ist ein Polynom dritten Grades, $x^{5}+x^{4}$ ist ein Polynom fünften Grades.
+\end{example}
+
+Für die Grade 0 bis 3 existieren spezielle Bezeichnungen:
+\begin{center}
+  \def\arraystretch{1.1}
+  \newcolumntype{R}{>{\raggedleft\arraybackslash}X}
+  \begin{tabularx}{0.9\textwidth}{XXR}
+  \toprule
+    \textbf{Grad} & \textbf{Bezeichnung} & \textbf{Beispiel} \\
+  \midrule
+    0 & konstant & $42$ \\
+  \midrule
+    1 & linear & $7x-23$ \\
+  \midrule
+    2 & quadratisch & $-5x^{2}+45x-92$ \\
+  \midrule
+    3 & kubisch & $x^{3}+x^{2}-50x-34$ \\
+  \bottomrule
+  \end{tabularx}
+\end{center}
+
+Wenn also beispielsweise von einem «quadratischen Term» oder einer «linearen Gleichung» die Rede ist, ist immer ein Polynom des entsprechenden Grades gemeint.
+
+% ------------------------------------------------------------------------------
+\subsection{Polynomgleichungen}
+
+
+Eine Polynomgleichung ist eine Gleichung, bei welcher auf beiden Seiten des Gleichheitszeichens ein Polynom steht.
+
+Eine Polynomgleichung kann so umgeformt werden, dass auf der einen Seite nur die Null steht:
+\[
+  a_{n}x^{n} + a_{n-1}x^{n-1} + \cdots + a_{2}x^{2} + a_{1}x + a_{0} = 0
+\]
+
+% ------------------------------------------------------------------------------
+\subsection{Fundamentalsatz der Algebra}
+
+Über die Anzahl Lösungen von Polynomgleichungen gibt es einen wichtigen Satz, also eine bewiesene Aussage:
+
+\begin{theorem}
+  \textbf{Fundamentalsatz der Algebra.} Eine Polynomgleichung $n$-ten Grades ($n > 0$) hat in den reellen Zahlen maximal $n$ Lösungen.
+\end{theorem}
+
+In den nächsten Kapiteln wird das Lösen von linearen und quadratischen Polynomgleichungen ausführlich betrachtet.
