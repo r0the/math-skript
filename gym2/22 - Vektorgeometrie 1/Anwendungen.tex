@@ -102,13 +102,14 @@ Damit ergibt sich für den Umfang des Dreiecks:
 \subsection{Schwerpunkt eines Dreiecks}
 \textbf{Aufgabe:} Bestimmen den Schwerpunkt der Dreiecks $\triangle ABC$ mit
 \[
-  \pxy[A]{2,2} \qquad \pxy[B]{9,1} \qquad \pxy[C]{6,5}
+  \pxy[A]{2,2} \qquad \pxy[B]{9,1} \qquad \pxy[C]{7,4}
 \]
 \begin{center}
   \begin{tikzpicture}
     \tkzInit[xmin=0,xmax=12,ymin=0,ymax=5]
     \tkzAxeXY[]
     \tkzGrid[color=lightgray]
+    \tkzDefPoint(0,0){O}
     \tkzDefPoint(2,2){A}
     \tkzDefPoint(9,1){B}
     \tkzDefPoint(7,4){C}
@@ -126,7 +127,7 @@ Damit ergibt sich für den Umfang des Dreiecks:
     \tkzLabelSegment[above left](O,A){$\vv{OA}$}
     \tkzLabelSegment[below right,pos=0.6](O,B){$\vv{OB}$}
     \tkzLabelSegment[red,above left](A,M){$\vv{AM}$}
-    \tkzLabelSegment[red,above right,pos=0.3](B,C){$\vv{b}$}
+    \tkzLabelSegment[red,above right,pos=0.3](B,C){$\vv{a}$}
 
     \tkzDrawPoints(A,B,C,M,S)
     \tkzLabelPoint[above left](A){$A$}
@@ -136,13 +137,13 @@ Damit ergibt sich für den Umfang des Dreiecks:
     \tkzLabelPoint[above right](S){$S$}
   \end{tikzpicture}
 \end{center}
-Zunächst wird der Vektor $\vv{b}$ ermittelt, welcher die Seite $b$ beschreibt.
+Zunächst wird der Vektor $\vv{a}$ ermittelt, welcher die Seite $b$ beschreibt.
 \[
-  \vv{b} = \vv{BC} = \vxy{7-9,4-1} = \vxy{-2,3} \\
+  \vv{a} = \vv{BC} = \vxy{7-9,4-1} = \vxy{-2,3}
 \]
-Nun kann der Mittelpunkt der Seite $b$ berechnet werden:
+Nun kann der Mittelpunkt der Seite $a$ berechnet werden:
 \[
-  \vv{OM} = \vv{OB}+\tfrac{1}{2}\vv{b} = \vxy{9,1}+\tfrac{1}{2}\vxy{-2,3} = \vxy{8,2.5}
+  \vv{OM} = \vv{OB}+\tfrac{1}{2}\vv{a} = \vxy{9,1}+\tfrac{1}{2}\vxy{-2,3} = \vxy{8,2.5}
 \]
 Jetzt wird der Vektor $\vv{AM}$ berechnet, welcher die Seitenhalbierende beschreibt.
 \[
@@ -171,7 +172,6 @@ Der Punkt $C$ erhält man, indem der Punkt $B$ um den Vektor $\vv{b}$ verschiebt
   \vv{OC} = \vv{OB} + \vv{b} = \vxy{8,1} + \vxy{3,2} = \vxy{8+3,1+2} = \vxy{11,3}
 \]
 Also ist der vierte Punkt des Parallelogramms $\pxy[C]{11,3}$.
-
 \begin{center}
   \begin{tikzpicture}
     \tkzInit[xmin=0,xmax=12,ymin=0,ymax=5]
@@ -208,7 +208,6 @@ Also ist der vierte Punkt des Parallelogramms $\pxy[C]{11,3}$.
     \tkzLabelPoint[above](D){$D$}
   \end{tikzpicture}
 \end{center}
-
 Der Umfang des Parallelogramms ergibt sich, indem die Längen von $\vv{a}$ und $\vv{b}$ addiert und verdoppelt werden:
 \[
   U = 2\left(|\vv{a}| + |\vv{b}|\right) = 2\left(\sqrt{5^{2}+(-1)^2}+\sqrt{3^{2}+2^{2}}\right) \approx 2\cdot 8.704 \approx 12.310
