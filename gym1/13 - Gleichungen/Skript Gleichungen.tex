@@ -12,7 +12,7 @@
 \title{Gleichungen}
 \author{Stefan Rothe}
 
-\date{11.11.2024}
+\date{13.11.2024}
 
 \newpairofpagestyles{firstpage}{%
   \cofoot{\textcopyright{} Gymnasium Kirchenfeld\\Dieses Skript steht unter einer Creative Commons Attribution 4.0 International-Lizenz.\\(CC BY 4.0)}
@@ -25,11 +25,45 @@
 \rofoot{}
 \makeatother
 
+\NewDocumentCommand{\balance}{m}{
+\begin{tikzpicture}[
+    scale=#1,
+    very thick,
+    balance style/.style={draw=blue, fill=lightblue},
+    block style/.style={draw=red, fill=lightred}
+  ]
+  % Aufhängungen der Schalen
+  \draw[blue,ultra thick] (-8,1.4) -- (-6,4);
+  \draw[blue,ultra thick] (-4,1.4) -- (-6,4);
+  \draw[blue,ultra thick] (8,1.4) -- (6,4);
+  \draw[blue,ultra thick] (4,1.4) -- (6,4);
+
+  % Waage - Balen
+  \fill[balance style] (-1,0) -- (1,0) -- (0,4) -- cycle; % Dreieck-Basis
+  \draw[balance style] (-6.2,3.8) rectangle (6.2,4.2);
+  \fill[balance style] (-6,4) circle (0.1);
+  \fill[balance style] (6,4) circle (0.1);
+  \fill[balance style] (0,4) circle (0.1);
+
+  % Blöcke in den Schalen
+  \draw[block style] (-7,1.2) rectangle (-6,2.4);
+  \draw[block style] (-6,1.2) rectangle (-5,2.4);
+  \draw[block style] (7,1.2) rectangle (6,2.4);
+  \draw[block style] (6,1.2) rectangle (5,2.4);
+
+  % Schalen
+  \fill[balance style] (-8,1) rectangle (-4,1.4);
+  \fill[balance style] (8,1) rectangle (4,1.4);
+\end{tikzpicture}
+}
+
 \begin{document}
   \maketitle
-  \thispagestyle{empty}
+  \thispagestyle{firstpage}
   \begin{center}
-    \includegraphics[height=4cm]{Waage.pdf}
+    \balance{0.75}
+    \vspace{5mm}
+
     \includegraphics[width=0.5\textwidth]{Erste Gleichung.png}
   \end{center}
   \tableofcontents
