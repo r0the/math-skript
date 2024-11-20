@@ -182,8 +182,13 @@
 \tikzset{circled/.style={shape=circle,draw,inner sep=2pt}}
 \NewDocumentCommand\circled{m}{\tikz[baseline=(char.base)]{\node[circled] (char) {#1};}}
 
+\makeatletter
 % Umgebung eqt
-\NewDocumentEnvironment{eqt}{}{\begin{array}{>{\displaystyle}r@{\hspace{0.2cm}}>{\displaystyle}l@{\hspace{1cm}}|l}}{\end{array}}
+\newcounter{@eqtrownumber}
+\newcommand\eqtequiv{\stepcounter{@eqtrownumber}\ifnum\value{@eqtrownumber}=1\else\Leftrightarrow\qquad\qquad\fi}
+\makeatother
+\NewDocumentEnvironment{eqt}{}{\begin{array}{@{\eqtequiv}>{\displaystyle}r@{\hspace{2mm}}>{\displaystyle}l@{\hspace{1cm}}|l}}{\end{array}}
+\preto\eqt{\setcounter{@eqtrownumber}{0}}
 
 % Makro \result, um das Resultat von Berechnungen hervorzuheben.
 \NewDocumentCommand\result{m}{\textcolor{red}{#1}}
