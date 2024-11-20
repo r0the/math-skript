@@ -3,30 +3,57 @@
 
 % ------------------------------------------------------------------------------
 \subsection{Begriff}
-Gleichungen dürfen nur nach bestimmten Regeln umgeformt werden, sodass die resultierende Gleichung \textbf{äquivalent} zur Ausgangsgleichung ist.
+Zwei Gleichungen heissen \textbf{äquivalent}, wenn sie die gleiche Lösungsmenge haben. Als Symbol für die Äquivalenz benutzten wir einen Doppelpfeil: $\Leftrightarrow$.
+
+\begin{example}
+  \textbf{Beispiel:} Die Gleichungen
+  \[
+     2x=4 \\
+  \Leftrightarrow	 \\ -x = -2 \\
+  \Leftrightarrow \\  x = 2
+  \]
+  sind zueinander äquivalent, da sie alle die selbe Lösungsmenge $ \mathbb{L} = \{ 2 \}$ haben. Hingegen hat die Gleichung
+  \[
+  x^{2} = 4
+  \]
+	die Lösungsmenge $ \mathbb{L} = \{ -2; 2 \}$. Die letzte Gleichung ist damit \textbf{nicht} äquivalent zu den drei obigen.
+\end{example}
+
+Beim Umformen einer Gleichung dürfen Sie nur solche Umformungen durchführen, welche die Lösungsmenge der Gleichung nicht verändern.
+Solche Umformungen werden \textbf{Äquivalenzumformungen} genannt.
 
 Eine Gleichung kann man sich als Balkenwaage vorstellen. Wenn die Gleichung eine wahre Aussage ist, sind die beiden Seiten ausbalanciert. Es sind nur solche Veränderungen erlaubt, welche die Balance der Waage erhalten.
 \begin{center}
-  \includegraphics[height=4cm]{Waage.pdf}
+  \balance{0.5}
 \end{center}
 
-Anhand der wage kann man sich überlegen, welche Änderungen erlaubt sind:
+Anhand der Waage kann man sich überlegen, welche Änderungen erlaubt sind:
 
-\begin{itemize}
-  \item eine Seite umschichten
+\begin{enumerate}
+  \item eine Seite umsortieren
   \item auf beiden Seiten das Gleiche hinzufügen oder entfernen
   \item beide Seiten verdoppeln oder halbieren
   \item beide Seiten vertauschen
-\end{itemize}
+\end{enumerate}
 
 Genau so können auch Gleichungen umgeformt werden:
 
-\begin{itemize}
+\begin{enumerate}
   \item Die Terme auf jeder Seite der Gleichung dürfen umgeformt werden (siehe Termumformungen).
   \item Auf beiden Seiten einer Gleichung kann der gleiche Term addiert oder subtrahiert werden.
-  \item Beide Seiten einer Gleichung können mit dem gleichen Term multipliziert oder dividiert werden.
+  \item Beide Seiten einer Gleichung können mit dem gleichen Term multipliziert oder dividiert werden. Dieser Term darf nicht Null sein.
   \item Die beiden Seiten einer Gleichung dürfen vertauscht werden.
-\end{itemize}
+\end{enumerate}
+
+% ------------------------------------------------------------------------------
+\subsection{Ziel}
+Wir dürfen Gleichungen mit Hilfe von Äquivalenzumformungen \textit{beliebig} umformen. Doch wozu ist das gut?
+
+Wir wollen die Lösungsmenge bestimmen, d.h. eine Gleichung lösen. Um Gleichungen zu lösen, werden diese so umgeformt, dass die Variable, für deren Lösung wir uns interessieren,  \textbf{isoliert} auf einer Seite der Gleichung steht. Das bedeutet, dass Gleichungen in die folgende Form gebracht werden:
+\[
+x = \square
+\]
+wobei $\square$ ein Term ist, der $x$ nicht enthält. Dann kann die Lösung für $x$ abgelesen werden, indem der Wert des Terms bestimmt wird.
 
 % ------------------------------------------------------------------------------
 \subsection{Umformungsprotokoll}
@@ -34,15 +61,17 @@ Genau so können auch Gleichungen umgeformt werden:
 Damit die an einer Gleichung vorgenommen Umformungen nachvollzogen werden können, wird ein \textbf{Umformungsprotokoll} geführt. Dazu wird rechts der Gleichung, durch eine vertikale Linie abgetrennt, jeweils der Umformungsschritt angegeben.
 \[\def\arraystretch{2}\begin{eqt}
   2x+6 &= 0  & -6 \\
-    2x &= -6 & :2 \\
-     x &= -\frac{6}{2} & \text{kürzen} \\
-     x &= -3
+   2x &= -6 & :2 \\
+    x &= -\frac{6}{2} & \text{kürzen} \\
+    x &= -3
 \end{eqt}\]
+Durch die Äquivalenzumformungen haben wir herausgefunden, dass alle diese Gleichungen die Lösungsmenge $ \mathbb{L} = \{ -3 \}$ haben.
 
 % ------------------------------------------------------------------------------
-\subsection{Terme umformen}
+\subsection{Termumformungen}
+Die Reihenfolge bzw. die Form eines Terms darf verändert werden. Im Bild der Balkenwaage entspricht dies einer Veränderung der Anordnung der Gewichte.
 
-Auf jeder Seite der Gleichung befindet sich ein Term. Diese dürfen mit den bekannten Regeln umgeformt werden.
+Auf jeder Seite der Gleichung befindet sich ein Term. Diese dürfen (jeder für sich) mit den bekannten Regeln umgeformt werden.
 
 \begin{example}
   \textbf{Beispiel:} Hier werden die Terme auf beiden Seiten zunächst ausmultipliziert. Danach werden auf der linken Seite die Summanden zusammengefasst.
@@ -56,28 +85,41 @@ Auf jeder Seite der Gleichung befindet sich ein Term. Diese dürfen mit den beka
 % ------------------------------------------------------------------------------
 \subsection{Addieren oder Subtrahieren eines Terms}
 
-Auf beiden Seiten der Gleichung darf der gleiche Term addiert oder subtrahiert werden. Dabei wird der Term auf beiden Seiten der Gleichung an den vorhandenen Term angefügt. Anschliessend können die Summanden auf beiden Seiten zusammengefasst werden.
+Auf beiden Seiten der Gleichung darf der gleiche Term addiert oder subtrahiert werden. Im Bild der Balkenwaage entspricht dies dem Hinzufügen oder Wegnehmen von gleichen Gewichten auf jeder Seite.
+
 
 \begin{example}
   \textbf{Beispiel:} Hier wird auf beiden Seiten der Gleichung $4x^{2}$ und $4x$ subtrahiert. Damit wird $x^{2}$ vollständig aus der Gleichung entfernt und $x$ auf die rechte Seite der Gleichung gebracht.
   \[\begin{eqt}
     4x^{2}+4x-3 &= 4x^{2}-20x & -4x^{2}-4x \\
-    4x^{2}+4x-3\mathcolor{red}{-x^{2}-4x} &= 4x^{2}-20x\mathcolor{red}{-x^{2}-4x} & \text{zusammenfassen} \\
+    4x^{2}+4x-3\mathcolor{red}{-4x^{2}-4x} &= 4x^{2}-20x\mathcolor{red}{-4x^{2}-4x} & \text{zusammenfassen} \\
              -3 &= -24x
   \end{eqt}\]
 \end{example}
 
+Im Beispiel ist es sehr sinnvoll, den quadratischen Term $x^2$ zu eleminieren und anschliessend $x$ auf eine Seite der Gleichung zu bringen. Im letzten Schritt, kann durch $-3$ geteilt werden.
+
 % ------------------------------------------------------------------------------
 \subsection{Multiplizieren oder Dividieren mit einem Term}
 
-Beide Seiten der Gleichung dürfen mit dem gleichen Term multipliziert oder dividiert werden. Dabei muss dieser \textbf{ungleich Null} sein. Dabei wird \textbf{jeder Summand} auf beiden Seiten der Gleichung mit dem Term multipliziert beziehungsweise durch ihn dividiert.
+Beide Seiten der Gleichung dürfen mit dem gleichen Term multipliziert oder dividiert werden. Im Bild der Balkenwaage entspricht dies dem Halbieren, Verdoppeln oder Vervielfachen beider Seiten.
+
+Wichtig ist, dass der Term, mit dem multipliziert wird \textbf{ungleich Null} ist, sonst wird der Wahrheitswert der Gleichung verändert.
+
+Der Term, mit dem multipliziert wird, wird jeweils mit dem gesamten Term beider Seiten multipliziert. Nach dem Distributivgesetz muss deshalb \textbf{jeder einzelne Summand} auf beiden Seiten der Gleichung mit dem Term multipliziert beziehungsweise durch ihn dividiert.
 
 \begin{example}
   \textbf{Beispiel:} Hier werden beide Seiten der Gleichung mit dem kgV der Nenner multipliziert, um Brüche zu entfernen.
   \[\begin{eqt}
     \frac{x}{4}+\frac{1}{5} &= \frac{x}{2}+\frac{x}{6}                 & \cdot \kgV(4,5,2,6) = 60 \\[4mm]
+    \mathcolor{red}{60\cdot} \Big(  \frac{x}{4}+\frac{1}{5} \Big) &=  \mathcolor{red}{60\cdot} \Big( \frac{x}{2}+\frac{x}{6} \Big) & \text{Distributivgesetz} \\[3mm]
     \frac{\mathcolor{red}{60\cdot} x}{4}+\frac{\mathcolor{red}{60\cdot} 1}{5} &= \frac{\mathcolor{red}{60\cdot} x}{2}+\frac{\mathcolor{red}{60\cdot} x}{6} & \text{kürzen} \\[3mm]
-    15x+12 &= 30x+10x
+    15x+12 &= 30x+10x & \text{zusammenfassen} \\
+    15x+12 &= 45x & -15x  \text{  ($x$ auf eine Seite bringen)}  \\
+    12 &= 30x & :30 \\
+    \frac{12}{30} &= x & \text{kürzen} \\[3mm]
+    \frac{2}{5} &= x
+
   \end{eqt}\]
 \end{example}
 
@@ -88,17 +130,32 @@ Beide Seiten der Gleichung dürfen mit dem gleichen Term multipliziert oder divi
   \[\begin{eqt}
     -3 &= -24x & \cdot(-1) \\
     \textcolor{red}{(-1)\cdot}(-3) &= \textcolor{red}{(-1)\cdot}(-24x)\ & \text{Klammern ausrechnen} \\
-             3 &= 24x
+             3 &= 24x & : 24 \\
+             \frac{3}{24} &=x & \text{kürzen} \\[3mm]
+             \frac{1}{8} &= x
   \end{eqt}\]
 \end{example}
 
-Ist auf einer Seite der Gleichung ein Mehrfaches der Variable vorhanden, so kann die Gleichung durch diesen Faktor dividiert werden, um die Variable zu isolieren. Dabei wird jeder Summand auf beiden Seiten der Gleichung durch den Faktor dividiert. Anschliessend kann gekürzt werden:
+Warum ist es wichtig, dass der Faktor oder Divisor nicht Null ist? Schauen wir uns Beispiele an.
+\begin{example}
+	\textbf{Multiplikation mit Null:} Die Gleichung $2=0$ ist eine falsche Aussage und hat dementsprechend die Lösungsmenge $\mathbb{L}=\{\}$. Wir multiplizieren beide Seiten mit $x-2$. Das ist aber nur erlaubt, wenn $x\neq 2$ ist, denn sonst multiplizieren wir mit 0.
+	\[\begin{eqt}
+		2 &= 0 & \mathbb{L}=\{2\} ,\text{wir multiplizieren mit } (x-2), \text{aber nur für } x\neq 2 \\
+		(x-2)\cdot 2 &= (x-2) \cdot 0 & \\
+		2x-4 &=  0 & +4 \\
+		2x &=4 & :2 \\
+		x&=2 & \text{Lösungsmenge wäre } \mathbb{L}=\{2\}, \text{ aber $x\neq2$}
+	\end{eqt}\]
+\end{example}
 
 \begin{example}
-  \textbf{Beispiel:} Hier werden beide Seiten der Gleichung durch $24$ dividiert, um die Variable $x$ vollständig zu isolieren.
-  \[\begin{eqt}
-    3 &= 24x  & :24 \\[3mm]
-    \frac{3}{\textcolor{red}{24}} &= \frac{24x}{\textcolor{red}{24}} & \text{kürzen} \\[4mm]
-    \frac{1}{8} &= x
-  \end{eqt}\]
+	\textbf{Division durch Null:} Die Gleichung $x^2=4$ hat die Lösungsmenge $\mathbb{L}=\{-2; 2\}$. Wir formen um
+	\[\begin{eqt}
+		x^2 &= 4 & -4 \\
+		x^2-4 &= 0 & \\
+		(x-2)(x+2) &= 0 &  :(x+2) \text{ für $x\neq -2$} \\
+		x-2 &= 0 & +2 \\
+		x&=2 & \text{Lösungsmenge wäre } \mathbb{L}=\{2\}
+	\end{eqt}\]
+	Die Lösungsmenge hat sich verändert, da $x=-2$ eine Lösung war. Aber wenn $x=-2$ ist, dann teilen wir bei $:(x+2)$ durch 0.
 \end{example}
