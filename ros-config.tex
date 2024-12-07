@@ -67,7 +67,7 @@
 \usepackage{multicol}
 
 % Rahmen
-\usepackage{mdframed}
+\usepackage{tcolorbox}
 
 % Tabellen
 \usepackage{booktabs}
@@ -109,14 +109,22 @@
 \usepackage[fleqn]{amsmath}
 \usepackage{amssymb}
 
-% 3.3 Vektoren
-% ------------
+% eigene Operatoren
+\DeclareMathOperator{\ggT}{ggT}
+\DeclareMathOperator{\kgV}{kgV}
+\DeclareMathOperator{\lb}{lb}
+
+% 3.3 Punkte und Vektoren
+% -----------------------
 \usepackage[b]{esvect}
 
 \makeatletter
 % Koordinatenschreibweise für 2D-Punkte
-\NewDocumentCommand\pxy@internal{mmm}{\mathopen{}\left(#1/#2\right)\mathclose{}}
+\NewDocumentCommand\pxy@internal{mmm}{\mathopen{}\left(#1/\mathopen{}#2\mathclose{}\right)\mathclose{}}
 \NewDocumentCommand\pxy{o>{\SplitArgument{2}{,}}m}{\IfNoValueF{#1}{#1}\pxy@internal #2}
+% Koordinatenschreibweise für 3D-Punkte
+\NewDocumentCommand\pxyz@internal{mmmm}{\mathopen{}\left(#1/\mathopen{}#2\mathclose{}/\mathopen{}#3\mathclose{}\right)\mathclose{}}
+\NewDocumentCommand\pxyz{o>{\SplitArgument{3}{,}}m}{\IfNoValueF{#1}{#1}\pxyz@internal #2}
 
 % Komponentenschreibweise für 2D-Vektoren
 \NewDocumentCommand\vxy@internal{mmm}{\begin{pmatrix}#1\\#2\end{pmatrix}}
@@ -125,7 +133,17 @@
 \NewDocumentCommand\vxyz{mmm}{\begin{pmatrix}#1\\#2\\#3\end{pmatrix}}
 \makeatother
 
-% Lineare Gleichungssysteme
+% 3.4 Umgebung eqt für Äquivalenzumformungen von Gleichungen
+% ----------------------------------------------------------
+\makeatletter
+\newcounter{@eqtrownumber}
+\def\eqtequiv{\stepcounter{@eqtrownumber}\ifnum\value{@eqtrownumber}=1\else\Leftrightarrow\qquad\qquad\fi}
+\makeatother
+\NewDocumentEnvironment{eqt}{}{\begin{array}{@{\eqtequiv}>{\displaystyle}r@{\hspace{2mm}}>{\displaystyle}l@{\hspace{1cm}}|l}}{\end{array}}
+\preto\eqt{\setcounter{@eqtrownumber}{0}}
+
+% 3.5 Lineare Gleichungssysteme
+% -----------------------------
 \usepackage{systeme}
 \sysdelim||
 
@@ -136,10 +154,6 @@
 \usepackage{longdivision}
 \longdivisionkeys{style=german}
 
-% eigene Operatoren
-\DeclareMathOperator{\ggT}{ggT}
-\DeclareMathOperator{\kgV}{kgV}
-\DeclareMathOperator{\lb}{lb}
 
 % muss wegen der Konfiguration vor tikz eingebunden werden
 % Mit table können Tabellenzellen eingefärbt werden
@@ -182,24 +196,48 @@
 \tikzset{circled/.style={shape=circle,draw,inner sep=2pt}}
 \NewDocumentCommand\circled{m}{\tikz[baseline=(char.base)]{\node[circled] (char) {#1};}}
 
-\makeatletter
-% Umgebung eqt
-\newcounter{@eqtrownumber}
-\newcommand\eqtequiv{\stepcounter{@eqtrownumber}\ifnum\value{@eqtrownumber}=1\else\Leftrightarrow\qquad\qquad\fi}
-\makeatother
-\NewDocumentEnvironment{eqt}{}{\begin{array}{@{\eqtequiv}>{\displaystyle}r@{\hspace{2mm}}>{\displaystyle}l@{\hspace{1cm}}|l}}{\end{array}}
-\preto\eqt{\setcounter{@eqtrownumber}{0}}
-
 % Makro \result, um das Resultat von Berechnungen hervorzuheben.
 \NewDocumentCommand\result{m}{\textcolor{red}{#1}}
 
 % Makro \extra, um schwierige Zusatzaufgaben zu markieren
 \NewDocumentCommand\extra{}{$\bigstar\quad$}
 
-\newmdenv[,skipabove=\parskip,outerlinewidth=1.5pt]{example}
-\newmdenv[backgroundcolor=notecolor,skipabove=\parskip,outerlinewidth=1.5pt]{note}
-\newmdenv[backgroundcolor=theoremcolor,skipabove=\parskip,outerlinewidth=1.5pt]{theorem}
-\newmdenv[backgroundcolor=theoremcolor,outerlinewidth=1.5pt]{instructions}
+\NewTColorBox{example}{}{
+  colback=white,
+  colframe=black,
+  arc=0mm,
+  before skip=2mm,
+  left=1mm,
+  right=1mm,
+  boxrule=1pt,
+}
+\NewTColorBox{note}{}{
+  colback=notecolor,
+  colframe=black,
+  arc=0mm,
+  before skip=2mm,
+  left=1mm,
+  right=1mm,
+  boxrule=1pt,
+}
+\NewTColorBox{theorem}{}{
+  colback=theoremcolor,
+  colframe=black,
+  arc=0mm,
+  before skip=2mm,
+  left=1mm,
+  right=1mm,
+  boxrule=1pt,
+}
+\NewTColorBox{instructions}{}{
+  colback=notecolor,
+  colframe=black,
+  arc=0mm,
+  before skip=2mm,
+  left=1mm,
+  right=1mm,
+  boxrule=1pt,
+}
 
 \usepackage{fontawesome5}
 \def\digital{\faLaptop{} }
