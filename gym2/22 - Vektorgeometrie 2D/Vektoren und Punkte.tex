@@ -8,7 +8,6 @@ Ein \textbf{Punkt} befindet sich an einem bestimmten Ort und er hat keine Richtu
 \[
   \pxy[P]{x,y}
 \]
-
 Ein \textbf{Vektor} kann beliebig verschoben werden, er hat also keine feste Position, aber er zeigt in eine bestimmte Richtung. Ein Vektor $\vv{v}$ mit den \textbf{Komponenten} $v_{x}$ und $v_{y}$ wird folgendermassen geschrieben:
 \[
   \vv{v} = \vxy{v_{x},v_{y}}
@@ -23,9 +22,8 @@ Wird ein Vektor $\vv{OP}$ mit dem Ursprung $O$ als Anfangspunkt und dem Punkt $\
 \]
 \begin{center}
   \begin{tikzpicture}
-    \tkzInit[xmin=0,xmax=8,ymin=0,ymax=4]
-    \tkzAxeXY[]
-    \tkzGrid[color=lightgray]
+    \tkzInit[xmin=-0.5,xmax=7,ymin=-0.5,ymax=3]
+    \tkzDrawXY
     \tkzDefPoint(0,0){O}
     \tkzDefPoint(6,2){P}
 
@@ -33,7 +31,7 @@ Wird ein Vektor $\vv{OP}$ mit dem Ursprung $O$ als Anfangspunkt und dem Punkt $\
     \tkzLabelSegment[red,above left](O,P){$\vv{OP}=\vxy{x,y}$}
 
     \tkzDrawPoints(O,P)
-    \tkzLabelPoint[above right](O){$O$}
+    \tkzLabelPoint[above left](O){$O$}
     \tkzLabelPoint[above right](P){$P\pxy{x,y}$}
   \end{tikzpicture}
 \end{center}
@@ -49,12 +47,10 @@ Werden Vektoren als Verschiebungen aufgefasst, so verschiebt der Ortsvektor den 
 \subsection{Vektor zwischen Punkten}
 
 Ein Vektor kann durch einen Anfangspunkt $A$ und einen Endpunkt $B$ bestimmt werden.
-
 \begin{center}
   \begin{tikzpicture}
-    \tkzInit[xmin=0,xmax=12,ymin=0,ymax=4]
-    \tkzAxeXY[]
-    \tkzGrid[color=lightgray]
+    \tkzInit[xmin=-0.5,xmax=10,ymin=-0.5,ymax=4]
+    \tkzDrawXY
     \tkzDefPoint(0,0){O}
     \tkzDefPoint(2,3){A}
     \tkzDefPoint(9,1){B}
@@ -69,7 +65,8 @@ Ein Vektor kann durch einen Anfangspunkt $A$ und einen Endpunkt $B$ bestimmt wer
     \tkzLabelSegment[red,above right](A,B){$\vv{AB}$}
 
     \tkzDrawPoints(A,B)
-    \tkzLabelPoint[left](A){$A\pxy{x_{A},y_{A}}$}
+    \tkzLabelPoints[above left](O)
+    \tkzLabelPoint[above](A){$A\pxy{x_{A},y_{A}}$}
     \tkzLabelPoint[right](B){$B\pxy{x_{B},y_{B}}$}
   \end{tikzpicture}
 \end{center}
@@ -78,15 +75,12 @@ Der Vektor $\vv{AB}$, welcher von Punkt $A$ nach Punkt $B$ zeigt, kann als Subtr
   \vv{AB} = \vv{OB} - \vv{OA} = \vxy{x_{B},y_{B}} - \vxy{x_{A},y_{A}} = \vxy{x_{B}-x_{A},y_{B}-y_{A}}
 \]
 Daraus lässt sich schliessen, dass sich die Komponenten des Vektors $\vv{AB}$ durch Subtraktion der Koordinaten von Punkt $B$ und Punkt $A$ ergeben.
-
-
 \begin{theorem}
-  \textbf{Vektor aus Punkten.} Hat ein Vektor $\vv{AB}$ den Anfangspunkt $\pxy[A]{x_{A},y_{A}}$ und den Endpunkt $\pxy[B]{x_{B},y_{B}}$ besitzt, so lautet seine Komponentendarstellung
+  \textbf{Vektor zwischen Punkten.} Hat ein Vektor $\vv{AB}$ den Anfangspunkt $\pxy[A]{x_{A},y_{A}}$ und den Endpunkt $\pxy[B]{x_{B},y_{B}}$ besitzt, so lautet seine Komponentendarstellung
   \[
     \vv{AB} = \vxy{x_{B}-x_{A},y_{B}-y_{A}}
   \]
 \end{theorem}
-
 \begin{example}
   \textbf{Beispiel:} Im der oben stehenden Abbildung ist der Vektor $\vv{v}$ durch den Anfangspunkt $\pxy[A]{2,3}$ und den Endpunkt $\pxy[B]{9,1}$ definiert. Also lautet seine Komponentendarstellung
   \[

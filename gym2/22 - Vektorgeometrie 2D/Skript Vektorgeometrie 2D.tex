@@ -1,0 +1,77 @@
+\documentclass[parskip=half]{scrartcl}
+\input{../../ros-config.tex}
+
+\usepackage{scrlayer-scrpage}
+\pagestyle{scrheadings}
+
+
+
+
+\KOMAoption{DIV}{12}
+\KOMAoption{toc}{listof}
+\DeclareTOCStyleEntry[entryformat=\bfseries,beforeskip=2pt,linefill=\TOCLineLeaderFill]{tocline}{section}
+\setcounter{tocdepth}{1}
+
+\title{Vektorgeometrie 2D}
+\author{Stefan Rothe}
+\date{26.12.2024}
+
+\newpairofpagestyles{firstpage}{%
+  \cofoot{\textcopyright{} Gymnasium Kirchenfeld\\Dieses Skript steht unter einer Creative Commons Attribution 4.0 International-Lizenz.\\(CC BY 4.0)}
+}
+
+\makeatletter
+\lohead{\@title}
+\rohead{\@date}
+\cofoot{\thepage}
+\rofoot{}
+\makeatother
+
+\begin{document}
+  \maketitle
+  \thispagestyle{firstpage}
+  \begin{center}
+    \begin{tikzpicture}
+      \tkzInit[xmin=0,xmax=12,ymin=0,ymax=5]
+      \tkzDefPoint(0,0){O}
+      \tkzDefPoint(2,2){A}
+      \tkzDefPoint(9,1){B}
+      \tkzDefPoint(7,4){C}
+      \tkzDefMidPoint(B,C) \tkzGetPoint{M}
+      \tkzDefTriangleCenter[centroid](A,B,C)
+      \tkzGetPoint{S}
+
+      \tkzDrawSegment[thick](A,B)
+      \tkzDrawSegment[thick](C,A)
+      \tkzDrawSegment[vector style](O,A)
+      \tkzDrawSegment[vector style](O,B)
+      \tkzDrawSegment[vector style](O,C)
+      \tkzDrawSegment[red,thick,vector style](B,C)
+      \tkzDrawSegment[red,thick,vector style](A,M)
+
+      \tkzLabelSegment[above left](O,A){$\vv{OA}$}
+      \tkzLabelSegment[below right,pos=0.6](O,B){$\vv{OB}$}
+      \tkzLabelSegment[below right,pos=0.3](O,C){$\vv{OC}$}
+      \tkzLabelSegment[red,below right](A,M){$\vv{AM}$}
+      \tkzLabelSegment[red,above right,pos=0.3](B,C){$\vv{a}$}
+
+      \tkzDrawPoints(A,B,C,M,S)
+      \tkzLabelPoint[above left](A){$A$}
+      \tkzLabelPoint[below right](B){$B$}
+      \tkzLabelPoint[above](C){$C$}
+      \tkzLabelPoint[above right](M){$M$}
+      \tkzLabelPoint[above right](S){$S$}
+    \end{tikzpicture}
+
+    \vspace{5mm}
+    $\displaystyle\vv{OS} = \tfrac{2}{3}\left(\tfrac{1}{2}\left(\vv{OC}-\vv{OB}\right) -\vv{OA}\right)$
+  \end{center}
+  \tableofcontents
+  \newpage
+  \input{Einführung}
+  \input{Komponenten}
+  \input{Vektoren und Punkte}
+  \input{Kollinearität und Orthogonalität}
+  \input{Geraden}
+  \input{Anwendungen}
+\end{document}

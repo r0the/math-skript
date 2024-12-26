@@ -1,0 +1,93 @@
+\newpage
+\section{Geraden}
+
+% ------------------------------------------------------------------------------
+\subsection{Geradengleichung}
+Eine Gerade $g$ kann durch die Vektorgleichung
+\[
+  g:\quad \vv{r} = \vv{p} + t\cdot\vv{a}
+\]
+beschrieben werden. Dabei ist $\vv{p} = \vv{OP}$ der Ortsvektor eines bestimmten
+\textbf{Punktes} $P$ auf der Geraden und $\vv{a}$ ist die \textbf{Richtung} der
+Geraden. Der \textbf{Parameter} $t$ ist eine beliebig wählbare, reelle Zahl.
+
+Wird für $t$ eine Zahl eingesetzt, so ergibt sich der Ortsvektor
+$\vv{r} = \vv{OR}$ eines Punktes $R$, welcher auf der Geraden liegt. Da $t$
+beliebig gewählt werden kann, können so sämtliche auf der Gerade liegenden
+Punkte ermittelt werden.
+\begin{center}
+  \begin{tikzpicture}
+    \tkzInit[xmin=-0.5,xmax=10,ymin=-0.5,ymax=4]
+    \tkzDrawXY
+    \tkzDefPoint(0,0){O}
+    \tkzDefPoint(4,3){P}
+    \tkzDefPoint(6,2.5){A}
+    \tkzDefPoint(0,4){G1}
+    \tkzDefPoint(10,1.5){G2}
+    \tkzDefPoint(8,2){R1}
+    \tkzDefPoint(1,3.75){R2}
+
+    \tkzDrawLine[](G1,G2)
+    \tkzLabelSegment[pos=1,above](G1,G2){$g$}
+
+    \tkzDrawSegment[very thick,red,vector style](O,P)
+    \tkzLabelSegment[above left](O,P){$\vv{p}$}
+
+    \tkzDrawSegment[very thick,red,vector style](P,A)
+    \tkzLabelSegment[above](P,A){$\vv{a}$}
+
+    \tkzDrawSegment[very thick,blue,vector style](A,R1)
+    \tkzLabelSegment[above](A,R1){$2\vv{a}$}
+
+    \tkzDrawSegment[very thick,blue,vector style](P,R2)
+    \tkzLabelSegment[above](P,R2){$-1.5\vv{a}$}
+
+    \tkzDrawPoints(O,P,R1,R2)
+    \tkzLabelPoints[above left](O)
+    \tkzLabelPoints[above](P)
+    \tkzLabelPoint[above](R1){$R_{1}$}
+    \tkzLabelPoint[above](R2){$R_{2}$}
+  \end{tikzpicture}
+\end{center}
+\begin{example}
+  \textbf{Beispiel:} Gegeben ist die Gerade
+  \[
+    g:\quad \vv{r} = \vxy{4,3}+t\cdot\vxy{2,-0.5}
+  \]
+  Durch Einsetzen von $2$ bzw. $-1.5$ für den Parameter $t$ können zwei
+  Ortsvektoren von Punkten $R_{1}$ und $R_{2}$ auf der Geraden ermittelt werden.
+  \begin{align*}
+    \vv{r_{1}} &= \vxy{4,3}+2\cdot\vxy{2,-0.5} = \vxy{4+4,3-1} = \vxy{8,2} \qquad&&\Rightarrow\qquad \pxy[R_{1}]{8,2} \\
+    \vv{r_{2}} &= \vxy{4,3}-1.5\cdot\vxy{2,-0.5} = \vxy{4-3,3+0.75} = \vxy{1,3.75} \qquad&&\Rightarrow\qquad \pxy[R_{2}]{1,3.75}
+  \end{align*}
+\end{example}
+
+\newpage
+% ------------------------------------------------------------------------------
+\subsection{Gerade durch zwei Punkte}
+
+Die Gleichung der Geraden durch die zwei Punkte $A$ und $B$ ergibt sich aus dem
+Richtungsvektor $\vv{a} = \vv{AB}$ und dem Ortsvektors $\vv{p} = \vv{OA}$.
+Alternativ kann auch der Ortsvektor von $B$ gewählt werden. Die Vektorgleichung
+der Geraden durch $A$ und $B$ lautet also:
+\[
+  \vv{r} = \vv{OA}+t\cdot\vv{AB}
+\]
+\begin{example}
+  \textbf{Beispiel:} Die Gleichung der Geraden durch $\pxy[A]{2,3}$ und
+  $\pxy[B]{-4,2}$ soll bestimmt werden.
+  \begin{align*}
+    \vv{a} &= \vv{AB} = \vv{OB}-\vv{OA} = \vxy{-4,2}-\vxy{2,3} = \vxy{-6,-1} \\
+    \vv{p} &= \vv{OA} = \vxy{2,3} \\
+    \vv{r} &= \vv{p}+t\cdot \vv{a} = \vxy{2,3}+t\cdot \vxy{-6,-1}
+  \end{align*}
+\end{example}
+% ------------------------------------------------------------------------------
+\subsection{Parallele durch einen Punkt}
+
+
+% ------------------------------------------------------------------------------
+\subsection{Senkrechte durch einen Punkt}
+
+% ------------------------------------------------------------------------------
+\subsection{Schnittpunkt zweier Geraden}
