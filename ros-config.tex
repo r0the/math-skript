@@ -80,16 +80,6 @@
 \usepackage{hyperref}
 \hypersetup{colorlinks=true,urlcolor=blue,linkcolor=black}
 
-% Einbinden von Quellcode
-\usepackage{listings}
-\lstdefinestyle{mystyle}{
-  basicstyle=\ttfamily,
-  numberstyle=\scriptsize\color{black!70},
-  numbers=left,
-  numbersep=0.75cm
-}
-\lstset{style=mystyle}
-
 % 3 Mathematik
 % ------------
 
@@ -108,6 +98,7 @@
 
 \usepackage[fleqn]{amsmath}
 \usepackage{amssymb}
+\usepackage{amsthm}
 
 % eigene Operatoren
 \DeclareMathOperator{\ggT}{ggT}
@@ -119,18 +110,23 @@
 \usepackage[b]{esvect}
 
 \makeatletter
-% Koordinatenschreibweise für 2D-Punkte
-\NewDocumentCommand\pxy@internal{mmm}{\mathopen{}\left(#1/\mathopen{}#2\mathclose{}\right)\mathclose{}}
-\NewDocumentCommand\pxy{o>{\SplitArgument{2}{,}}m}{\IfNoValueF{#1}{#1}\pxy@internal #2}
-% Koordinatenschreibweise für 3D-Punkte
-\NewDocumentCommand\pxyz@internal{mmmm}{\mathopen{}\left(#1/\mathopen{}#2\mathclose{}/\mathopen{}#3\mathclose{}\right)\mathclose{}}
-\NewDocumentCommand\pxyz{o>{\SplitArgument{3}{,}}m}{\IfNoValueF{#1}{#1}\pxyz@internal #2}
+% Komponentenschreibweise für Punkte
+\NewDocumentCommand\coord@internal{mmmm}{%
+\IfNoValueTF{#3}{\mathopen{}\left(#1/\mathopen{}#2\mathclose{}\right)\mathclose{}}
+{\mathopen{}\left(#1/\mathopen{}#2\mathclose{}/\mathopen{}#3\mathclose{}\right)\mathclose{}}}
+\NewDocumentCommand\coord{o>{\SplitArgument{3}{,}}m}{\IfNoValueF{#1}{#1}\coord@internal #2}
 
-% Komponentenschreibweise für 2D-Vektoren
-\NewDocumentCommand\vxy@internal{mmm}{\begin{pmatrix}#1\\#2\end{pmatrix}}
-\NewDocumentCommand\vxy{>{\SplitArgument{2}{,}}m}{\vxy@internal #1}
-% Komponentenschreibweise für 3D-Vektoren
-\NewDocumentCommand\vxyz{mmm}{\begin{pmatrix}#1\\#2\\#3\end{pmatrix}}
+% Komponentenschreibweise für Vektoren für inline-Math
+\NewDocumentCommand\tvec@internal{mmmm}{%
+\IfNoValueTF{#3}{\left(\begin{smallmatrix}\scriptstyle #1\\\scriptstyle #2\end{smallmatrix}\right)}
+{\left(\begin{smallmatrix}\scriptstyle #1\\\scriptstyle #2\\\scriptstyle #3\end{smallmatrix}\right)}}
+\NewDocumentCommand\tvec{>{\SplitArgument{3}{,}}m}{\tvec@internal #1}
+
+% Komponentenschreibweise für Vektoren für display-Math
+\NewDocumentCommand\dvec@internal{mmmm}{%
+\IfNoValueTF{#3}{\left(\begin{matrix}#1\\ #2\end{matrix}\right)}
+{\left(\begin{matrix} #1\\ #2\\ #3\end{matrix}\right)}}
+\NewDocumentCommand\dvec{>{\SplitArgument{3}{,}}m}{\dvec@internal #1}
 \makeatother
 
 % 3.4 Umgebung eqt für Äquivalenzumformungen von Gleichungen
@@ -139,13 +135,55 @@
 \newcounter{@eqtrownumber}
 \def\eqtequiv{\stepcounter{@eqtrownumber}\ifnum\value{@eqtrownumber}=1\else\Leftrightarrow\qquad\qquad\fi}
 \makeatother
-\NewDocumentEnvironment{eqt}{}{\begin{array}{@{\eqtequiv}>{\displaystyle}r@{\hspace{2mm}}>{\displaystyle}l@{\hspace{1cm}}|l}}{\end{array}}
+\NewDocumentEnvironment{eqt}{}{\begin{equation*}\begin{array}{@{\eqtequiv}>{\displaystyle}r@{\hspace{2mm}}>{\displaystyle}l@{\hspace{1cm}}|l}}{\end{array}\end{equation*}}
 \preto\eqt{\setcounter{@eqtrownumber}{0}}
 
 % 3.5 Lineare Gleichungssysteme
 % -----------------------------
 \usepackage{systeme}
 \sysdelim||
+
+% 3.6 Differentiale
+% -----------------
+\usepackage{derivative}
+
+% 3.7 Umgebung für Beispiele
+% --------------------------
+% Definition eines neuen Theorem-Stils für Beispiele
+\newtheoremstyle{example}
+  {3pt}% Platz oberhalb des Beispiels
+  {3pt}% Platz unterhalb des Beispiels
+  {\itshape}% Schriftart des Beispiel-Textes
+  {}% Abstand nach dem Beispiel-Kopf
+  {\bfseries\itshape}% Schriftart des Beispiel-Kopfes
+  {.}% Punktierung nach dem Beispiel-Kopf
+  {.5em}% Abstand nach der Punktierung
+  {\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}% Kopfname spezifizieren
+
+\theoremstyle{example}
+\newtheorem*{example}{Beispiel}
+
+% 4 Diagramme
+% -----------
+
+% 4.1 TikZ
+% --------
+% muss wegen der Konfiguration vor tikz eingebunden werden
+% Mit table können Tabellenzellen eingefärbt werden
+\usepackage[table]{xcolor}
+
+% für Geometrie (TikZ-Erweiterung)
+% damit wird auch tikz eingebunden
+\usepackage{tkz-base}
+
+% für Funktionsplots
+\usepackage{tkz-fct}
+
+% Konfiguration Darstellung von Tangenten in tkz-fct
+\tkzfctset{tan style/.style={red,thick,>=}}
+
+% für Geometrie
+\usepackage{tkz-euclide}
 
 % Kürzen bei Brüchen zeigen
 \usepackage{cancel}
@@ -154,19 +192,34 @@
 \usepackage{longdivision}
 \longdivisionkeys{style=german}
 
-
-% muss wegen der Konfiguration vor tikz eingebunden werden
-% Mit table können Tabellenzellen eingefärbt werden
-\usepackage[table]{xcolor}
-% für Geometrie (TikZ-Erweiterung)
-% damit wird auch tikz eingebunden
-\usepackage{tkz-base}
-\usepackage{tkz-fct}
-% Konfiguration Darstellung von Tangenten in tkz-fct
-\tkzfctset{tan style/.style={red,thick,>=}}
-\usepackage{tkz-euclide}
 % Bäume mit tikz
 \usepackage{forest}
+
+% 5 Informatik
+% ------------
+
+% 5.1 Quellcode
+% -------------
+\usepackage{listings}
+
+\definecolor{pythonCommentColor}{HTML}{9F9F9F}
+\definecolor{pythonIdentifierColor}{HTML}{02007C}
+\definecolor{pythonKeywordColor}{HTML}{6B134A}
+\definecolor{pythonNumberColor}{HTML}{9E4A1A}
+\definecolor{pythonStringColor}{HTML}{215912}
+\lstset{
+  basicstyle=\ttfamily\small,
+  breaklines,
+  commentstyle={\color{pythonCommentColor}\itshape},
+  frame=single,
+  keywordstyle={\color{pythonKeywordColor}\bfseries},
+  language=Python,
+  numbers=left,
+  numbersep=5pt,
+  numberstyle=\scriptsize\color{black!70},
+  showstringspaces=false,
+  stringstyle={\color{pythonStringColor}},
+}
 
 % Material Design-Farben
 % ----------------------
@@ -202,16 +255,9 @@
 % Makro \extra, um schwierige Zusatzaufgaben zu markieren
 \NewDocumentCommand\extra{}{$\bigstar\quad$}
 
-\NewTColorBox{example}{}{
-  colback=white,
-  colframe=black,
-  arc=0mm,
-  before skip=2mm,
-  left=1mm,
-  right=1mm,
-  boxrule=1pt,
-}
+
 \NewTColorBox{note}{}{
+  parbox=false,
   colback=notecolor,
   colframe=black,
   arc=0mm,
@@ -221,6 +267,7 @@
   boxrule=1pt,
 }
 \NewTColorBox{theorem}{}{
+  parbox=false,
   colback=theoremcolor,
   colframe=black,
   arc=0mm,
@@ -230,6 +277,7 @@
   boxrule=1pt,
 }
 \NewTColorBox{instructions}{}{
+  parbox=false,
   colback=notecolor,
   colframe=black,
   arc=0mm,
