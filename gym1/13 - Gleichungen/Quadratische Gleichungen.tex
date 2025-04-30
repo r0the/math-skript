@@ -33,30 +33,29 @@ Aus diesem Satz folgt, dass die Gleichung $x\cdot(ax+b) = 0$ wahr wird, wenn ent
 \textbf{Fall $x = 0$}. Zunächst wird der Fall betrachtet, dass $x = 0$ ist. Dieser Fall ist trivial, da der Wert für $x$ schon feststeht.
 
 \textbf{Fall $ax+b = 0$}. In diesem Fall liegt eine lineare Gleichung vor. Es ist bereits bekannt, wie eine solche Gleichung gelöst wird:
-\[\begin{eqt}
+\begin{eqt}
   ax+b &= 0            & -b \\
     ax &= -b           & :a \\
      x &= -\frac{b}{a}
-\end{eqt}\]
+\end{eqt}
 Somit ist die Lösungsmenge einer solchen quadratischen Gleichung
 \[
   \mathbb{L} = \left\{0;-\frac{b}{a}\right\}
 \]
 
 \begin{example}
-  \textbf{Beispiel:}
-  \[\begin{eqt}
+  \begin{eqt}
     3x^{2} + 6x &= 0 & \text{ausklammern} \\
         x(3x+6) &= 0
-  \end{eqt}\]
+  \end{eqt}
   Fall 1: $x = 0$: trivial.
 
   Fall 2: $(3x+6) = 0$:
-  \[\begin{eqt}
+  \begin{eqt}
     3x+6 &= 0  & -6 \\
       3x &= -6 & :3 \\
        x &= -2
-  \end{eqt}\]
+  \end{eqt}
   Die Lösungsmenge ist $\mathbb{L} = \{-2;0\}$.
 \end{example}
 
@@ -76,33 +75,33 @@ Teilen wir jetzt auf beiden Seiten durch $a$, erhalten wir:
 x^2 = \frac{-c}{a}
 \]
 Um bei dieser Gleichung die Lösungen zu bestimmen, müssen wir die Gleichung \textbf{radizieren} (die Wurzel ziehen).
-\[\begin{eqt}
+\begin{eqt}
        x^{2} &= -\frac{c}{a} & \sqrt{\phantom{x}} \\
 x &= \pm\sqrt{-\frac{c}{a}}
-\end{eqt}\]
+\end{eqt}
 
 \subsubsection{Radizieren einer Gleichung}
-Das Radizieren (Wurzelziehen) ist im allgemeinen \textbf{keine} Äquivalenzumformung. Wir benötigen deshalb eine \textbf{Fallunterscheidung}. 
+Das Radizieren (Wurzelziehen) ist im allgemeinen \textbf{keine} Äquivalenzumformung. Wir benötigen deshalb eine \textbf{Fallunterscheidung}.
 
 \begin{example}
-	\textbf{Beispiel:} Die Gleichungen 
+	Die Gleichungen
 	\[ x^2 =-4 \\ x^2 =-25 \\ x^2= -100 \]
 	haben \textbf{keine} Lösung, da es keine Zahl $x$ gibt, die mit sich selbst multipliziert eine negative Zahl ergibt. Ziehen wir auf beiden Seiten die Wurzel, erhalten wir:
 	\[ x =\sqrt{-4} \\ x =\sqrt{-25} \\ x= \sqrt{-100} \]
-	und die Wurzel einer negativen Zahl ist \textbf{nicht definiert}. Entsprechend gib es keine Lösung. 
+	und die Wurzel einer negativen Zahl ist \textbf{nicht definiert}. Entsprechend gib es keine Lösung.
 \end{example}
-Haben wir eine Gleichung der allgemeinen Form 
+Haben wir eine Gleichung der allgemeinen Form
 \[
 x^2 = D,
 \]
 so hat die Gleichung \textbf{keine Lösung}, wenn $D<0$ ist. Die Lösungsmenge ist dann die leere Menge $\mathbb{L}= \{\}$.
 \begin{example}
-	\textbf{Beispiel:} Die Gleichung
+	Die Gleichung
 	\[ x^2 = 0 \]
 	hat \textbf{eine} Lösung, nämlich die Zahl 0. Ziehen wir auf beiden Seiten die Wurzel, erhalten wir:
 	\[ x =\sqrt{0} = 0 \]
 \end{example}
-Haben wir eine Gleichung der allgemeinen Form 
+Haben wir eine Gleichung der allgemeinen Form
 \[
 x^2 = D,
 \]
@@ -110,36 +109,35 @@ so hat die Gleichung \textbf{eine Lösung}, wenn $D=0$ ist. Die Lösungsmenge is
 
 Der \textit{Normalfall} ist der Folgende:
 \begin{example}
-	\textbf{Beispiel:} Die Gleichungen 
+	Die Gleichungen
 	\[ x^2 =4 \\ x^2 =25 \\ x^2= 100 \]
 	haben \textbf{zwei} Lösungen, da es zwei Zahlen $\pm x$ gibt, welche die Gleichung erfüllen. Ziehen wir auf beiden Seiten die Wurzel, erhalten wir:
 	\[ x =\pm \sqrt{4} = \pm 2 \\ x = \pm \sqrt{25} = \pm 5\\ x= \pm  \sqrt{100} = \pm 10 \]
 	Das $x= \pm 2$ ist eine Kurzschreibweise für $x=2$ \textbf{oder} $x=-2$, denn beide Zahlen lösen die Gleichung $x^2=4$. Das sind die beiden Fälle, die wir unterscheiden müssen:
-	  \[\begin{eqt}
+	  \begin{eqt}
 		x^2 &= 4  & \sqrt{\square} \\
-		\Leftrightarrow x &=2 \text{ oder }  x= -2  
-	\end{eqt}\]
-	
+		\Leftrightarrow x &=2 \text{ oder }  x= -2
+	\end{eqt}
+
 \end{example}
-Haben wir eine Gleichung der allgemeinen Form 
+Haben wir eine Gleichung der allgemeinen Form
 \[
-x^2 = D,
+  x^2 = D,
 \]
 so hat die Gleichung \textbf{zwei Lösungen}, wenn $D>0$ ist. Die Lösungsmenge ist dann die leere Menge $\mathbb{L}= \{-\sqrt{D},\sqrt{D}\}$.
 
 \begin{note}
-	\textbf{Bemerkung:} Das Radizieren einer Gleichung ist genau dann eine Äquivalenzumformung, wenn eine Fallunterscheidung für $\pm \sqrt{\square}$ gemacht wird \textbf{und} jeweils der \textbf{gesamte Term} einer Seite radiziert wird. 
-	\[\begin{eqt}
+	\textbf{Bemerkung:} Das Radizieren einer Gleichung ist genau dann eine Äquivalenzumformung, wenn eine Fallunterscheidung für $\pm \sqrt{\square}$ gemacht wird \textbf{und} jeweils der \textbf{gesamte Term} einer Seite radiziert wird.
+	\begin{eqt}
 		\text{Term 1} &= \text{Term 2}           & \sqrt{\phantom{x}} \\
-	\Leftrightarrow	\sqrt{\text{Term 1}} &= \pm\sqrt{\text{Term 2}} 
-	\end{eqt}\]
+	\Leftrightarrow	\sqrt{\text{Term 1}} &= \pm\sqrt{\text{Term 2}}
+	\end{eqt}
 \end{note}
 
-Die obige Bemerkung ist auch der Grund, warum Sie Gleichungen der Form $ax^2+bx+c=0$ für $b\neq0$ durch einfaches Wurzelziehen \textbf{nicht} lösen können. 
+Die obige Bemerkung ist auch der Grund, warum Sie Gleichungen der Form $ax^2+bx+c=0$ für $b\neq0$ durch einfaches Wurzelziehen \textbf{nicht} lösen können.
 Betrachten wir das folgende Beispiel:
 \begin{example}
-	\textbf{Beispiel:}
-	\[ x^2 + 2x +1 = 0 \Leftrightarrow \sqrt{ x^2 + 2x +1} = \pm \sqrt{0} \] 
+	\[ x^2 + 2x +1 = 0 \Leftrightarrow \sqrt{ x^2 + 2x +1} = \pm \sqrt{0} \]
 	\[
 	\Leftrightarrow x^2 + 2x +1 = 0 \Leftrightarrow x^2 = - 2x -1 \Leftrightarrow x=  \pm \sqrt{-2x-1} \]
 	\[
@@ -150,10 +148,10 @@ Betrachten wir das folgende Beispiel:
 \begin{note}
 	\textbf{Zusammenfassung:}
 	Für Gleichungen der Form
-	\[\begin{eqt}
+	\begin{eqt}
 		x^{2} &= D           & \sqrt{\phantom{x}} \\
 		\sqrt{x^{2}} &= \pm\sqrt{D} &
-	\end{eqt}\]
+	\end{eqt}
 	gibt es unterschiedlich viele Lösungen, je nachdem welche Zahl unter der Wurzel steht:
 	\begin{itemize}
 		\item $D>0$: Ist $D$ grösser als Null, so hat die Gleichung wie oben erläutert die zwei Lösungen $\pm \sqrt{D}$, also die Lösungsmenge $\mathbb{L} = \{-\sqrt{D};\sqrt{D}\}$.
@@ -165,62 +163,60 @@ Betrachten wir das folgende Beispiel:
 
 
 \begin{example}
-  \textbf{Beispiele:}
-  \[\begin{eqt}
+  \begin{eqt}
     3x^{2} - 48 &= 0     & +48 \\
          3x^{2} &= 48    & :3  \\
           x^{2} &= 16    & \sqrt{\phantom{x}} \\
               x &= \pm \sqrt{16}
-  \end{eqt}\]
+  \end{eqt}
   $D=16 > 0$, also gibt es zwei Lösungen. Die Lösungsmenge ist $\mathbb{L} = \{-4;4\}$.
 
-  \[\begin{eqt}
+  \begin{eqt}
          3x^{2} &= 0    & :3  \\
           x^{2} &= 0    & \sqrt{\phantom{x}} \\
               x &= \pm\sqrt{0}
-  \end{eqt}\]
+  \end{eqt}
   $D=0$, also gibt es eine Lösung. Die Lösungsmenge ist $\mathbb{L} = \{0\}$.
 
-  \[\begin{eqt}
+  \begin{eqt}
     3x^{2} + 48 &= 0     & -48 \\
          3x^{2} &= -48   & :3  \\
           x^{2} &= -16   & \sqrt{\phantom{x}} \\
               x &= \pm \sqrt{-16}
-  \end{eqt}\]
+  \end{eqt}
   $D=-16 < 0$, also gibt es keine Lösung. Die Lösungsmenge ist $\mathbb{L} = \{\}$.
 \end{example}
 
 % ------------------------------------------------------------------------------
 \subsection{Lösen mit binomischen Formeln}
 \begin{example}
-	\textbf{Beispiele:}
-		\[\begin{eqt}
+		\begin{eqt}
 		x^2 +4x +4 &= 16 & \text{Faktorisieren 1. binomische Formel} \\
 		(x+2)^{2} &= 16 & \sqrt{\phantom{x}} \\
 		x+2 &= \pm\sqrt{16} & -2 \\
 		x &= -2 \pm 4
-	\end{eqt}\]
+	\end{eqt}
 	Die Lösungsmenge lautet $\mathbb{L} = \{-6;4\}$.
-		\[\begin{eqt}
+		\begin{eqt}
 		x^2 -2x +1 &= 25 & \text{Faktorisieren 2. binomische Formel} \\
 		(x-1)^{2} &= 25 & \sqrt{\phantom{x}} \\
 		x-1 &= \pm\sqrt{25} & +1 \\
 		x &= 1\pm 5
-	\end{eqt}\]
+	\end{eqt}
 	Die Lösungsmenge lautet $\mathbb{L} = \{-4;6\}$.
-	\[\begin{eqt}
+	\begin{eqt}
 		x^2  - 81 &= 0 & \text{Faktorisieren 3. binomische Formel} \\
 		(x+9)(x-9) &= 0 & \text{Nullprodukt} \\
 		x &= \pm 9
-	\end{eqt}\]
+	\end{eqt}
 	Nach dem Satz über das Nullprodukt ist entweder $x+9=0$ oder $x-9=0$. Die Lösungsmenge lautet $\mathbb{L} = \{-9;9\}$.
 \end{example}
 Die binomischen Formeln können dabei helfen, quadratische Gleichungen zu  lösen. Wenn eine quadratische Gleichung durch ein Binom dargestellt werden kann, so kann sie ebenfalls durch radizieren gelöst werden:
-\[\begin{eqt}
+\begin{eqt}
   (x+k)^{2} &= D & \sqrt{\phantom{x}} \\
         x+k &= \pm\sqrt{D} & -k \\
           x &= -k\pm\sqrt{D}
-\end{eqt}\]
+\end{eqt}
 Damit kann abhängig von $D$ die Lösungsmenge angegeben werden:
 \begin{itemize}
   \item $D>0$: zwei Lösungen $-k\pm\sqrt{D}$, also $\quad\mathbb{L} = \left\{-k-\sqrt{D};-k+\sqrt{D}\right\}$
@@ -235,9 +231,9 @@ Damit kann abhängig von $D$ die Lösungsmenge angegeben werden:
 Mit Hilfe eines Tricks kann jede quadratische Gleichung in ein Binom umgewandelt werden. Dieser Trick wird quadratische Ergänzung genannt.
 
 \begin{example}
-  \textbf{Beispiel:} $2x^{2}+12x+2 = 0$
+  $2x^{2}+12x+2 = 0$
   Zunächst liegt keine binomische Formel vor. Betrachten Sie das Beispiel und beschreiben Sie in eigenen Worten, wie der \textit{Trick} funktioniert.
-  \[\begin{eqt}
+  \begin{eqt}
     2x^{2}+12x+2 &= 0           & :2 \\
       x^{2}+6x+1 &= 0           & -1 \\
         x^{2}+6x &= -1          & +9 \\
@@ -246,7 +242,7 @@ Mit Hilfe eines Tricks kann jede quadratische Gleichung in ein Binom umgewandelt
        (x+3)^{2} &= 8           & \sqrt{\phantom{x}} \\
              x+3 &= \pm\sqrt{8} & -3 \\
                x &= -3\pm\sqrt{8}
-  \end{eqt}\]
+  \end{eqt}
 \end{example}
 
 % ------------------------------------------------------------------------------
@@ -257,7 +253,7 @@ Mit Hilfe der quadratischen Ergänzung kann die allgemeine quadratische Gleichun
   ax^{2}+bx+c = 0
 \]
 Die Gleichung wird zunächst durch $a$ dividiert und dann mit Hilfe der quadratischen Ergänzung in die Binom-Form gebracht und radiziert:
-\[\begin{eqt}
+\begin{eqt}
                 ax^{2}+bx+c &= 0 & :a \\[4mm]
   x^{2}+\frac{b}{a}x+\frac{c}{a} &= 0 & -\frac{c}{a} \\[4mm]
               x^{2}+\frac{b}{a}x &= -\frac{c}{a} & +\left(\frac{b}{a}\right)^{2} \\[4mm]
@@ -269,7 +265,7 @@ Die Gleichung wird zunächst durch $a$ dividiert und dann mit Hilfe der quadrati
      x+\frac{b}{2a} &= \pm\sqrt{\frac{b^{2}-4ac}{4a^{2}}} & -\frac{b}{2a} \\[4mm]
     x &=  -\frac{b}{2a}\pm\frac{\sqrt{b^{2}-4ac}}{2a} & \text{Brüche addieren} \\[4mm]
     x &= \frac{-b\pm\sqrt{b^{2}-4ac}}{2a}
-\end{eqt}\]
+\end{eqt}
 Der Term unter der Wurzel gibt an, wie viele Lösungen die Gleichung hat und wird \textbf{Diskriminante} $D$ genannt.
 \[
   D = b^{2}-4ac
@@ -298,30 +294,28 @@ Damit ist die quadratische Gleichung allgemein gelöst!
 \subsection{Lösen durch Faktorisieren}
 Gelingt es uns, den Term $ax^2+bx+c$ zu faktorisieren, können wir dank dem Satz über das Nullprodukt die Lösungen ziemlich schnell ablesen. Dazu müssen wir lediglich schauen, wann die Faktoren Null sind. Es lohnt sich oft, kurz nach einer Faktorisierung zu suchen, bevor man die allgemeine Lösungsformel anwendet.
 
-
 \begin{example}
-	\textbf{Beispiele:}
-	\begin{enumerate}[label=(\alph*)]
-			\item 
-			\begin{align*}
-				x^2-x-12 &= 0 \\
-				\Leftrightarrow (x-4)(x+3) &= 0 \\
-				\Leftrightarrow x-4 &= 0 \text{ oder } x+3=0 \\
-				\mathbb{L}=\{-3;4\} 
-			\end{align*}
-			\item 
-			\begin{align*}
-				2^2+7x+6 &= 0 \\
-				\Leftrightarrow (2x+3)(x+2) &= 0 \\
-				\Leftrightarrow 2x+3 &= 0 \text{ oder } x+2=0 \\
-				\mathbb{L}=\{-2;\frac{-3}{2}\} 
-			\end{align*}
-			\item 
-			\begin{align*}
-				x^2-9x-20 &= 0 \\
-				\Leftrightarrow (x-4)(x-5) &= 0 \\
-				\Leftrightarrow x-4 &= 0 \text{ oder } x-5=0 \\
-				\mathbb{L}=\{4;5\} 
-			\end{align*}
-	\end{enumerate}
+  \begin{enumerate}[label=(\alph*)]
+  \item
+    \begin{eqt}
+      x^2-x-12 &= 0 \\
+      (x-4)(x+3) &= 0 \\
+      x-4 &= 0 \text{ oder } x+3=0 \\
+      \mathbb{L}=\{-3;4\}
+    \end{eqt}
+  \item
+  \begin{eqt}
+    2^2+7x+6 &= 0 \\
+    (2x+3)(x+2) &= 0 \\
+    2x+3 &= 0 \text{ oder } x+2=0 \\
+    \mathbb{L}=\left\{-2;\frac{-3}{2}\right\}
+  \end{eqt}
+  \item
+    \begin{eqt}
+      x^2-9x-20 &= 0 \\
+      \Leftrightarrow (x-4)(x-5) &= 0 \\
+      \Leftrightarrow x-4 &= 0 \text{ oder } x-5=0 \\
+      \mathbb{L}=\{4;5\}
+    \end{eqt}
+  \end{enumerate}
 \end{example}
