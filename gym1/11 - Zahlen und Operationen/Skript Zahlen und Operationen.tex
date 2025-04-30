@@ -29,7 +29,53 @@ Laurenz Pantenburg}
   \maketitle
   \thispagestyle{firstpage}
   \begin{center}
-    \includegraphics[height=50mm]{calculator.pdf}
+    \begin{tikzpicture}[scale=0.9]
+        % Gehäuse
+        \definecolor{colorbg}{HTML}{434F60}
+        \definecolor{colordisplay}{HTML}{A7BAC6}
+        \definecolor{colordigit}{HTML}{7895A8}
+        \definecolor{colorop}{HTML}{F8C743}
+        \definecolor{coloreq}{HTML}{ED6E3E}
+
+        \draw[fill=colorbg,rounded corners] (0,0) rectangle (5,6.5);
+        % Display
+        \draw[fill=colordisplay,rounded corners] (0.6,5) rectangle (4.4,6);
+
+        \node at (3.9,5.5) {42};
+
+        % Ziffern
+        \foreach \x in {0,1,2} {
+            \foreach \y in {0,1,2} {
+                \draw[fill=colordigit,rounded corners] (\x+0.6,\y+1.6) rectangle (\x+1.4,\y+2.4);
+                \node[color=white] at (\x+1,\y+2) {\pgfmathparse{int(3*\y+\x+1)}\pgfmathresult};
+            }
+        }
+
+        % Null
+        \draw[fill=colordigit,rounded corners] (0.6,0.6) rectangle (1.4,1.4);
+        \node[color=white] at (1,1) {0};
+
+        % Dezimalpunkt
+        \draw[fill=colordigit,rounded corners] (1.6,0.6) rectangle (2.4,1.4);
+        \node[color=white] at (2,0.9) {.};
+
+        % Gleichheitszeichen
+        \draw[fill=coloreq,rounded corners] (2.6,0.6) rectangle (3.4,1.4);
+        \node[color=white] at (3,1) {=};
+
+        % Operatoren
+        \draw[fill=colorop,rounded corners] (3.6,0.6) rectangle (4.4,1.4);
+        \node at (4,1) {$+$};
+
+        \draw[fill=colorop,rounded corners] (3.6,1.6) rectangle (4.4,2.4);
+        \node at (4,2) {$-$};
+
+        \draw[fill=colorop,rounded corners] (3.6,2.6) rectangle (4.4,3.4);
+        \node at (4,3) {$\times$};
+
+        \draw[fill=colorop,rounded corners] (3.6,3.6) rectangle (4.4,4.4);
+        \node at (4,4) {$\div$};
+    \end{tikzpicture}
   \end{center}
   \tableofcontents
   \clearpage
