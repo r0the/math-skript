@@ -5,25 +5,21 @@
 \subsection{Negativer Exponent}
 
 Bisher konnten Potenzen nur eine natürliche Zahl als Exponenten haben. Man kann sich aber fragen, was es bedeuten würde, wenn eine negative Zahl im Exponenten steht. Dazu wird betrachtet, was passiert, wenn bei einer Potenz immer wieder der Exponent um Eins verringert wird.
-\begin{align*}
-  \begin{eqt}
-    5^{3} &= 1\cdot 5\cdot 5\cdot 5 = 125 & :5 \\[2mm]
-    5^{2} &= 1\cdot 5\cdot 5 = 25 & :5 \\[2mm]
-    5^{1} &= 1\cdot 5 = 5 & :5 \\[2mm]
-    5^{0} &= 1
-  \end{eqt}
-\end{align*}
+\begin{eqt}
+  5^{3} &= 1\cdot 5\cdot 5\cdot 5 = 125 & :5 \\[2mm]
+  5^{2} &= 1\cdot 5\cdot 5 = 25 & :5 \\[2mm]
+  5^{1} &= 1\cdot 5 = 5 & :5 \\[2mm]
+  5^{0} &= 1
+\end{eqt}
 Wenn bei einer Potenz der Exponent um eins verringert wird, bedeutet dies, dass der Wert der Potenz durch ihre Basis dividiert wird. Das macht Sinn, ein um Eins kleinerer Exponent bedeutet ja, dass die Basis einmal weniger mit sich selbst multipliziert wird.
 
 Wenn nun diese Regel bei der Potenz $5^{0}$ weiter angewendet wird, dann entsteht die Potenz $5^{-1}$. Deren Wert ist der Wert von $5^{0}$ dividert durch $5$ also $\frac{1}{5}$. Wird dies so fortgesetzt, können die Werte für sämtliche Potenzen mit negativem Exponenten bestimmt werden:
-\begin{align*}
-  \begin{eqt}
-    5^{0}  &= 1 & :5 \\[4mm]
-    5^{-1} &= \frac{1}{5} & :5 \\[4mm]
-    5^{-2} &= \frac{1}{5\cdot 5} = \frac{1}{25} & :5 \\[4mm]
-    5^{-3} &= \frac{1}{5\cdot 5\cdot 5} = \frac{1}{125}
-  \end{eqt}
-\end{align*}
+\begin{eqt}
+  5^{0}  &= 1 & :5 \\[4mm]
+  5^{-1} &= \frac{1}{5} & :5 \\[4mm]
+  5^{-2} &= \frac{1}{5\cdot 5} = \frac{1}{25} & :5 \\[4mm]
+  5^{-3} &= \frac{1}{5\cdot 5\cdot 5} = \frac{1}{125}
+\end{eqt}
 Diese Überlegungen werden in folgender Definition festgehalten:
 
 \textbf{Definition:} Die Potenz einer Zahl $a$ mit einem negativen Exponenten $-n$ ist der Kehrwert der Potenz mit der Gegenzahl $n$ im Exponenten.
@@ -31,7 +27,7 @@ Diese Überlegungen werden in folgender Definition festgehalten:
   a^{-n} := \frac{1}{a^{n}} = \frac{1}{1\cdot\underbrace{a\cdot a\cdot a\cdots a}_{n-\text{mal}}}
 \]
 \begin{example}
-  \textbf{Beispiele:} $\displaystyle \qquad 4^{-7} = \frac{1}{4^{7}} \qquad\qquad 3^{-1} = \frac{1}{3} \qquad\qquad 10^{-2} = \frac{1}{10^{2}} = 0.01$
+  $\displaystyle \qquad 4^{-7} = \frac{1}{4^{7}} \qquad\qquad 3^{-1} = \frac{1}{3} \qquad\qquad 10^{-2} = \frac{1}{10^{2}} = 0.01$
 \end{example}
 
 \newpage
@@ -73,7 +69,7 @@ Potenzen können gemäss der fünf Potenzgesetze umgeformt werden.
   a^{k}\cdot a^{m} = 1\cdot\underbrace{a\cdot a\cdot a\cdots a}_{k-\text{mal}}\cdot 1\cdot\underbrace{a\cdot a\cdot a\cdots a}_{m-\text{mal}} = 1\cdot\underbrace{a\cdot a\cdot a\cdots a}_{(k+m)-\text{mal}} = a^{k+m}
 \]
 \begin{example}
-  \textbf{Beispiele:} $\displaystyle 5^{2}\cdot 5^{3} = 5^{2+3} = 5^{5} \qquad\qquad 3\cdot 3^{-3} = 3^{1+(-3)} = 3^{-2}$
+  $\displaystyle 5^{2}\cdot 5^{3} = 5^{2+3} = 5^{5} \qquad\qquad 3\cdot 3^{-3} = 3^{1+(-3)} = 3^{-2}$
 \end{example}
 \vspace{1cm}
 \begin{theorem}
@@ -91,7 +87,7 @@ Ist hingegen $m$ grösser als $k$, so bleibt der Faktor $(m-k)$-mal im Nenner ü
   \frac{a^{k}}{a^{m}} = \frac{1\cdot\overbrace{a\cdot a\cdot a\cdots a}^{k-\text{mal}}}{1\cdot\underbrace{a\cdot a\cdots a}_{m-\text{mal}}} = \frac{1}{1\cdot\underbrace{a\cdot a\cdots a}_{(m-k)-\text{mal}}} = \frac{1}{a^{m-k}} = a^{-(m-k)} = a^{k-m}
 \]
 \begin{example}
-  \textbf{Beispiele:} $\displaystyle \frac{5^{2}}{5^{3}} = 5^{2-3} = 5^{-1} \qquad\qquad \frac{3^{-2}}{3^{-4}} = 3^{-2-(-4)} = 3^{2}$
+  $\displaystyle \frac{5^{2}}{5^{3}} = 5^{2-3} = 5^{-1} \qquad\qquad \frac{3^{-2}}{3^{-4}} = 3^{-2-(-4)} = 3^{2}$
 \end{example}
 \begin{theorem}
   \textbf{Produkt mit gleichem Exponent.} In einem Produkt können gleiche Exponenten ausgeklammert werden:
@@ -104,7 +100,7 @@ Ist hingegen $m$ grösser als $k$, so bleibt der Faktor $(m-k)$-mal im Nenner ü
   a^{k}\cdot b^{k} = 1\cdot\underbrace{a\cdot a\cdot a\cdots a}_{k-\text{mal}}\cdot 1\cdot\underbrace{b\cdot b\cdot b\cdots b}_{k-\text{mal}} = 1\cdot\underbrace{(a\cdot b)\cdot (a\cdot b)\cdot (a\cdot b)\cdots (a\cdot b)}_{k-\text{mal}} = (ab)^{k}
 \]
 \begin{example}
-  \textbf{Beispiele:} $\displaystyle 5^{3} \cdot 3^{3} = (5\cdot 3)^{3} = 15^{3} \qquad\qquad 2^{-2}\cdot 7^{-2} = (2\cdot 7)^{-2} = 14^{-2}$
+  $\displaystyle 5^{3} \cdot 3^{3} = (5\cdot 3)^{3} = 15^{3} \qquad\qquad 2^{-2}\cdot 7^{-2} = (2\cdot 7)^{-2} = 14^{-2}$
 \end{example}
 \begin{theorem}
   \textbf{Quotient mit gleichem Exponent.} In einem Bruch können gleiche Exponenten ausgeklammert werden:
@@ -117,7 +113,7 @@ Ist hingegen $m$ grösser als $k$, so bleibt der Faktor $(m-k)$-mal im Nenner ü
   \frac{a^{k}}{b^{k}} = \frac{1\cdot\overbrace{a\cdot a\cdot a\cdots a}^{k-\text{mal}}}{1\cdot\underbrace{b\cdot b\cdot b\cdots b}_{k-\text{mal}}} = 1\cdot\underbrace{\frac{a}{b}\cdot \frac{a}{b}\cdot \frac{a}{b}\cdots \frac{a}{b}}_{k-\text{mal}} = \left(\frac{a}{b}\right)^{k}
 \]
 \begin{example}
-  \textbf{Beispiele:} $\displaystyle \frac{4^{6}}{2^{6}} = \left(\frac{4}{2}\right)^{6} = 2^{6} \qquad\qquad \frac{3^{-2}}{5^{-2}} = \left(\frac{3}{5}\right)^{-2} = 0.6^{-2}$
+  $\displaystyle \frac{4^{6}}{2^{6}} = \left(\frac{4}{2}\right)^{6} = 2^{6} \qquad\qquad \frac{3^{-2}}{5^{-2}} = \left(\frac{3}{5}\right)^{-2} = 0.6^{-2}$
 \end{example}
 \begin{theorem}
   \textbf{Potenz einer Potenz.} Potenzen werden potenziert, indem die Exponenten multipliziert werden:
@@ -130,7 +126,7 @@ Ist hingegen $m$ grösser als $k$, so bleibt der Faktor $(m-k)$-mal im Nenner ü
   (a^{k})^{m} = \overbrace{1\cdot\underbrace{a\cdot a\cdots a}_{k-\text{mal}}\cdot 1\cdot\underbrace{a\cdot a\cdots a}_{k-\text{mal}}\cdots 1\cdot\underbrace{a\cdot a\cdots a}_{k-\text{mal}}}^{m-\text{mal}} = 1\cdot\underbrace{a\cdot a\cdot a\cdots a}_{(k\cdot m)-\text{mal}} = a^{k\cdot m}
 \]
 \begin{example}
-  \textbf{Beispiele:} $\displaystyle (2^{3})^{2} = 2^{3\cdot 2} = 2^{6} \qquad\qquad (5^{2})^{-2} = 5^{2\cdot(-2)} = 5^{-4}$
+  $\displaystyle (2^{3})^{2} = 2^{3\cdot 2} = 2^{6} \qquad\qquad (5^{2})^{-2} = 5^{2\cdot(-2)} = 5^{-4}$
 \end{example}
 \begin{note}
   \textbf{Achtung:} Potenzen werden von oben nach unten berechnet. So ist $5^{3^{2}}$ nicht dasselbe wie $\left(5^{3}\right)^{2}$:
