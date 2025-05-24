@@ -176,6 +176,12 @@
 % damit wird auch tikz eingebunden
 \usepackage{tkz-base}
 
+% tkz-base verwendet numprint für die Darstellung von Achsbeschriftungen.
+% Damit dort das Dezimaltrennzeichen als Punkt dargestellt wird:
+\makeatletter
+\g@addto@macro\npstylegerman{\npdecimalsign{{.}}}
+\makeatother
+
 % für Funktionsplots
 \usepackage{tkz-fct}
 
