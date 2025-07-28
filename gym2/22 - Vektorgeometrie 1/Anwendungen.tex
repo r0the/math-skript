@@ -8,7 +8,7 @@ exemplarisch ein paar solcher Probleme betrachtet.
 \subsection{Streckenteilung}
 \textbf{Aufgabe:} Teilen Sie die Strecke $\overline{AB}$ in drei gleiche Teile.
 \[
-  \pxy[A]{2,4} \qquad \pxy[B]{11,1}
+  \coord[A]{2,4} \qquad \coord[B]{11,1}
 \]
 Zunächst wird der Vektor $\vv{a} = \vv{AB}$ bestimmt. Der erste Teilpunkt
 $T_{1}$ erhält man, indem ein Drittel von $\vv{a}$ zum Ortsvektor von $A$
@@ -28,9 +28,9 @@ von $\vv{a}$.
     \tkzDefPoint(5,3){T1}
     \tkzDefPoint(8,2){T2}
     \tkzDrawSegment[](A,B)
-    \tkzDrawSegment[vector style](O,A)
-    \tkzDrawSegment[vector style](O,T1)
-    \tkzDrawSegment[vector style](O,T2)
+    \tkzDrawSegment[dashed,vector style](O,A)
+    \tkzDrawSegment[dashed,vector style](O,T1)
+    \tkzDrawSegment[dashed,vector style](O,T2)
     \tkzDrawSegment[red,thick,vector style](A,T1)
     \tkzDrawSegment[red,thick,vector style](T1,T2)
     \tkzDrawSegment[red,thick,vector style](T2,B)
@@ -52,17 +52,18 @@ von $\vv{a}$.
 \end{center}
 Damit ergeben sich folgende Ortsvektoren und Koordinaten für $T_{1}$ und $T_{2}$:
 \begin{align*}
-       \vv{a} &= \vv{AB} = \vxy{11,1} - \vxy{2,4} = \vxy{11-2,1-4} = \vxy{9,-3} \\[2mm]
-  \vv{OT_{1}} &= \vxy{2,4}+\frac{1}{3}\vxy{9,-3} = \vxy{2+\frac{1}{3}9,4+\frac{1}{3}(-3)} = \vxy{5,3} \\[2mm]
-  \vv{OT_{2}} &= \vxy{2,4}+\frac{2}{3}\vxy{9,-3} = \vxy{2+\frac{2}{3}9,4+\frac{2}{3}(-3)} = \vxy{8,2}
+       \vv{a} &= \vv{AB} = \tvec{11,1} - \tvec{2,4} = \tvec{11-2,1-4} = \tvec{9,-3} \\[2mm]
+  \vv{OT_{1}} &= \tvec{2,4}+\frac{1}{3}\tvec{9,-3} = \tvec{2+\frac{1}{3}9,4+\frac{1}{3}(-3)} = \tvec{5,3} \\[2mm]
+  \vv{OT_{2}} &= \tvec{2,4}+\frac{2}{3}\tvec{9,-3} = \tvec{2+\frac{2}{3}9,4+\frac{2}{3}(-3)} = \tvec{8,2}
 \end{align*}
-Die Strecke wird also durch die Punkte $\pxy[T_{1}]{5,3}$ und $\pxy[T_{2}]{8,2}$ in drei gleiche Teile geteilt.
+Die Strecke wird also durch die Punkte $\coord[T_{1}]{5,3}$ und
+$\coord[T_{2}]{8,2}$ in drei gleiche Teile geteilt.
 
 % ------------------------------------------------------------------------------
 \subsection{Umfang eines Dreiecks}
 \textbf{Aufgabe:} Bestimmen Sie den Umfang des Dreiecks $\triangle ABC$ mit
 \[
-  \pxy[A]{3,2} \qquad \pxy[B]{8,1} \qquad \pxy[C]{7,4}
+  \coord[A]{3,2} \qquad \coord[B]{8,1} \qquad \coord[C]{7,4}
 \]
 Zwischen den Punkten $A$, $B$ und $C$ können die Vektoren $\vv{AB}$, $\vv{BC}$ und $\vv{CA}$ definiert werden.
 \begin{center}
@@ -88,9 +89,9 @@ Zwischen den Punkten $A$, $B$ und $C$ können die Vektoren $\vv{AB}$, $\vv{BC}$ 
 \end{center}
 Anschliessend werden die Längen der Vektoren ermittelt und addiert, um den Umfang des Dreiecks zu erhalten.
 \begin{align*}
-  \vv{a} &= \vv{AB} = \vxy{8-3,1-2} = \vxy{5,-1} & |\vv{a}| &= \sqrt{5^{2}+(-1)^{2}} = \sqrt{26} \approx 5.099 \\[2mm]
-  \vv{b} &= \vv{BC} = \vxy{7-8,4-1} = \vxy{-1,3} & |\vv{b}| &= \sqrt{(-1)^{2}+3^{2}} = \sqrt{10} \approx 3.162 \\[2mm]
-  \vv{c} &= \vv{CA} = \vxy{3-7,2-4} = \vxy{-4,-2} & |\vv{c}| &= \sqrt{(-4)^{2}+(-2)^{2}} = \sqrt{20} \approx 4.472
+  \vv{a} &= \vv{AB} = \tvec{8-3,1-2} = \tvec{5,-1} & |\vv{a}| &= \sqrt{5^{2}+(-1)^{2}} = \sqrt{26} \approx 5.099 \\[2mm]
+  \vv{b} &= \vv{BC} = \tvec{7-8,4-1} = \tvec{-1,3} & |\vv{b}| &= \sqrt{(-1)^{2}+3^{2}} = \sqrt{10} \approx 3.162 \\[2mm]
+  \vv{c} &= \vv{CA} = \tvec{3-7,2-4} = \tvec{-4,-2} & |\vv{c}| &= \sqrt{(-4)^{2}+(-2)^{2}} = \sqrt{20} \approx 4.472
 \end{align*}
 Damit ergibt sich für den Umfang des Dreiecks:
 \[
@@ -102,7 +103,7 @@ Damit ergibt sich für den Umfang des Dreiecks:
 \subsection{Schwerpunkt eines Dreiecks}
 \textbf{Aufgabe:} Bestimmen den Schwerpunkt der Dreiecks $\triangle ABC$ mit
 \[
-  \pxy[A]{2,2} \qquad \pxy[B]{9,1} \qquad \pxy[C]{7,4}
+  \coord[A]{2,2} \qquad \coord[B]{9,1} \qquad \coord[C]{7,4}
 \]
 \begin{center}
   \begin{tikzpicture}
@@ -119,8 +120,8 @@ Damit ergibt sich für den Umfang des Dreiecks:
 
     \tkzDrawSegment[thick](A,B)
     \tkzDrawSegment[thick](C,A)
-    \tkzDrawSegment[vector style](O,A)
-    \tkzDrawSegment[vector style](O,B)
+    \tkzDrawSegment[dashed,vector style](O,A)
+    \tkzDrawSegment[dashed,vector style](O,B)
     \tkzDrawSegment[red,thick,vector style](B,C)
     \tkzDrawSegment[red,thick,vector style](A,M)
 
@@ -139,39 +140,40 @@ Damit ergibt sich für den Umfang des Dreiecks:
 \end{center}
 Zunächst wird der Vektor $\vv{a}$ ermittelt, welcher die Seite $a$ beschreibt.
 \[
-  \vv{a} = \vv{BC} = \vxy{7-9,4-1} = \vxy{-2,3}
+  \vv{a} = \vv{BC} = \tvec{7-9,4-1} = \tvec{-2,3}
 \]
 Nun kann der Mittelpunkt der Seite $a$ berechnet werden:
 \[
-  \vv{OM} = \vv{OB}+\tfrac{1}{2}\vv{a} = \vxy{9,1}+\tfrac{1}{2}\vxy{-2,3} = \vxy{8,2.5}
+  \vv{OM} = \vv{OB}+\tfrac{1}{2}\vv{a} = \tvec{9,1}+\tfrac{1}{2}\tvec{-2,3} = \tvec{8,2.5}
 \]
 Jetzt wird der Vektor $\vv{AM}$ berechnet, welcher die Seitenhalbierende beschreibt.
 \[
-  \vv{AM} = \vv{OM}-\vv{OA} = \vxy{8,2.5}-\vxy{2,2} = \vxy{6,0.5}
+  \vv{AM} = \vv{OM}-\vv{OA} = \tvec{8,2.5}-\tvec{2,2} = \tvec{6,0.5}
 \]
 Da der Schwerpunkt die Seitenhalbierende im Verhältnis 2:1 teilt, kann nun dessen Ortsverktor berechnet werden.
 \[
-  \vv{OS} = \vv{OA}+\tfrac{2}{3}\vv{AM} = \vxy{2,2}+\tfrac{2}{3}\vxy{6,0.5} = \vxy{6,2.\overline{3}}
+  \vv{OS} = \vv{OA}+\tfrac{2}{3}\vv{AM} = \tvec{2,2}+\tfrac{2}{3}\tvec{6,0.5} = \tvec{6,2.\overline{3}}
 \]
-Der Schwerpunkt des Dreiecks hat also die Koordinaten $\pxy[S]{6,2.\overline{3}}$.
+Der Schwerpunkt des Dreiecks hat also die Koordinaten
+$\coord[S]{6,2.\overline{3}}$.
 \newpage
 % ------------------------------------------------------------------------------
 \subsection{Parallelogramm}
 
 \textbf{Aufgabe:} Ermitteln Sie den fehlenden Eckpunkt $C$ und den Umfang des Parallelogramms $ABCD$ mit
 \[
-  \pxy[A]{3,2} \qquad \pxy[B]{8,1} \qquad \pxy[D]{6,4}
+  \coord[A]{3,2} \qquad \coord[B]{8,1} \qquad \coord[D]{6,4}
 \]
 Zuerst werden die Seitenvektoren des Parallelogramms bestimmt:
 \begin{align*}
-  \vv{a} &= \vv{OB}-\vv{OA} = \vxy{8,1}-\vxy{3,2} = \vxy{8-3,1-2} = \vxy{5,-1} \\[2mm]
-  \vv{b} &= \vv{OD}-\vv{OA} = \vxy{6,4}-\vxy{3,2} = \vxy{6-3,4-2} = \vxy{3,2}
+  \vv{a} &= \vv{OB}-\vv{OA} = \tvec{8,1}-\tvec{3,2} = \tvec{8-3,1-2} = \tvec{5,-1} \\[2mm]
+  \vv{b} &= \vv{OD}-\vv{OA} = \tvec{6,4}-\tvec{3,2} = \tvec{6-3,4-2} = \tvec{3,2}
 \end{align*}
 Der Punkt $C$ erhält man, indem der Punkt $B$ um den Vektor $\vv{b}$ verschiebt. Dazu wird $\vv{b}$ zum Ortsvektor $\vv{OB}$ addiert:
 \[
-  \vv{OC} = \vv{OB} + \vv{b} = \vxy{8,1} + \vxy{3,2} = \vxy{8+3,1+2} = \vxy{11,3}
+  \vv{OC} = \vv{OB} + \vv{b} = \tvec{8,1} + \tvec{3,2} = \tvec{8+3,1+2} = \tvec{11,3}
 \]
-Also ist der vierte Punkt des Parallelogramms $\pxy[C]{11,3}$.
+Also ist der vierte Punkt des Parallelogramms $\coord[C]{11,3}$.
 \begin{center}
   \begin{tikzpicture}
     \tkzInit[xmin=0,xmax=12,ymin=0,ymax=5]
@@ -183,10 +185,10 @@ Also ist der vierte Punkt des Parallelogramms $\pxy[C]{11,3}$.
     \tkzDefPoint(11,3){C}
     \tkzDefPoint(6,4){D}
 
-    \tkzDrawSegment[vector style](O,A)
+    \tkzDrawSegment[dashed,vector style](O,A)
     \tkzLabelSegment[above left](O,A){$\vv{OA}$}
 
-    \tkzDrawSegment[vector style](O,B)
+    \tkzDrawSegment[dashed,vector style](O,B)
     \tkzLabelSegment[below right](O,B){$\vv{OB}$}
 
     \tkzDrawSegment[thick,vector style](A,B)
@@ -219,7 +221,7 @@ Der Umfang des Parallelogramms ergibt sich, indem die Längen von $\vv{a}$ und $
 
 \textbf{Aufgabe:} Ermitteln Sie die fehlenden Eckpunkte $C$ und $D$ sowie die Fläche des Quadrats $ABCD$ mit
 \[
-  \pxy[A]{3,2} \qquad \pxy[B]{6,1}
+  \coord[A]{3,2} \qquad \coord[B]{6,1}
 \]
 \begin{center}
   \begin{tikzpicture}
@@ -250,18 +252,19 @@ Der Umfang des Parallelogramms ergibt sich, indem die Längen von $\vv{a}$ und $
 \end{center}
 Zunächst wird der Vektor $\vv{a} = \vv{AB}$ ermittelt:
 \[
-  \vv{a} = \vxy{6,1}-\vxy{3,2} = \vxy{6-3,1-2} = \vxy{3,-1}
+  \vv{a} = \tvec{6,1}-\tvec{3,2} = \tvec{6-3,1-2} = \tvec{3,-1}
 \]
 Nun wird der zu $\vv{a}$ senkrechte Vektor $\vv{b}$ ermittelt:
 \[
-  \vv{b} = \vxy{1,3}
+  \vv{b} = \tvec{1,3}
 \]
 Nun werden $C$ und $D$ ermittelt:
 \begin{align*}
-  \vv{OC} &= \vv{OB}+\vv{b} = \vxy{6,1} + \vxy{1,3} = \vxy{6+1,1+3} = \vxy{7,4} \\[2mm]
-  \vv{OD} &= \vv{OA}+\vv{b} = \vxy{3,2} + \vxy{1,3} = \vxy{3+1,2+3} = \vxy{4,5}
+  \vv{OC} &= \vv{OB}+\vv{b} = \tvec{6,1} + \tvec{1,3} = \tvec{6+1,1+3} = \tvec{7,4} \\[2mm]
+  \vv{OD} &= \vv{OA}+\vv{b} = \tvec{3,2} + \tvec{1,3} = \tvec{3+1,2+3} = \tvec{4,5}
 \end{align*}
-Die gesuchten Punkte sind also $\pxy[C]{7,4}$ und $\pxy[D]{4,5}$. Die Fläche des Quadrats beträgt
+Die gesuchten Punkte sind also $\coord[C]{7,4}$ und $\coord[D]{4,5}$. Die Fläche
+des Quadrats beträgt
 \[
   A = |\vv{a}|^{2} = \left(\sqrt{3^{2}+1^{2}}\right)^{2} = 9+1 = 10
 \]
@@ -272,7 +275,7 @@ Die gesuchten Punkte sind also $\pxy[C]{7,4}$ und $\pxy[D]{4,5}$. Die Fläche de
 
 \textbf{Aufgabe:} Berechnen Sie den Mittelpunkt und den Radius des Kreises, auf welchem die folgenden drei Punkte liegen:
 \[
-  \pxy[A]{3,2} \qquad \pxy[B]{6,5} \qquad \pxy[C]{7,2}
+  \coord[A]{3,2} \qquad \coord[B]{6,5} \qquad \coord[C]{7,2}
 \]
 \begin{center}
   \begin{tikzpicture}
@@ -299,7 +302,7 @@ Die gesuchten Punkte sind also $\pxy[C]{7,4}$ und $\pxy[D]{4,5}$. Die Fläche de
 \end{center}
 Sei $\vv{OA}$ der Ortsvektor des Punkts $A$ auf dem Kreis und $\vv{OM}$ der Ortsvektor des Mittelpunkts $M$ mit den folgenden Komponenten:
 \[
-  \vv{OA} = \vxy{3,2} \qquad \vv{OM} = \vxy{x,y}
+  \vv{OA} = \tvec{3,2} \qquad \vv{OM} = \tvec{x,y}
 \]
 Der Vektor $\vv{AM} = \vv{OM}-\vv{OA}$ zeigt vom Punkt $P$ zum Kreismittelpunkt $M$. Seine Länge ist der Radius des Kreises $r$:
 \[
@@ -331,9 +334,9 @@ Durch Gleichsetzen der Gleichungen werden $r$ und die Quadrate eliminiert und es
   6x+6y &= 48 \\
   8x &= 40
 \end{align*}
-Die Lösung des Gleichungssystems ist $x = 5$ und $y = 3$. Also hat der Mittelpunkt des Kreises die Koordinaten $\pxy[M]{5,3}$.
+Die Lösung des Gleichungssystems ist $x = 5$ und $y = 3$. Also hat der Mittelpunkt des Kreises die Koordinaten $\coord[M]{5,3}$.
 
 Den Radius des Kreises ist die Länge des Vektors $\vv{AM}$:
 \[
-  r = \left|\vv{AM}\right| = \left|\vxy{5-2,3-2}\right| = \left|\vxy{3,1}\right| = \sqrt{3^{2}+1^{2}} = \sqrt{10} \approx 3.162
+  r = \left|\vv{AM}\right| = \left|\tvec{5-2,3-2}\right| = \left|\tvec{3,1}\right| = \sqrt{3^{2}+1^{2}} = \sqrt{10} \approx 3.162
 \]

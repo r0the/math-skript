@@ -4,17 +4,15 @@
 \usepackage{scrlayer-scrpage}
 \pagestyle{scrheadings}
 
-
-
-
 \KOMAoption{DIV}{12}
 \KOMAoption{toc}{listof}
 \DeclareTOCStyleEntry[entryformat=\bfseries,beforeskip=2pt,linefill=\TOCLineLeaderFill]{tocline}{section}
 \setcounter{tocdepth}{1}
 
-\title{Vektorgeometrie 2D}
+\title{Vektorgeometrie 1}
+\subtitle{Vektoren und Geraden in der Ebene}
 \author{Stefan Rothe}
-\date{26.12.2024}
+\date{30.04.2025}
 
 \newpairofpagestyles{firstpage}{%
   \cofoot{\textcopyright{} Gymnasium Kirchenfeld\\Dieses Skript steht unter einer Creative Commons Attribution 4.0 International-Lizenz.\\(CC BY 4.0)}
@@ -43,9 +41,9 @@
 
       \tkzDrawSegment[thick](A,B)
       \tkzDrawSegment[thick](C,A)
-      \tkzDrawSegment[vector style](O,A)
-      \tkzDrawSegment[vector style](O,B)
-      \tkzDrawSegment[vector style](O,C)
+      \tkzDrawSegment[dashed,vector style](O,A)
+      \tkzDrawSegment[dashed,vector style](O,B)
+      \tkzDrawSegment[dashed,vector style](O,C)
       \tkzDrawSegment[red,thick,vector style](B,C)
       \tkzDrawSegment[red,thick,vector style](A,M)
 
@@ -55,7 +53,8 @@
       \tkzLabelSegment[red,below right](A,M){$\vv{AM}$}
       \tkzLabelSegment[red,above right,pos=0.3](B,C){$\vv{a}$}
 
-      \tkzDrawPoints(A,B,C,M,S)
+      \tkzDrawPoints(O,A,B,C,M,S)
+      \tkzLabelPoint[below left](O){$O$}
       \tkzLabelPoint[above left](A){$A$}
       \tkzLabelPoint[below right](B){$B$}
       \tkzLabelPoint[above](C){$C$}

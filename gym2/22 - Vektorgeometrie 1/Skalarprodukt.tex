@@ -1,0 +1,158 @@
+% ------------------------------------------------------------------------------
+\newpage
+\section{Skalarprodukt und Winkel}
+
+In der Vektorgeometrie benötigen wir eine Möglichkeit, Winkel zwischen Vektoren
+zu berechnen. Ausgehend von Betrachtungen am Dreieck und durch einen Vergleich
+mit dem Kosinussatz erhalten wir eine Definition für das \textbf{Skalarprodukt}
+von Vektoren, welches diese Möglichkeit bietet.
+
+% ------------------------------------------------------------------------------
+\subsection{Herleitung aus dem Kosinussatz}
+Im folgenden wird gezeigt, wie das Skalarprodukt aus dem Kosinussatz hergeleitet
+wird. Dazu wird das folgende Dreieck betrachtet:
+\begin{center}
+  \begin{tikzpicture}
+    \tkzDefPoint(3,2){C}
+    \tkzDefPoint(8,1){A}
+    \tkzDefPoint(7,4){B}
+    \tkzDrawSegment[thick,vector style](C,A)
+    \tkzDrawSegment[thick,vector style](C,B)
+    \tkzDrawSegment[thick,vector style](A,B)
+    \tkzLabelSegment[below left](C,A){$\vv{a}$}
+    \tkzLabelSegment[above right](A,B){$\vv{c}$}
+    \tkzLabelSegment[above left](C,B){$\vv{b}$}
+    \tkzMarkAngle[size=1](A,C,B)
+    \tkzLabelAngle[pos=0.7](A,C,B){$\gamma$}
+
+    \tkzDrawPoints(A,B,C)
+    \tkzLabelPoint[below right](A){$A$}
+    \tkzLabelPoint[above](B){$B$}
+    \tkzLabelPoint[below left](C){$C$}
+  \end{tikzpicture}
+\end{center}
+Die Vektoren $\vv{a}$ und $\vv{b}$ werden als Komponenten geschrieben. Der
+Vektor $\vv{c}$ kann aus den anderen berechnet werden.
+\begin{align*}
+  \vv{a} &= \vxy{a_{x},a_{y}} &
+  \vv{b} &= \vxy{b_{x},b_{y}} &
+  \vv{c} &= \vv{b}-\vv{a} = \vxy{b_{x}-a_{x},b_{y}-a_{y}}
+\end{align*}
+Mit dem Satz des Pythagoras können die Längen der Vektoren und somit auch
+deren Quadrate berechnet werden:
+\begin{align*}
+  |\vv{a}|^{2} &= a_{x}^{2}+a_{y}^{2} &
+  |\vv{b}|^{2} &= b_{x}^{2}+b_{y}^{2}
+\end{align*}
+Analog kann die Länge der Seite $c$ aus den Komponenten von $\vv{a}$ und
+$\vv{b}$ berechnet werden:
+\[\begin{eqt}
+  |\vv{c}|^{2} &= (b_{x}-a_{x})^{2}+(b_{y}-a_{y})^{2} & \text{ausmultiplizieren} \\[2mm]
+  |\vv{c}|^{2} &= b_{x}^{2}-2a_{x}b_{x}+a_{x}^{2}+b_{y}^{2}-2a_{y}b_{y}+a_{y}^{2} & \text{Terme umstellen} \\[2mm]
+  |\vv{c}|^{2} &= a_{x}^{2}+a_y^{2}+b_{x}^{2}+b_{y}^{2}-2a_{x}b_{x}-2a_{y}b_{y} & \text{ersetzen} \\[2mm]
+  |\vv{c}|^{2} &= |\vv{a}|^{2}+|\vv{b}|^{2}-2a_{x}b_{x}-2a_{y}b_{y} & -2 \text{ ausklammern} \\[2mm]
+  |\vv{c}|^{2} &= |\vv{a}|^{2}+|\vv{b}|^{2}-2\left(a_{x}b_{x}+a_{y}b_{y}\right)
+\end{eqt}\]
+Nach einigen Umformungen entsteht eine Gleichung, welche grosse Ähnlichkeit
+mit dem Kosinussatz hat:
+\[
+  |\vv{c}|^{2} = |\vv{a}|^{2}+|\vv{b}|^{2}-2\cdot |\vv{a}|\cdot |\vv{b}|\cdot\cos(\gamma)
+\]
+Daraus kann geschlossen werden, dass folgendes gilt:
+\[
+  a_{x}b_{x}+a_{y}b_{y} = |\vv{a}|\cdot |\vv{b}|\cdot\cos(\gamma)
+\]
+Die linke Seite dieser Gleichung kann ausschliesslich aus den Komponenten der
+Vektoren $\vv{a}$ und $\vv{b}$ berechnet werden.
+\begin{theorem}
+  \textbf{Definition Skalarprodukt 2D:} Das Skalarprodukt der Vektoren
+  $\vv{a} = \vxy{a_{x},a_{y}}$ und $\vv{b} = \vxy{b_{x},b_{y}}$ ist
+  wie folgt definiert:
+  \[
+    \vv{a}\circ \vv{b} = a_{x}\cdot b_{x}+a_{y}\cdot b_{y}
+  \]
+\end{theorem}
+\begin{example}
+  Das Skalarprodukt der beiden Vektoren $\vv{a} = \vxy{2,-3}$
+  und $\vv{b} = \vxy{5,4}$ beträgt:
+  \[
+    \vv{a}\circ \vv{b}
+    = \vxy{2,-3}\circ \vxy{5,4}
+    = 2\cdot 5+(-3)\cdot 4
+    = 10-12
+    = -2
+  \]
+\end{example}
+Analog wird das Skalarprodukt für dreidimensionale Vektoren definiert:
+\begin{theorem}
+  Das Skalarprodukt der Vektoren
+  $\vv{a} = \vxyz{a_{x},a_{y},a_{z}}$ und $\vv{b} = \vxyz{b_{x},b_{y},b_{z}}$ ist
+  wie folgt definiert:
+  \[
+    \vv{a}\circ \vv{b} = a_{x}\cdot b_{x}+a_{y}\cdot b_{y}+a_{z}\cdot b_{z}
+  \]
+\end{theorem}
+\begin{example}
+  Das Skalarprodukt der beiden Vektoren $\vv{a} = \vxyz{2,-3,1}$
+  und $\vv{b} = \vxyz{-1,5,4}$ beträgt:
+  \[
+    \vv{a}\circ \vv{b}
+    = \vxyz{2,-3,1}\circ \vxyz{-1,5,4}
+    = 2\cdot (-1)+(-3)\cdot 5+1\cdot 4
+    = -2-15+4
+    = -13
+  \]
+\end{example}
+Aus dem Vergleich mit dem Kosinussatz ergibt sich folgende Beziehung zwischen
+dem Skalarprodukt und dem Winkel der Vektoren:
+\begin{theorem}
+  \textbf{Skalarprodukt und Winkel:} Für das Skalarprodukt und den von den
+  Vektoren eingeschlossenen Winkel $\varphi$ gilt folgende Beziehung:
+  \[
+    \vv{a}\circ \vv{b} = |\vv{a}|\cdot |\vv{b}|\cdot \cos(\varphi)
+  \]
+\end{theorem}
+Mit Hilfe dieser Gleichung kann der Winkel zwischen zwei Vektoren berechnet
+werden.
+
+\newpage
+% ------------------------------------------------------------------------------
+\subsection{Winkel zwischen zwei Vektoren}
+Wird die obenstehende Gleichung umgeformt, so kann damit der Winkel zwischen
+zwei Vektoren berechnet werden.
+\begin{theorem}
+  \textbf{Winkel zwischen zwei Vektoren:} Der Winkel $\varphi$ zwischen den
+  Vektoren $\vv{a}$ und $\vv{b}$ wird
+  wie folgt berechnet:
+  \begin{align*}
+    \cos(\varphi) &= \frac{\vv{a}\circ \vv{b}}{|\vv{a}|\cdot |\vv{b}|} &
+    \varphi &= \arccos\left(\frac{\vv{a}\circ \vv{b}}{|\vv{a}|\cdot |\vv{b}|}\right)
+  \end{align*}
+  Insbesondere gilt:
+  \begin{itemize}
+    \item $\vv{a}$ und $\vv{b}$ stehen genau dann senkrecht aufeinander, wenn $\vv{a}\circ \vv{b} = 0$.
+    \item $\vv{a}$ und $\vv{b}$ sind genau dann parallel zueinander, wenn $\vv{a}\circ \vv{b} = 1$.
+  \end{itemize}
+\end{theorem}
+
+\begin{example}
+  Der Winkel zwischen den Vektoren $\vv{a} = \vxy{-1,4}$ und $\vv{b} = \vxy{5,-1}$ soll berechnet werden.
+
+  Zunächst wird das Skalarprodukt der beiden Vektoren berechnet:
+  \[
+    \vv{a}\circ \vv{b} = -1\cdot 5+4\cdot (-1) = -5-4 = -9
+  \]
+  Wenn das Skalarprodukt 0 oder 1 ergibt, dann stehen die Vektoren senkrecht beziehungsweise
+  parallel zueinander. Der Winkel wäre somit \ang{90} bzw. \ang{0}. Ansonsten werden als
+  nächstes die Längen der Vektoren ermittelt:
+  \begin{align*}
+    |\vv{a}| &= \sqrt{(-1)^{2}+4^{2}} = \sqrt{1+16} = \sqrt{17} \\
+    |\vv{b}| &= \sqrt{5^{2}+(-1)^{2}} = \sqrt{25+1} = \sqrt{26}
+  \end{align*}
+  Nun kann der Winkel berechnet werden:
+  \[
+    \varphi = \arccos\left(\frac{\vv{a}\circ \vv{b}}{|\vv{a}|\cdot |\vv{b}|}\right)
+    = \arccos\left(\frac{-9}{\sqrt{17}\cdot \sqrt{26}}\right) \approx \arccos\left(-0.428\right) \approx \ang{115.34}
+  \]
+\end{example}
+
